@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is Decompose? Deterministic Text Classification for AI Agents</title>
+    <meta name="description" content="Decompose is a deterministic text classification library for AI agents. No LLM, no probability, no hallucination. Regex-based classification into authority, risk, attention, and entities. Open source on PyPI.">
+    <meta name="keywords" content="decompose text classification, deterministic text classification without ML, rule-based text classification python, text classification no LLM, decompose-mcp">
+    <meta property="og:title" content="What Is Decompose? Deterministic Text Classification for AI Agents">
+    <meta property="og:description" content="Text in, classified structure out. No LLM. No probability. No hallucination. The deterministic foundation for AI pipelines.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://echology.io/what-is-decompose">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://echology.io/what-is-decompose">
+    <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Decompose",
+        "alternateName": "decompose-mcp",
+        "description": "Deterministic text classification library for AI agents. Classifies text into authority levels, risk categories, attention scores, and entities using regex-based pattern matching. No LLM required.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "url": "https://echology.io/what-is-decompose",
+        "downloadUrl": "https://pypi.org/project/decompose-mcp/",
+        "codeRepository": "https://github.com/echology-io/decompose",
+        "programmingLanguage": "Python",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Echology",
+            "url": "https://echology.io"
+        },
+        "featureList": [
+            "Deterministic text classification",
+            "Authority level detection (mandatory, directive, permissive)",
+            "Risk category scoring (safety, financial, compliance)",
+            "Attention scoring (0-10 priority scale)",
+            "Entity extraction (standards, dates, dollar amounts)",
+            "Irreducibility detection",
+            "MCP tool server for AI agents",
+            "No LLM dependency",
+            "No cloud dependency"
+        ]
+    }
+    </script>
+    <style>
+        .answer-body { max-width: 720px; margin: 0 auto; }
+        .answer-body h2 { font-size: 24px; font-weight: 700; margin: 48px 0 16px; letter-spacing: -0.3px; }
+        .answer-body h3 { font-size: 18px; font-weight: 700; margin: 32px 0 12px; }
+        .answer-body p { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 20px; }
+        .answer-body p strong { color: var(--fg); }
+        .answer-body p code { background: var(--code-bg); padding: 2px 6px; border-radius: 3px; font-size: 14px; color: var(--accent); }
+        .answer-body blockquote {
+            border-left: 3px solid var(--accent);
+            padding: 12px 20px;
+            margin: 24px 0;
+            background: var(--code-bg);
+            border-radius: 0 6px 6px 0;
+        }
+        .answer-body blockquote p { color: var(--fg); margin: 0; font-size: 15px; }
+        .answer-body ul, .answer-body ol { color: var(--muted); font-size: 16px; line-height: 1.75; margin-bottom: 20px; padding-left: 24px; }
+        .answer-body li { margin-bottom: 8px; }
+        .answer-body .code-block { margin: 24px 0; }
+        .answer-body a { text-decoration: underline; text-underline-offset: 2px; }
+
+        .def-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 32px 0;
+        }
+        .def-item {
+            border: 1px solid var(--border);
+            background: var(--code-bg);
+            padding: 20px;
+            border-radius: 6px;
+        }
+        .def-item h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .def-item p {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+        @media (max-width: 640px) {
+            .def-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">echology<span>.</span></a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+            <div class="nav-links">
+                <a href="/about">About</a>
+                <a href="/aecai">AECai</a>
+                <a href="/decompose" class="active">Decompose</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact</a>
+                <a href="/pt/" class="lang-toggle" title="Portugues">&#127463;&#127479;</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container container--narrow">
+            <h1>What Is<br><span>Decompose?</span></h1>
+            <p class="sub">Deterministic text classification for AI agents. No LLM, no probability, no hallucination. Text in, classified structure out.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container answer-body">
+
+            <h2>The short answer</h2>
+
+            <p><strong>Decompose is an open-source Python library that classifies text deterministically.</strong> It takes raw text and returns structured semantic units scored by authority, risk, attention, and entities. It uses regex-based pattern matching instead of machine learning, which means the same input always produces the same output. No training data, no model weights, no probability distribution. Just pattern matching against known linguistic structures.</p>
+
+            <p>Install it from PyPI:</p>
+
+            <div class="code-block">
+pip install decompose-mcp
+            </div>
+
+            <p>Use it in one function call:</p>
+
+            <div class="code-block">
+<span class="key">from</span> decompose <span class="key">import</span> decompose_text
+
+result = decompose_text(<span class="str">"The contractor shall comply with ASTM C150 for all portland cement."</span>)
+
+<span class="cmt"># Returns structured units with:</span>
+<span class="cmt"># - authority: "mandatory" (detected "shall")</span>
+<span class="cmt"># - risk: "compliance"</span>
+<span class="cmt"># - attention: 4.2</span>
+<span class="cmt"># - entities: ["ASTM C150"]</span>
+<span class="cmt"># - irreducible: True</span>
+            </div>
+
+            <h2>What it classifies</h2>
+
+            <p>Decompose breaks text into semantic units and scores each one across four dimensions.</p>
+
+            <div class="def-grid">
+                <div class="def-item">
+                    <h4>Authority</h4>
+                    <p>Detects whether language is mandatory ("shall," "must," "is required to"), directive ("should," "is expected to"), or permissive ("may," "is permitted to"). This is how you separate obligations from suggestions in any document.</p>
+                </div>
+                <div class="def-item">
+                    <h4>Risk</h4>
+                    <p>Categorizes content by risk type: safety, financial, compliance, legal, or informational. A clause about load-bearing requirements is safety. A clause about payment terms is financial. A paragraph describing project history is informational.</p>
+                </div>
+                <div class="def-item">
+                    <h4>Attention</h4>
+                    <p>Assigns a 0 to 10 priority score based on the combined signal of authority, risk, and entity density. High-attention units are the ones that matter most. Low-attention units can be skipped or deprioritized.</p>
+                </div>
+                <div class="def-item">
+                    <h4>Entities</h4>
+                    <p>Extracts standards references (ASTM, ACI, ISO), dates, dollar amounts, percentages, and other structured data points. These are the concrete facts embedded in prose that downstream systems need.</p>
+                </div>
+            </div>
+
+            <p>It also flags <strong>irreducible content</strong>: text that cannot be paraphrased without losing meaning. Dollar amounts, code references, threshold values, verbatim legal language. These are units that any downstream system must preserve exactly as written.</p>
+
+            <h2>Why deterministic classification matters</h2>
+
+            <p>Most text classification today uses machine learning. You train a model on labeled data, and it predicts categories with some probability. This works for many tasks, but it introduces a fundamental problem: <strong>the same input can produce different outputs.</strong> Model updates change predictions. Temperature settings introduce randomness. Confidence scores shift across runs.</p>
+
+            <p>Decompose eliminates this entirely. Its classification is deterministic. The same text always produces the same output. Every time. On every machine. Without model weights, without GPU, without an API call.</p>
+
+            <p>This matters for three reasons:</p>
+
+            <ul>
+                <li><strong>Ground truth for AI pipelines.</strong> When you use decompose as a preprocessing step before an LLM, the LLM receives structured, classified input instead of raw text. The classification layer is stable, auditable, and reproducible. The probabilistic layer above it can change without breaking the foundation.</li>
+                <li><strong>Auditability.</strong> Every classification decision can be traced to a specific pattern match. There is no black box. When a unit is classified as "mandatory, safety, attention 7.2," you can inspect exactly which patterns triggered that classification.</li>
+                <li><strong>Speed.</strong> Decompose runs in milliseconds, not seconds. There is no model inference, no API latency, no token cost. Classification happens at the speed of regex execution.</li>
+            </ul>
+
+            <h2>Use cases</h2>
+
+            <h3>Preprocessing for LLM pipelines</h3>
+            <p>Instead of sending raw documents to an LLM, decompose them first. Filter by attention score. Send only high-priority units to the model. This reduces token cost, improves response quality, and gives the LLM structured context instead of noise.</p>
+
+            <h3>Document triage</h3>
+            <p>When hundreds of documents arrive (specifications, contracts, reports, submissions), decompose them all. Sort by attention score. Route mandatory content to reviewers, skip informational boilerplate. A 200-page specification becomes 30 pages of material that actually requires human attention.</p>
+
+            <h3>Content filtering for RAG</h3>
+            <p>Retrieval-augmented generation works better when the chunks in your vector store are classified semantic units instead of arbitrary text splits. Decompose gives each chunk a structure: authority, risk, attention, entities. Your retrieval system can then filter by these dimensions before the LLM ever sees the content.</p>
+
+            <h3>Compliance and risk analysis</h3>
+            <p>Extract every mandatory requirement from a regulatory document. Flag every financial obligation in a contract. Surface every safety-critical clause in a specification. Decompose does this without training a custom model, because the linguistic patterns that signal obligation and risk are structural, not statistical.</p>
+
+            <h3>MCP tool for AI agents</h3>
+            <p>Decompose runs as a Model Context Protocol (MCP) tool server. AI agents can call decompose as a tool, receiving structured classification data they can reason about. This gives agents a perception layer: they can see what a document contains before deciding what to do with it.</p>
+
+            <div class="code-block">
+<span class="cmt"># Run as an MCP tool server</span>
+python -m decompose --serve
+
+<span class="cmt"># Or use directly in your agent code</span>
+<span class="key">from</span> decompose <span class="key">import</span> decompose_text
+
+<span class="cmt"># Decompose before sending to LLM</span>
+result = decompose_text(document_text)
+high_priority = [u <span class="key">for</span> u <span class="key">in</span> result[<span class="str">"units"</span>] <span class="key">if</span> u[<span class="str">"attention"</span>] >= <span class="num">3.0</span>]
+
+<span class="cmt"># Only send what matters to the model</span>
+<span class="key">for</span> unit <span class="key">in</span> high_priority:
+    response = llm.analyze(unit[<span class="str">"text"</span>], context=unit[<span class="str">"metadata"</span>])
+            </div>
+
+            <h2>How it works under the hood</h2>
+
+            <p>Decompose uses compiled regular expressions to detect linguistic patterns that signal authority, risk, and structural importance. These patterns are based on how obligations, permissions, and requirements are expressed in professional and technical writing.</p>
+
+            <p>The classification pipeline has three stages:</p>
+
+            <ol>
+                <li><strong>Segmentation.</strong> Raw text is split into semantic units at sentence and clause boundaries, preserving context.</li>
+                <li><strong>Pattern matching.</strong> Each unit is tested against pattern libraries for authority language, risk indicators, entity types, and irreducibility markers.</li>
+                <li><strong>Scoring.</strong> Pattern matches are aggregated into the four classification dimensions (authority, risk, attention, entities) and an overall attention score is computed.</li>
+            </ol>
+
+            <p>No training step. No model file. No dependency on external services. The pattern libraries are included in the package and execute at native regex speed.</p>
+
+            <h2>Get started</h2>
+
+            <div class="code-block">
+<span class="cmt"># Install</span>
+pip install decompose-mcp
+
+<span class="cmt"># Classify any text</span>
+<span class="key">from</span> decompose <span class="key">import</span> decompose_text
+result = decompose_text(open(<span class="str">"document.md"</span>).read())
+
+<span class="cmt"># Inspect the output</span>
+<span class="key">for</span> unit <span class="key">in</span> result[<span class="str">"units"</span>]:
+    <span class="key">print</span>(unit[<span class="str">"authority"</span>], unit[<span class="str">"risk"</span>], unit[<span class="str">"attention"</span>], unit[<span class="str">"text"</span>][:<span class="num">80</span>])
+            </div>
+
+            <div class="btn-group" style="margin-top: 40px; margin-bottom: 20px;">
+                <a href="https://pypi.org/project/decompose-mcp/" class="btn btn-primary">PyPI</a>
+                <a href="https://github.com/echology-io/decompose" class="btn btn-outline">GitHub</a>
+                <a href="/decompose" class="btn btn-outline">Product Page</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="copy">&copy; 2026 Echology, Inc.</div>
+            <div class="footer-links">
+                <a href="https://aecai.io">AECai</a>
+                <a href="https://geodelabs.io">Geode</a>
+                <a href="https://github.com/echology-io">GitHub</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

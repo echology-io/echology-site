@@ -46,6 +46,20 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://echology.io/pt/contato" />
   </url>
 
+  <!-- Answer pages -->
+  <url>
+    <loc>https://echology.io/what-is-decompose</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://echology.io/perception-before-generation</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Blog posts (EN) -->
   <url>
     <loc>https://echology.io/blog/regex-beats-llm</loc>
