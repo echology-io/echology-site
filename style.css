@@ -339,9 +339,15 @@ a.stack-item:hover strong { color: var(--accent); }
     background: var(--border);
     margin: 0 auto;
 }
-.stack-layer--foundation { border-color: var(--accent-dim); }
-.stack-layer--engines { }
+.stack-layer--engines { border-color: var(--accent-dim); }
 .stack-layer--modules { }
+
+.stack-note {
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 20px;
+}
 
 .stack-pipeline {
     display: flex;

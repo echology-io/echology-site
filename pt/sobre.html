@@ -50,36 +50,26 @@
         <div class="container">
             <p class="section-label">Arquitetura da Plataforma</p>
             <div class="stack">
-                <div class="stack-layer stack-layer--foundation">
-                    <div class="stack-tier">Base</div>
-                    <div class="stack-content">
-                        <a href="/pt/decompose" class="stack-item">
-                            <strong>Decompose</strong>
-                            <span>Classificacao deterministica de texto. Sem LLM. Sem probabilidade. Publicado no PyPI.</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="stack-connector"></div>
                 <div class="stack-layer stack-layer--engines">
                     <div class="stack-tier">Engines</div>
                     <div class="stack-content stack-content--triple">
                         <div class="stack-item">
                             <strong>Vanta</strong>
-                            <span>Perceber</span>
+                            <span>Perceber, classificar, embedar, indexar</span>
                         </div>
                         <div class="stack-item">
                             <strong>Aletheia</strong>
-                            <span>Verificar</span>
+                            <span>Verificar, auditar, referencia cruzada</span>
                         </div>
                         <div class="stack-item">
                             <strong>Daedalus</strong>
-                            <span>Agir</span>
+                            <span>Recuperar, relatar, agir</span>
                         </div>
                     </div>
                 </div>
                 <div class="stack-connector"></div>
                 <div class="stack-layer stack-layer--modules">
-                    <div class="stack-tier">Modulos</div>
+                    <div class="stack-tier">Aplicacoes</div>
                     <div class="stack-content stack-content--triple">
                         <a href="/pt/aecai" class="stack-item">
                             <strong>AECai</strong>
@@ -96,6 +86,7 @@
                     </div>
                 </div>
             </div>
+            <p class="stack-note">Construido sobre <a href="/pt/decompose">Decompose</a>, o classificador deterministico open-source do qual todo engine depende. <a href="/pt/decompose">Experimente &rarr;</a></p>
             <div class="stack-pipeline">
                 <span>INGERIR</span>
                 <span class="stack-arrow">&rarr;</span>
