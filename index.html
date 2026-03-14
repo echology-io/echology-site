@@ -29,10 +29,10 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Intelligence that<br><span>understands structure.</span></h1>
-            <p class="sub">AI gave everyone access to powerful models. Echology builds the architecture that makes those models useful: tools that classify and structure documents before they ever reach an LLM. Local-first. No cloud. No compromise.</p>
+            <h1>The perception layer<br><span>for structured AI.</span></h1>
+            <p class="sub">Most AI treats documents as flat text. Echology is the platform that classifies and structures knowledge before it reaches a model. One architecture. Multiple applications. Local-first.</p>
             <div class="btn-group">
-                <a href="/aecai" class="btn btn-primary">Explore AECai</a>
+                <a href="/aecai" class="btn btn-primary">See it applied: AECai</a>
                 <a href="/decompose" class="btn btn-outline">Try Decompose</a>
             </div>
         </div>
@@ -40,28 +40,103 @@
 
     <section>
         <div class="container">
-            <p class="section-label">Products</p>
-            <div class="card-grid">
-                <a href="/aecai" class="card" style="text-decoration:none">
-                    <div class="tag">Vertical</div>
-                    <h3>AECai</h3>
-                    <p>Document intelligence for Architecture, Engineering, and Construction. Full pipeline: parse, classify, enrich, decompose, index. Deterministic classification before LLM. Runs on your hardware.</p>
-                </a>
-                <a href="/decompose" class="card" style="text-decoration:none">
-                    <div class="tag">Open Source</div>
-                    <h3>Decompose</h3>
-                    <p>Deterministic text classification for AI agents. Text in, classified structured units out. No LLM. No setup. One function call. Published on PyPI as decompose-mcp.</p>
-                </a>
-                <a href="https://geode.digital" class="card" style="text-decoration:none">
-                    <div class="tag">Service</div>
-                    <h3>Geode</h3>
-                    <p>Generative Engine Optimization. We make your expertise citable by AI systems: ChatGPT, Perplexity, Google AI Overviews, Copilot. Powered by the echology stack.</p>
-                </a>
-                <a href="https://github.com/echology-io/open-scripture-intelligence" class="card" style="text-decoration:none">
-                    <div class="tag">Case Study</div>
-                    <h3>Open Scripture Intelligence</h3>
-                    <p>The Bible as a structured knowledge graph. 31,100 verses normalized into AI-ready schema with 344,799 cross-reference edges, semantic embeddings, and entity extraction.</p>
-                </a>
+            <p class="section-label">Platform Architecture</p>
+            <div class="stack">
+                <div class="stack-layer stack-layer--foundation">
+                    <div class="stack-tier">Foundation</div>
+                    <div class="stack-content">
+                        <a href="/decompose" class="stack-item">
+                            <strong>Decompose</strong>
+                            <span>Deterministic text classification. No LLM. No probability. Published on PyPI.</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="stack-connector"></div>
+                <div class="stack-layer stack-layer--engines">
+                    <div class="stack-tier">Core Engines</div>
+                    <div class="stack-content stack-content--triple">
+                        <div class="stack-item">
+                            <strong>Vanta</strong>
+                            <span>Perceive</span>
+                        </div>
+                        <div class="stack-item">
+                            <strong>Aletheia</strong>
+                            <span>Verify</span>
+                        </div>
+                        <div class="stack-item">
+                            <strong>Daedalus</strong>
+                            <span>Act</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stack-connector"></div>
+                <div class="stack-layer stack-layer--modules">
+                    <div class="stack-tier">Modules</div>
+                    <div class="stack-content stack-content--triple">
+                        <a href="/aecai" class="stack-item">
+                            <strong>AECai</strong>
+                            <span>Engineering document intelligence</span>
+                        </a>
+                        <a href="https://geode.digital" class="stack-item">
+                            <strong>Geode</strong>
+                            <span>AI visibility optimization</span>
+                        </a>
+                        <a href="https://github.com/echology-io/open-scripture-intelligence" class="stack-item">
+                            <strong>Open Scripture</strong>
+                            <span>Bible knowledge graph</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="stack-pipeline">
+                <span>INGEST</span>
+                <span class="stack-arrow">&rarr;</span>
+                <span>CLASSIFY</span>
+                <span class="stack-arrow">&rarr;</span>
+                <span>EMBED</span>
+                <span class="stack-arrow">&rarr;</span>
+                <span>RETRIEVE</span>
+                <span class="stack-arrow">&rarr;</span>
+                <span>ACT</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container container--narrow">
+            <p class="section-label">Why This Matters</p>
+            <h2 class="section-title">Documents contain structure. Most AI ignores it.</h2>
+            <p class="section-desc">Real documents are not flat text. They contain sections, citations, formulas, standards, obligations. If AI cannot perceive that structure, it cannot reason correctly. Echology builds the perception layer: deterministic classification before probabilistic generation.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <p class="section-label">See It Work</p>
+            <h2 class="section-title">What Decompose sees in your text.</h2>
+            <div class="panels">
+                <div class="panel">
+                    <div class="panel-label">Input</div>
+                    <span class="dim">Section 4.2.1 &mdash; All stormwater detention facilities</span><br>
+                    <span class="dim">shall be designed in accordance with AASHTO HEC-22</span><br>
+                    <span class="dim">and local jurisdiction requirements. The engineer of</span><br>
+                    <span class="dim">record shall submit calculations sealed by a licensed</span><br>
+                    <span class="dim">PE within 30 calendar days of plan approval.</span>
+                </div>
+                <div class="panel accent">
+                    <div class="panel-label">Decompose Output</div>
+                    <span class="key">authority:</span> <span class="str">0.92</span> &mdash; mandatory obligation<br>
+                    <span class="key">risk:</span> <span class="str">0.78</span> &mdash; deadline, compliance<br>
+                    <span class="key">attention:</span> <span class="str">0.85</span> &mdash; requires action<br>
+                    <span class="key">entities:</span><br>
+                    &nbsp;&nbsp;<span class="key">standard:</span> <span class="str">AASHTO HEC-22</span><br>
+                    &nbsp;&nbsp;<span class="key">role:</span> <span class="str">engineer of record</span><br>
+                    &nbsp;&nbsp;<span class="key">deadline:</span> <span class="str">30 calendar days</span><br>
+                    <span class="key">irreducible:</span> <span class="bool">true</span>
+                </div>
+            </div>
+            <div class="legend">
+                <p>No LLM. No probability. Same input always produces same output. <strong>13.9ms</strong> average. <a href="/decompose">Learn more &rarr;</a></p>
             </div>
         </div>
     </section>
@@ -87,14 +162,6 @@
                     <div class="stat-label">Cloud dependencies</div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container container--narrow">
-            <p class="section-label">Philosophy</p>
-            <h2 class="section-title">All intelligence begins with decomposition.</h2>
-            <p class="section-desc">Perception before generation. The system sees before it speaks. Every document flows through deterministic classification before any generative model is invoked. Structure first, inference second.</p>
         </div>
     </section>
 

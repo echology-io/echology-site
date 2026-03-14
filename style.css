@@ -272,6 +272,98 @@ section:first-of-type { border-top: none; }
     font-size: 12px;
 }
 
+/* ── Stack Diagram ────────────────────────────── */
+
+.stack {
+    max-width: 720px;
+    margin: 0 auto;
+}
+.stack-layer {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--bg-card);
+}
+.stack-tier {
+    width: 120px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    border-right: 1px solid var(--border);
+    padding: 16px 12px;
+    text-align: center;
+}
+.stack-content {
+    flex: 1;
+    padding: 20px 24px;
+}
+.stack-content--triple {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    padding: 0;
+}
+.stack-content--triple .stack-item {
+    padding: 20px 16px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+}
+.stack-content--triple .stack-item:last-child { border-right: none; }
+.stack-item {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+a.stack-item:hover strong { color: var(--accent); }
+.stack-item strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    transition: color 0.2s;
+}
+.stack-item span {
+    font-size: 13px;
+    color: var(--muted);
+}
+.stack-connector {
+    width: 1px;
+    height: 20px;
+    background: var(--border);
+    margin: 0 auto;
+}
+.stack-layer--foundation { border-color: var(--accent-dim); }
+.stack-layer--engines { }
+.stack-layer--modules { }
+
+.stack-pipeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 32px;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--muted);
+}
+.stack-arrow { color: var(--accent-dim); }
+
+@media (max-width: 640px) {
+    .stack-tier { width: 80px; font-size: 10px; letter-spacing: 1px; padding: 12px 8px; }
+    .stack-content--triple { grid-template-columns: 1fr; }
+    .stack-content--triple .stack-item { border-right: none; border-bottom: 1px solid var(--border); padding: 14px 16px; }
+    .stack-content--triple .stack-item:last-child { border-bottom: none; }
+    .stack-pipeline { flex-wrap: wrap; font-size: 11px; }
+}
+
 /* ── Stats ────────────────────────────────────── */
 
 .stats {

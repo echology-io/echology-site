@@ -29,10 +29,10 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Inteligencia que<br><span>entende estrutura.</span></h1>
-            <p class="sub">IA deu a todos acesso a modelos poderosos. Echology constroi a arquitetura que torna esses modelos uteis — comecando com ferramentas que classificam e estruturam documentos antes que cheguem a um LLM. Local-first. Sem nuvem. Sem concessao.</p>
+            <h1>A camada de percepcao<br><span>para IA estruturada.</span></h1>
+            <p class="sub">A maioria das IAs trata documentos como texto plano. Echology e a plataforma que classifica e estrutura conhecimento antes que ele chegue a um modelo. Uma arquitetura. Multiplas aplicacoes. Local-first.</p>
             <div class="btn-group">
-                <a href="/pt/aecai" class="btn btn-primary">Conhecer AECai</a>
+                <a href="/pt/aecai" class="btn btn-primary">Veja aplicado: AECai</a>
                 <a href="/pt/decompose" class="btn btn-outline">Experimentar Decompose</a>
             </div>
         </div>
@@ -40,19 +40,73 @@
 
     <section>
         <div class="container">
-            <p class="section-label">Produtos</p>
-            <div class="card-grid">
-                <a href="/pt/aecai" class="card" style="text-decoration:none">
-                    <div class="tag">Plataforma</div>
-                    <h3>AECai</h3>
-                    <p>Inteligencia documental para Arquitetura, Engenharia e Construcao. Tres engines: Vanta, Aletheia, Daedalus. Pipeline completo: parsing, classificacao, enriquecimento, decomposicao, indexacao. Roda no seu hardware.</p>
-                </a>
-                <a href="/pt/decompose" class="card" style="text-decoration:none">
-                    <div class="tag">Ferramenta MCP</div>
-                    <h3>Decompose</h3>
-                    <p>O primitivo cognitivo que falta para agentes de IA. Texto entra, unidades estruturadas e classificadas saem. Sem LLM. Sem setup. Uma chamada. Gratuito, open-source, e projetado para ensinar como funciona a arquitetura de inteligencia documental.</p>
-                </a>
+            <p class="section-label">Arquitetura da Plataforma</p>
+            <div class="stack">
+                <div class="stack-layer stack-layer--foundation">
+                    <div class="stack-tier">Base</div>
+                    <div class="stack-content">
+                        <a href="/pt/decompose" class="stack-item">
+                            <strong>Decompose</strong>
+                            <span>Classificacao deterministica de texto. Sem LLM. Sem probabilidade. Publicado no PyPI.</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="stack-connector"></div>
+                <div class="stack-layer stack-layer--engines">
+                    <div class="stack-tier">Engines</div>
+                    <div class="stack-content stack-content--triple">
+                        <div class="stack-item">
+                            <strong>Vanta</strong>
+                            <span>Perceber</span>
+                        </div>
+                        <div class="stack-item">
+                            <strong>Aletheia</strong>
+                            <span>Verificar</span>
+                        </div>
+                        <div class="stack-item">
+                            <strong>Daedalus</strong>
+                            <span>Agir</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stack-connector"></div>
+                <div class="stack-layer stack-layer--modules">
+                    <div class="stack-tier">Modulos</div>
+                    <div class="stack-content stack-content--triple">
+                        <a href="/pt/aecai" class="stack-item">
+                            <strong>AECai</strong>
+                            <span>Inteligencia documental para engenharia</span>
+                        </a>
+                        <a href="https://geode.digital/pt/" class="stack-item">
+                            <strong>Geode</strong>
+                            <span>Otimizacao de visibilidade em IA</span>
+                        </a>
+                        <a href="https://github.com/echology-io/open-scripture-intelligence" class="stack-item">
+                            <strong>Open Scripture</strong>
+                            <span>Grafo de conhecimento biblico</span>
+                        </a>
+                    </div>
+                </div>
             </div>
+            <div class="stack-pipeline">
+                <span>INGERIR</span>
+                <span class="stack-arrow">&rarr;</span>
+                <span>CLASSIFICAR</span>
+                <span class="stack-arrow">&rarr;</span>
+                <span>EMBEDAR</span>
+                <span class="stack-arrow">&rarr;</span>
+                <span>RECUPERAR</span>
+                <span class="stack-arrow">&rarr;</span>
+                <span>AGIR</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container container--narrow">
+            <p class="section-label">Por Que Importa</p>
+            <h2 class="section-title">Documentos contem estrutura. A maioria das IAs ignora isso.</h2>
+            <p class="section-desc">Documentos reais nao sao texto plano. Eles contem secoes, citacoes, formulas, normas, obrigacoes. Se a IA nao consegue perceber essa estrutura, nao consegue raciocinar corretamente. Echology constroi a camada de percepcao: classificacao deterministica antes de geracao probabilistica.</p>
         </div>
     </section>
 
@@ -65,11 +119,11 @@
                     <div class="stat-label">Engines (Vanta, Aletheia, Daedalus)</div>
                 </div>
                 <div>
-                    <div class="stat-value">29</div>
-                    <div class="stat-label">Endpoints de API</div>
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Estagios do pipeline</div>
                 </div>
                 <div>
-                    <div class="stat-value">640</div>
+                    <div class="stat-value">630+</div>
                     <div class="stat-label">Testes passando</div>
                 </div>
                 <div>
@@ -77,14 +131,6 @@
                     <div class="stat-label">Dependencias de nuvem</div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container container--narrow">
-            <p class="section-label">Filosofia</p>
-            <h2 class="section-title">Toda inteligencia comeca com decomposicao.</h2>
-            <p class="section-desc">Sistemas complexos ficam compreensiveis quando voce os quebra em partes constituintes, classifica cada parte e mapeia as relacoes entre elas. E isso que nossas ferramentas fazem — para documentos, para dados, para decisoes.</p>
         </div>
     </section>
 
