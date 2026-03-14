@@ -81,6 +81,12 @@
 
   <!-- Blog posts (EN) -->
   <url>
+    <loc>https://echology.io/blog/platform-state-march-2026</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://echology.io/blog/regex-beats-llm</loc>
     <lastmod>2026-02-15</lastmod>
     <changefreq>monthly</changefreq>
