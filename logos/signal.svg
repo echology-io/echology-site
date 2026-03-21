@@ -1,0 +1,25 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Signal: Operational Intelligence -- blue (#3a78a1) -->
+  <polygon points="80,12 132,40 132,108 80,136 28,108 28,40" stroke="#3a78a1" stroke-width="2" fill="none"/>
+  <!-- Crown facet -->
+  <polygon points="80,12 132,40 108,64 62,52" fill="#6ba3c7" opacity="0.25"/>
+  <!-- Right pavilion -->
+  <polygon points="132,40 132,108 108,64" fill="#3a78a1" opacity="0.15"/>
+  <!-- Left pavilion -->
+  <polygon points="80,12 28,40 62,52" fill="#3a78a1" opacity="0.18"/>
+  <!-- Inner hex ring -->
+  <polygon points="80,48 106,62 106,98 80,112 54,98 54,62" stroke="#3a78a1" stroke-width="1.5" opacity="0.25" fill="none"/>
+  <!-- Three-axis lines -->
+  <line x1="80" y1="12" x2="80" y2="136" stroke="#3a78a1" stroke-width="1" opacity="0.1"/>
+  <line x1="28" y1="40" x2="132" y2="108" stroke="#3a78a1" stroke-width="1" opacity="0.08"/>
+  <line x1="132" y1="40" x2="28" y2="108" stroke="#3a78a1" stroke-width="1" opacity="0.08"/>
+  <!-- Center point -->
+  <circle cx="80" cy="80" r="6" fill="#3a78a1" opacity="0.8"/>
+  <!-- Fire vertices -->
+  <circle cx="80" cy="12" r="2.5" fill="#a0c8e0" opacity="0.6"/>
+  <circle cx="132" cy="40" r="2" fill="#6ba3c7" opacity="0.5"/>
+  <circle cx="132" cy="108" r="2" fill="#3a78a1" opacity="0.35"/>
+  <circle cx="80" cy="136" r="2" fill="#3a78a1" opacity="0.25"/>
+  <circle cx="28" cy="108" r="2" fill="#3a78a1" opacity="0.3"/>
+  <circle cx="28" cy="40" r="2" fill="#6ba3c7" opacity="0.45"/>
+</svg>

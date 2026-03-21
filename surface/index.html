@@ -1,336 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Geode Surface -- Be Found by AI | echology</title>
-    <meta name="description" content="Your expertise is invisible to AI. The Geode Surface tests where you are missing, extracts what you already know, and structures it for citation.">
-    <link rel="stylesheet" href="../style.css">
-    <style>
-        .offer-table { width: 100%; border-collapse: collapse; margin: 0 auto; font-size: 14px; }
-        .offer-table th { text-align: left; padding: 12px 16px; border-bottom: 2px solid var(--accent-dim); color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; }
-        .offer-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--muted); line-height: 1.5; }
-        .offer-table tr:last-child td { border-bottom: none; }
-        .offer-table td:first-child { color: var(--fg); }
-        .offer-table td:nth-child(2) { color: var(--accent); font-weight: 600; white-space: nowrap; }
-        .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        @media (max-width: 640px) { .fit-grid { grid-template-columns: 1fr; } }
-        .fit-grid .card ul { list-style: none; padding: 0; }
-        .fit-grid .card li { font-size: 14px; color: var(--muted); line-height: 1.8; padding-left: 20px; position: relative; }
-        .fit-grid .card li::before { position: absolute; left: 0; }
-        .fit-grid .card.fit-yes li::before { content: "\2713"; color: var(--accent); }
-        .fit-grid .card.fit-no li::before { content: "\2717"; color: #c05050; }
-        .deliverables { list-style: none; padding: 0; }
-        .deliverables li { font-size: 14px; color: var(--muted); line-height: 1.8; padding-left: 20px; position: relative; }
-        .deliverables li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); }
-        .guarantee { margin-top: 20px; padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--bg-card); font-size: 14px; color: var(--fg); }
-        .price { font-size: 28px; font-weight: 800; color: var(--accent); letter-spacing: -1px; margin-bottom: 4px; }
-        .price-note { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
-        .proof-block { text-align: center; padding: 40px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; }
-        .proof-block p { font-size: 16px; color: var(--muted); max-width: 560px; margin: 0 auto; line-height: 1.6; }
-        .proof-block p strong { color: var(--fg); }
-        .math-block { text-align: center; max-width: 560px; margin: 0 auto; }
-        .math-block p { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
-        .math-block .price { font-size: 36px; margin-bottom: 8px; }
-    </style>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Geode Surface Services",
-        "description": "AI citation presence services. We extract existing expertise and structure it for AI citation.",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "item": {
-                    "@type": "Service",
-                    "name": "Surface Audit",
-                    "description": "Baseline citation assessment across 5 major AI platforms. 20 high-intent queries tested and scored. Gap report showing where you are cited, where competitors are cited, and page-by-page recommendations.",
-                    "provider": {
-                        "@type": "Organization",
-                        "name": "echology, Inc."
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "price": "5000",
-                        "priceCurrency": "USD"
-                    }
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "item": {
-                    "@type": "Service",
-                    "name": "Surface Build",
-                    "description": "Citation-ready knowledge extracted from existing documents. Answer pages structured and published for AI citation signals. Schema.org structured data implementation. Provenance verification on all published content.",
-                    "provider": {
-                        "@type": "Organization",
-                        "name": "echology, Inc."
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "price": "15000",
-                        "priceCurrency": "USD"
-                    }
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "item": {
-                    "@type": "Service",
-                    "name": "Surface Intelligence",
-                    "description": "Weekly citation re-audit across all AI platforms. Surface optimization based on citation signal changes. Monthly reporting on citation share, competitive movement, and new query opportunities.",
-                    "provider": {
-                        "@type": "Organization",
-                        "name": "echology, Inc."
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "price": "5000",
-                        "priceCurrency": "USD",
-                        "billingDuration": "P1M"
-                    }
-                }
-            }
-        ]
-    }
-    </script>
-</head>
-<body>
-
-<nav>
-    <div class="container">
-        <a href="/" class="logo">echology<span>.</span></a>
-        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
-        <div class="nav-links">
-            <a href="/signal/">Signal</a>
-            <a href="/surface/" class="active">Surface</a>
-            <a href="/spec/">Spec</a>
-            <a href="/about">About</a>
-            <a href="/blog">Blog</a>
-            <a href="/contact">Contact</a>
-        </div>
-    </div>
-</nav>
-
-<!-- Hero -->
-<div class="hero">
-    <div class="container">
-        <h1>The Geode <span>Surface</span></h1>
-        <p class="sub">Be found, not forgotten.</p>
-        <p class="sub" style="margin-top: -20px;">Your company has deep expertise. But when a prospect asks ChatGPT, Claude, or Perplexity a question in your space, your competitor gets cited. You do not. Not because you lack expertise. Because your knowledge is locked in formats AI cannot find.</p>
-        <div class="btn-group">
-            <a href="/contact" class="btn btn-primary">Schedule a Conversation</a>
-            <a href="#audit" class="btn btn-outline">See What You Get</a>
-        </div>
-    </div>
-</div>
-
-<!-- How It Works -->
-<section>
-    <div class="container">
-        <p class="section-label">Methodology</p>
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-desc">We do not write new content. We do not generate anything. We surface what you already know in formats AI systems can read.</p>
-        <div class="card-grid">
-            <div class="card">
-                <div class="tag">Step 1</div>
-                <h3>Test AI Citations</h3>
-                <p>We run real queries across ChatGPT, Claude, Perplexity, Google AI Overviews, and Microsoft Copilot. We score every response: who gets cited, who gets recommended, who gets ignored.</p>
-            </div>
-            <div class="card">
-                <div class="tag">Step 2</div>
-                <h3>Extract Your Knowledge</h3>
-                <p>We extract your existing knowledge from documents, proposals, and case studies you already have. Geode extracts -- it does not generate or fabricate.</p>
-            </div>
-            <div class="card">
-                <div class="tag">Step 3</div>
-                <h3>Structure for Citation</h3>
-                <p>We restructure and publish what you already know in formats AI systems prefer to cite. Every piece of published content traces to its source. Nothing fabricated. Everything verifiable.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Surface Audit -->
-<section id="audit">
-    <div class="container container--narrow">
-        <p class="section-label">Tier 1</p>
-        <h2 class="section-title">Surface Audit</h2>
-        <div class="price">$5,000</div>
-        <p class="price-note">1 week / We show you exactly where you are invisible.</p>
-        <ul class="deliverables">
-            <li>Baseline citation assessment across 5 major AI platforms</li>
-            <li>20 high-intent queries tested and scored in your domain</li>
-            <li>Gap report: where you are cited, where competitors are cited, where nobody is cited</li>
-            <li>Page-by-page recommendations: what to build and where</li>
-        </ul>
-        <div class="guarantee">
-            <strong>The guarantee:</strong> If the Surface Audit does not identify at least 5 queries where your competitors are cited and you are not, you do not pay.
-        </div>
-    </div>
-</section>
-
-<!-- Surface Build -->
-<section>
-    <div class="container container--narrow">
-        <p class="section-label">Tier 2</p>
-        <h2 class="section-title">Surface Build</h2>
-        <div class="price">$15,000</div>
-        <p class="price-note">2-3 weeks / We build the knowledge surfaces that make you citable.</p>
-        <p class="section-desc" style="margin-bottom: 24px;">Everything in the Audit, plus:</p>
-        <ul class="deliverables">
-            <li>Citation-ready knowledge extracted from your existing documents and proposals</li>
-            <li>Answer pages structured and published for AI citation signals</li>
-            <li>Schema.org structured data implementation</li>
-            <li>Provenance verification on all published content -- everything traces to its source</li>
-        </ul>
-        <div class="guarantee" style="border-left-color: var(--muted);">
-            The Surface Build does not create fake expertise. It surfaces real expertise you already have in formats AI systems reward.
-        </div>
-    </div>
-</section>
-
-<!-- Surface Intelligence -->
-<section>
-    <div class="container container--narrow">
-        <p class="section-label">Tier 3</p>
-        <h2 class="section-title">Surface Intelligence</h2>
-        <div class="price">$5,000/month</div>
-        <p class="price-note">Ongoing / Your citation presence stays current.</p>
-        <p class="section-desc" style="margin-bottom: 24px;">Everything persists, plus:</p>
-        <ul class="deliverables">
-            <li>Weekly citation re-audit across all AI platforms</li>
-            <li>Surface optimization based on citation signal changes</li>
-            <li>Monthly reporting: citation share, competitive movement, new query opportunities</li>
-            <li>New content surfaces as your knowledge base grows</li>
-        </ul>
-        <div class="guarantee" style="border-left-color: var(--muted);">
-            AI search is growing 20-30% annually. Every month you stay invisible, the gap compounds.
-        </div>
-    </div>
-</section>
-
-<!-- What It Prevents -->
-<section>
-    <div class="container">
-        <p class="section-label">Cost of Inaction</p>
-        <h2 class="section-title">What It Prevents</h2>
-        <table class="offer-table">
-            <thead>
-                <tr>
-                    <th>What is happening right now</th>
-                    <th>Cost</th>
-                    <th>What Surface delivers instead</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Prospects asking AI and getting your competitor</td>
-                    <td>$50K-$500K per lost deal</td>
-                    <td>Your expertise cited when prospects ask</td>
-                </tr>
-                <tr>
-                    <td>12 months of AI invisibility while competitors build presence</td>
-                    <td>$500K-$5M in lost pipeline</td>
-                    <td>Citation share from week one</td>
-                </tr>
-                <tr>
-                    <td>Agency "AI readiness" assessment that tells you what you already know</td>
-                    <td>$15K-$50K</td>
-                    <td>Specific gaps with specific fixes</td>
-                </tr>
-                <tr>
-                    <td>SEO retainer optimizing for a channel AI is replacing</td>
-                    <td>$96K-$240K/year</td>
-                    <td>Optimization for the channel that is growing</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<!-- Who This Is For / Not For -->
-<section>
-    <div class="container">
-        <p class="section-label">Fit</p>
-        <h2 class="section-title">Is This For You?</h2>
-        <div class="fit-grid">
-            <div class="card fit-yes">
-                <h3>Who This Is For</h3>
-                <ul>
-                    <li>B2B professional services with deep domain expertise (engineering, legal, insurance, manufacturing)</li>
-                    <li>Companies with 20-500 employees and $5M-$100M revenue</li>
-                    <li>Firms with real expertise locked in PDFs, proposals, and tribal knowledge</li>
-                    <li>Leaders who noticed competitors showing up in AI answers</li>
-                </ul>
-            </div>
-            <div class="card fit-no">
-                <h3>Who This Is NOT For</h3>
-                <ul>
-                    <li>Companies with nothing to say -- no expertise means nothing to cite</li>
-                    <li>Companies that want AI-generated content -- we extract, we do not fabricate</li>
-                    <li>Pure e-commerce -- citation matters for expertise, not product listings</li>
-                    <li>Companies unwilling to share existing documents for extraction</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Self-Referential Proof -->
-<section>
-    <div class="container">
-        <p class="section-label">Proof</p>
-        <h2 class="section-title">Why You Should Believe This</h2>
-        <div class="proof-block">
-            <p><strong>We run the Surface on ourselves.</strong></p>
-            <p style="margin-top: 12px;">echology runs the Surface on its own portfolio. Every methodology we sell, we test first on our own sites. The system that audits your citation presence is the same one that built ours.</p>
-        </div>
-    </div>
-</section>
-
-<!-- The Math -->
-<section>
-    <div class="container">
-        <p class="section-label">The Math</p>
-        <div class="math-block">
-            <div class="price">$5,000</div>
-            <p>The Surface Audit costs $5,000.</p>
-            <p>What does it cost when a prospect asks ChatGPT "who is the best [your domain] firm in [your city]" and your competitor gets recommended?</p>
-            <p style="color: var(--fg); font-weight: 600;">One lost deal: $50K-$500K.</p>
-            <p>How many times per month do prospects ask AI before they ask you? That number is growing every quarter.</p>
-            <p style="color: var(--accent); font-weight: 600; font-size: 18px; margin-top: 24px;">$5,000. One week. If we do not find gaps, you do not pay.</p>
-        </div>
-    </div>
-</section>
-
-<!-- CTA -->
-<section>
-    <div class="container" style="text-align: center;">
-        <h2 class="section-title">Schedule a Conversation</h2>
-        <p class="section-desc">We will tell you whether your domain has enough AI search volume to justify an engagement -- before you spend anything.</p>
-        <a href="/contact" class="btn btn-primary">Schedule a Conversation</a>
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        <span class="copy">echology, Inc. -- Delaware C-Corp. Your knowledge, surfaced. Nothing fabricated. Everything traceable.</span>
-        <div class="footer-links">
-            <a href="/signal/">Signal</a>
-            <a href="/surface/">Surface</a>
-            <a href="/spec/">Spec</a>
-            <a href="/about">About</a>
-            <a href="/blog">Blog</a>
-            <a href="/contact">Contact</a>
-        </div>
-    </div>
-</footer>
-
-</body>
-</html>
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>Surface -- AI Citation Intelligence | echology</title><meta name="description" content="When prospects ask AI about your domain, does it recommend you? Surface finds where you are invisible and builds the fix."><link rel="canonical" href="https://echology.io/surface/"><meta property="og:title" content="Surface -- AI Citation Intelligence | echology"><meta property="og:description" content="When prospects ask AI about your domain, does it recommend you? Surface finds where you are invisible and builds the fix."><meta property="og:type" content="website"><meta property="og:url" content="https://echology.io/surface/"><meta property="og:image" content="https://echology.io/og-default.png"><meta property="og:site_name" content="echology"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Surface -- AI Citation Intelligence | echology"><meta name="twitter:description" content="When prospects ask AI about your domain, does it recommend you? Surface finds where you are invisible and builds the fix."><meta name="twitter:image" content="https://echology.io/og-default.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><script defer data-domain="echology.io" src="https://plausible.io/js/script.js"></script><link rel="stylesheet" href="/_astro/Section.6jk9A9a3.css"></head> <body class="flex min-h-screen flex-col"> <nav class="fixed top-0 z-50 w-full border-b border-border bg-bg/80 backdrop-blur-md"> <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6"> <a href="/" class="text-xl font-semibold tracking-tight text-text">
+echology<span class="text-accent">.</span> </a> <button id="nav-toggle" class="flex h-10 w-10 items-center justify-center rounded-md text-text-secondary hover:text-text md:hidden" aria-label="Toggle navigation"> <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> <div id="nav-links" class="hidden items-center gap-1 md:flex"> <a href="/signal/" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> Signal </a><a href="/surface/" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text"> Surface </a><a href="/spec/" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> Spec </a><a href="/resonance/" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> Syncro </a><a href="/build/" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> Build </a><a href="/about/" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> About </a> <a href="/engage/" class="btn-glow ml-3 inline-flex shrink-0 whitespace-nowrap rounded-md border border-accent bg-accent/10 px-4 py-2 text-sm font-semibold text-accent transition-all hover:bg-accent hover:text-bg">
+Get started
+</a> </div> </div> <!-- Mobile menu --> <div id="mobile-menu" class="hidden border-t border-border md:hidden"> <div class="flex flex-col gap-1 px-6 py-4"> <a href="/signal/" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> Signal </a><a href="/surface/" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text"> Surface </a><a href="/spec/" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> Spec </a><a href="/resonance/" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> Syncro </a><a href="/build/" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> Build </a><a href="/about/" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> About </a> <a href="/engage/" class="btn-glow mt-2 rounded-md border border-accent bg-accent/10 px-4 py-2 text-center text-sm font-semibold text-accent transition-all hover:bg-accent hover:text-bg">
+Get started
+</a> </div> </div> </nav> <div class="h-16"></div> <script type="module">const e=document.getElementById("nav-toggle"),t=document.getElementById("mobile-menu");e?.addEventListener("click",()=>{t?.classList.toggle("hidden")});</script> <main class="flex-1">     <section class="py-section pt-24 pb-16 md:pt-32 md:pb-24"> <div class="mx-auto max-w-6xl px-6">  <div class="max-w-3xl"> <div class="mb-4 flex items-center gap-2"> <div class="h-2 w-2 rounded-full bg-surface"></div> <span class="text-sm font-medium text-surface">Surface</span> </div> <h1 class="text-4xl font-bold tracking-tight text-text md:text-5xl">
+AI is the new search.<br>Be the answer.
+</h1> <p class="mt-6 max-w-2xl text-lg text-text-secondary">
+Your prospects are asking ChatGPT, Claude, Perplexity, and Google AI about your domain. Are they recommending you? Surface finds where you are invisible and builds the fix.
+</p> <a href="/engage/" class="mt-8 btn-glow inline-block rounded-md border border-surface bg-surface/10 px-6 py-3 text-sm font-semibold text-surface transition-all hover:bg-surface hover:text-bg">
+Get a citation audit
+</a> </div>  </div> </section>  <section class="py-section border-t border-border bg-bg-elevated"> <div class="mx-auto max-w-6xl px-6">  <div class="mx-auto max-w-3xl text-center"> <p class="text-lg text-text-secondary">
+Your competitors are being recommended by AI when prospects ask about your domain. You are not.
+</p> <p class="mt-4 text-2xl font-bold text-text">
+Every month that gap exists, you are invisible to the fastest-growing information channel in history.
+</p> <p class="mt-2 text-text-secondary">
+A traditional agency will charge $50K+ to figure out why. We show you exactly where and build the fix for $20K.
+</p> </div>  </div> </section>  <section class="py-section border-t border-border"> <div class="mx-auto max-w-6xl px-6">  <h2 class="mb-8 text-3xl font-bold text-text">How Surface works</h2> <div class="grid gap-6 md:grid-cols-4"> <div> <p class="mb-2 font-mono text-sm text-surface">01</p> <h3 class="mb-2 font-semibold text-text">Audit</h3> <p class="text-sm text-text-secondary">Test 20+ high-intent queries across 5 AI platforms. Map where you are cited, where you are not, where competitors are.</p> </div><div> <p class="mb-2 font-mono text-sm text-surface">02</p> <h3 class="mb-2 font-semibold text-text">Extract</h3> <p class="text-sm text-text-secondary">Pull citation-ready knowledge from your existing documents, proposals, case studies. No content fabrication.</p> </div><div> <p class="mb-2 font-mono text-sm text-surface">03</p> <h3 class="mb-2 font-semibold text-text">Structure</h3> <p class="text-sm text-text-secondary">Schema.org structured data, answer pages, knowledge surfaces optimized for AI citation signals.</p> </div><div> <p class="mb-2 font-mono text-sm text-surface">04</p> <h3 class="mb-2 font-semibold text-text">Monitor</h3> <p class="text-sm text-text-secondary">Weekly re-audit across all platforms. Track citation share, competitive movement, new opportunities.</p> </div> </div>  </div> </section>  <section class="py-section border-t border-border"> <div class="mx-auto max-w-6xl px-6">  <div class="mx-auto max-w-3xl rounded-lg border border-surface/20 bg-bg-card p-8"> <h3 class="text-xl font-bold text-text">Surface does not generate content.</h3> <p class="mt-3 text-text-secondary">
+We extract, structure, and publish what your organization already knows. Your expertise. Your language. Your provenance. We use Vanta to perceive and Aletheia to verify. Nothing is fabricated.
+</p> </div>  </div> </section>  <section class="py-section border-t border-border"> <div class="mx-auto max-w-6xl px-6">  <h2 class="mb-8 text-3xl font-bold text-text">SEO is ranking. GEO is being cited.</h2> <div class="overflow-x-auto"> <table class="w-full text-left text-sm"> <thead> <tr class="border-b border-border text-text-muted"> <th class="pb-3 pr-6 font-medium">Dimension</th> <th class="pb-3 pr-6 font-medium">Traditional SEO</th> <th class="pb-3 font-medium">Generative Engine Optimization</th> </tr> </thead> <tbody class="text-text-secondary"> <tr class="border-b border-border-subtle"> <td class="py-3 pr-6 font-medium text-text">Goal</td> <td class="py-3 pr-6">Rank on page 1</td> <td class="py-3">Be cited in AI answers</td> </tr> <tr class="border-b border-border-subtle"> <td class="py-3 pr-6 font-medium text-text">Signal</td> <td class="py-3 pr-6">Backlinks, keywords, authority</td> <td class="py-3">Structured knowledge, provenance, specificity</td> </tr> <tr class="border-b border-border-subtle"> <td class="py-3 pr-6 font-medium text-text">Content</td> <td class="py-3 pr-6">Volume, freshness</td> <td class="py-3">Density, structure, verifiability</td> </tr> <tr> <td class="py-3 pr-6 font-medium text-text">Measurement</td> <td class="py-3 pr-6">Rankings, clicks, impressions</td> <td class="py-3">Citations, citation share, recommendation rate</td> </tr> </tbody> </table> </div>  </div> </section>  <section class="py-section border-t border-border"> <div class="mx-auto max-w-6xl px-6">  <h2 class="mb-2 text-3xl font-bold text-text">Pricing</h2> <p class="mb-8 text-text-secondary">Know where you stand. Build the fix. Track the movement.</p> <div class="grid gap-6 md:grid-cols-3"> <div class="flex flex-col rounded-lg border p-8 border-border bg-bg-elevated"> <h3 class="text-lg font-semibold text-text">Citation Gap Audit</h3> <div class="mt-3 flex items-baseline gap-1"> <span class="text-3xl font-bold text-text">$5,000</span> <span class="text-sm text-text-muted">/ 1 week</span> </div> <p class="mt-3 text-sm text-text-secondary">Where are you cited? Where are you not? Where are competitors?</p> <p class="mt-3 rounded bg-accent-subtle/30 px-3 py-2 text-xs text-text-secondary">
+Replaces: $15K-$50K agency AI readiness assessment </p> <ul class="mt-6 flex-1 space-y-3"> <li class="flex items-start gap-2 text-sm text-text-secondary"> <svg class="mt-0.5 h-4 w-4 shrink-0 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> Baseline across ChatGPT, Claude, Perplexity, Google AI, Copilot </li><li class="flex items-start gap-2 text-sm text-text-secondary"> <svg class="mt-0.5 h-4 w-4 shrink-0 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> 20 high-intent queries tested and scored </li><li class="flex items-start gap-2 text-sm text-text-secondary"> <svg class="mt-0.5 h-4 w-4 shrink-0 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> Gap report with competitor comparison </li><li class="flex items-start gap-2 text-sm text-text-secondary"> <svg class="mt-0.5 h-4 w-4 shrink-0 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> Page-by-page recommendations </li> </ul> <a href="/engage/" class="btn-glow mt-8 block rounded-md px-4 py-3 text-center text-sm font-semibold transition-all border border-border text-text hover:bg-bg-hover"> Get started </a> </div> <div class="flex flex-col rounded-lg border p-8 border-surface/30 bg-bg-card"> <h3 class="text-lg font-semibold text-text">Knowledge Surface Build</h3> <div class="mt-3 flex items-baseline gap-1"> <span class="text-3xl font-bold text-text">$15,000</span> <span class="text-sm text-text-muted">/ 2-3 weeks</span> </div> <p class="mt-3 text-sm text-text-secondary">Extract and publish your expertise for AI citation.</p> <p class="mt-3 rounded bg-accent-subtle/30 px-3 py-2 text-xs text-text-secondary">
+Replaces: $25K-$75K content strategy engagement </p> <ul class="mt-6 flex-1 space-y-3"> <li class="flex items-start gap-2 text-sm text-text-secondary"> <svg class="mt-0.5 h-4 w-4 shrink-0 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> Everything in Audit </li><li class="flex items-start gap-2 text-sm text-text-secondary"> <svg class="mt-0.5 h-4 w-4 shrink-0 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> Citation-ready knowledge extraction from existing docs </li><li class="flex items-start gap-2 text-sm text-text-secondary"> <svg class="mt-0.5 h-4 w-4 shrink-0 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> Structured answer pages for AI platforms </li><li class="flex items-start gap-2 text-sm text-text-secondary"> <svg class="mt-0.5 h-4 w-4 shrink-0 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> Schema.org implementation </li><li class="flex items-start gap-2 text-sm text-text-secondary"> <svg class="mt-0.5 h-4 w-4 shrink-0 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> Provenance verification (Aletheia audit trail) </li> </ul> <a href="/engage/" class="btn-glow mt-8 block rounded-md px-4 py-3 text-center text-sm font-semibold transition-all border border-surface bg-surface/10 text-surface hover:bg-surface hover:text-bg"> Get started </a> </div> <div class="flex flex-col rounded-lg border p-8 border-border bg-bg-elevated"> <h3 class="text-lg font-semibold text-text">Citation Intelligence</h3> <div class="mt-3 flex items-baseline gap-1"> <span class="text-3xl font-bold text-text">$5,000</span> <span class="text-sm text-text-muted">/month</span> </div> <p class="mt-3 text-sm text-text-secondary">Track your citation share. Own the conversation.</p> <p class="mt-3 rounded bg-accent-subtle/30 px-3 py-2 text-xs text-text-secondary">
+Replaces: $8K-$20K/month SEO retainer </p> <ul class="mt-6 flex-1 space-y-3"> <li class="flex items-start gap-2 text-sm text-text-secondary"> <svg class="mt-0.5 h-4 w-4 shrink-0 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> Everything persists </li><li class="flex items-start gap-2 text-sm text-text-secondary"> <svg class="mt-0.5 h-4 w-4 shrink-0 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> Weekly citation re-audit across all platforms </li><li class="flex items-start gap-2 text-sm text-text-secondary"> <svg class="mt-0.5 h-4 w-4 shrink-0 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> Surface optimization from signal changes </li><li class="flex items-start gap-2 text-sm text-text-secondary"> <svg class="mt-0.5 h-4 w-4 shrink-0 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path> </svg> Monthly report: citation share, competitive movement </li> </ul> <a href="/engage/" class="btn-glow mt-8 block rounded-md px-4 py-3 text-center text-sm font-semibold transition-all border border-border text-text hover:bg-bg-hover"> Get started </a> </div> </div>  </div> </section>  <section class="py-section border-t border-border"> <div class="mx-auto max-w-6xl px-6">  <div class="mx-auto max-w-2xl rounded-lg border border-surface/20 bg-bg-card p-8 text-center"> <h3 class="text-xl font-bold text-text">Our guarantee</h3> <p class="mt-4 text-text-secondary">
+If the Citation Gap Audit does not identify at least 5 queries where your competitors are cited and you are not, you do not pay.
+</p> </div>  </div> </section>  <section class="py-section border-t border-border"> <div class="mx-auto max-w-6xl px-6">  <h2 class="mb-6 text-2xl font-bold text-text">Surface is not for everyone</h2> <ul class="space-y-3 text-sm text-text-secondary"> <li class="flex items-start gap-2"> <span class="mt-0.5 text-text-muted">&times;</span>
+Companies with nothing to say (no expertise means nothing to cite)
+</li> <li class="flex items-start gap-2"> <span class="mt-0.5 text-text-muted">&times;</span>
+Companies that want AI-generated content (Surface extracts, it does not fabricate)
+</li> <li class="flex items-start gap-2"> <span class="mt-0.5 text-text-muted">&times;</span>
+Pure e-commerce (citation matters for expertise, not product listings)
+</li> </ul>  </div> </section>  <section class="py-section border-t border-border"> <div class="mx-auto max-w-6xl px-6">  <div class="mx-auto max-w-2xl text-center"> <h2 class="text-3xl font-bold text-text">Find out where you are invisible.</h2> <p class="mt-4 text-text-secondary">
+One audit. Five AI platforms. 20 queries. You will know exactly where you stand.
+</p> <a href="/engage/" class="mt-8 btn-glow inline-block rounded-md border border-surface bg-surface/10 px-6 py-3 text-sm font-semibold text-surface transition-all hover:bg-surface hover:text-bg">
+Get your citation audit
+</a> </div>  </div> </section>    </main> <footer class="border-t border-border bg-bg"> <div class="mx-auto max-w-6xl px-6 py-16"> <div class="grid gap-12 md:grid-cols-4"> <div class="md:col-span-1"> <a href="/" class="text-xl font-semibold tracking-tight text-text">
+echology<span class="text-accent">.</span> </a> <p class="mt-3 text-sm text-text-secondary">
+Revealing structure. On your hardware. Built to show.
+</p> </div> <div> <h4 class="mb-4 text-sm font-semibold uppercase tracking-wider text-text-muted">Products</h4> <ul class="space-y-2"> <li><a href="/signal/" class="text-sm text-text-secondary hover:text-text">Signal</a></li> <li><a href="/surface/" class="text-sm text-text-secondary hover:text-text">Surface</a></li> <li><a href="/spec/" class="text-sm text-text-secondary hover:text-text">Spec</a></li> <li><a href="/resonance/" class="text-sm text-text-secondary hover:text-text">Syncro</a></li> </ul> </div> <div> <h4 class="mb-4 text-sm font-semibold uppercase tracking-wider text-text-muted">Company</h4> <ul class="space-y-2"> <li><a href="/about/" class="text-sm text-text-secondary hover:text-text">About</a></li> <li><a href="/build/" class="text-sm text-text-secondary hover:text-text">Build</a></li> <li><a href="/blog/" class="text-sm text-text-secondary hover:text-text">Blog</a></li> <li><a href="/engage/" class="text-sm text-text-secondary hover:text-text">Contact</a></li> </ul> </div> <div> <h4 class="mb-4 text-sm font-semibold uppercase tracking-wider text-text-muted">Legal</h4> <ul class="space-y-2"> <li><a href="/terms/" class="text-sm text-text-secondary hover:text-text">Terms</a></li> <li><a href="/privacy/" class="text-sm text-text-secondary hover:text-text">Privacy</a></li> <li><a href="/dpa/" class="text-sm text-text-secondary hover:text-text">DPA</a></li> </ul> </div> </div> <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row"> <p class="text-sm text-text-muted">
+&copy; 2026 echology, Inc. Delaware C-Corp.
+</p> <p class="text-sm text-text-muted">
+On-premise. Zero cloud. You keep everything.
+</p> </div> </div> </footer> <script type="module">const s=new IntersectionObserver(e=>{e.forEach(r=>{r.isIntersecting&&r.target.classList.add("visible")})},{threshold:.1});document.querySelectorAll(".reveal").forEach(e=>s.observe(e));</script> </body> </html>

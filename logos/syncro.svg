@@ -1,0 +1,24 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Syncro: Temporal Intelligence -- green (#2e7d32) -->
+  <polygon points="80,12 132,40 132,108 80,136 28,108 28,40" stroke="#2e7d32" stroke-width="2" fill="none"/>
+  <!-- Crown facet -->
+  <polygon points="80,12 132,40 108,64 62,52" fill="#66bb6a" opacity="0.2"/>
+  <!-- Right pavilion -->
+  <polygon points="132,40 132,108 108,64" fill="#2e7d32" opacity="0.12"/>
+  <!-- Left pavilion -->
+  <polygon points="80,12 28,40 62,52" fill="#388e3c" opacity="0.15"/>
+  <!-- Inner hex ring -->
+  <polygon points="80,48 106,62 106,98 80,112 54,98 54,62" stroke="#2e7d32" stroke-width="1.5" opacity="0.25" fill="none"/>
+  <!-- Temporal wave lines (unique to Syncro) -->
+  <path d="M 40,80 Q 55,70 70,80 Q 85,90 100,80 Q 115,70 130,80" stroke="#66bb6a" stroke-width="1" opacity="0.15" fill="none"/>
+  <path d="M 40,72 Q 55,62 70,72 Q 85,82 100,72 Q 115,62 130,72" stroke="#2e7d32" stroke-width="0.8" opacity="0.1" fill="none"/>
+  <!-- Center point -->
+  <circle cx="80" cy="80" r="6" fill="#2e7d32" opacity="0.8"/>
+  <!-- Fire vertices -->
+  <circle cx="80" cy="12" r="2.5" fill="#a5d6a7" opacity="0.5"/>
+  <circle cx="132" cy="40" r="2" fill="#66bb6a" opacity="0.4"/>
+  <circle cx="132" cy="108" r="2" fill="#2e7d32" opacity="0.3"/>
+  <circle cx="80" cy="136" r="2" fill="#2e7d32" opacity="0.2"/>
+  <circle cx="28" cy="108" r="2" fill="#2e7d32" opacity="0.25"/>
+  <circle cx="28" cy="40" r="2" fill="#66bb6a" opacity="0.35"/>
+</svg>

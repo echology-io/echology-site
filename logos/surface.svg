@@ -1,0 +1,26 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Surface: AI Citation Intelligence -- purple (#8b6cc7) -->
+  <polygon points="80,12 132,40 132,108 80,136 28,108 28,40" stroke="#8b6cc7" stroke-width="2" fill="none"/>
+  <!-- Crown facet -->
+  <polygon points="80,12 132,40 108,64 62,52" fill="#c4aee8" opacity="0.25"/>
+  <!-- Right pavilion -->
+  <polygon points="132,40 132,108 108,64" fill="#8b6cc7" opacity="0.15"/>
+  <!-- Left pavilion -->
+  <polygon points="80,12 28,40 62,52" fill="#a88ed5" opacity="0.18"/>
+  <!-- Inner hex ring -->
+  <polygon points="80,48 106,62 106,98 80,112 54,98 54,62" stroke="#8b6cc7" stroke-width="1.5" opacity="0.25" fill="none"/>
+  <!-- Fire line -->
+  <line x1="62" y1="52" x2="108" y2="64" stroke="#d4c0f0" stroke-width="1.5" opacity="0.4"/>
+  <!-- Structure lines -->
+  <line x1="80" y1="12" x2="62" y2="52" stroke="#a88ed5" stroke-width="1" opacity="0.2"/>
+  <line x1="132" y1="40" x2="108" y2="64" stroke="#8b6cc7" stroke-width="1" opacity="0.2"/>
+  <!-- Center point -->
+  <circle cx="80" cy="80" r="6" fill="#8b6cc7" opacity="0.8"/>
+  <!-- Fire vertices -->
+  <circle cx="62" cy="52" r="2.5" fill="#e0d4f5" opacity="0.6"/>
+  <circle cx="108" cy="64" r="2" fill="#d4c0f0" opacity="0.5"/>
+  <circle cx="80" cy="12" r="2" fill="#d4c0f0" opacity="0.4"/>
+  <circle cx="132" cy="40" r="2" fill="#c4aee8" opacity="0.35"/>
+  <circle cx="80" cy="136" r="2" fill="#8b6cc7" opacity="0.25"/>
+  <circle cx="28" cy="40" r="2" fill="#a88ed5" opacity="0.35"/>
+</svg>

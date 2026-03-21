@@ -1,0 +1,19 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Spec: AEC Document Intelligence -- gold (#c9a24d) on dark blue (#0b2f4a) -->
+  <polygon points="80,12 132,40 132,108 80,136 28,108 28,40" fill="#0b2f4a"/>
+  <!-- Three-axis lines -->
+  <line x1="80" y1="12" x2="80" y2="136" stroke="#f2f4f6" stroke-width="1.5" opacity="0.1"/>
+  <line x1="28" y1="40" x2="132" y2="108" stroke="#f2f4f6" stroke-width="1.5" opacity="0.08"/>
+  <line x1="132" y1="40" x2="28" y2="108" stroke="#f2f4f6" stroke-width="1.5" opacity="0.08"/>
+  <!-- Inner hex ring -->
+  <polygon points="80,48 106,62 106,98 80,112 54,98 54,62" stroke="#c9a24d" stroke-width="1.5" opacity="0.3" fill="none"/>
+  <!-- Gold center -->
+  <circle cx="80" cy="80" r="10" fill="#c9a24d" opacity="0.9"/>
+  <!-- Fire vertices -->
+  <circle cx="80" cy="48" r="3" fill="#e8d5a0" opacity="0.7"/>
+  <circle cx="106" cy="62" r="2.5" fill="#e0ca8a" opacity="0.55"/>
+  <circle cx="106" cy="98" r="2.5" fill="#d4b870" opacity="0.4"/>
+  <circle cx="80" cy="112" r="2" fill="#c9a24d" opacity="0.3"/>
+  <circle cx="54" cy="98" r="2" fill="#c9a24d" opacity="0.25"/>
+  <circle cx="54" cy="62" r="2.5" fill="#d4b870" opacity="0.4"/>
+</svg>
