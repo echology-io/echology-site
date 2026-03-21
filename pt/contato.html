@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato — Echology</title>
-    <meta name="description" content="Entre em contato com a Echology. Solicite uma avaliacao AECai ou pergunte sobre o Decompose.">
+    <title>Contato -- Echology</title>
+    <meta name="description" content="Agende uma conversa sobre Signal, Surface, Spec ou Resonance. Diremos se seu ambiente tem estrutura suficiente para um engajamento antes de voce gastar qualquer coisa.">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        .qualification-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 640px) { .qualification-grid { grid-template-columns: 1fr; } }
+        .form-note { font-size: 12px; color: var(--muted); margin-top: 4px; }
+        .anti-icp-note { margin-top: 32px; padding: 20px 24px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-card); }
+        .anti-icp-note h3 { font-size: 14px; font-weight: 600; color: var(--fg); margin-bottom: 8px; }
+        .anti-icp-note p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+    </style>
 </head>
 <body>
     <nav>
@@ -13,9 +21,10 @@
             <a href="/pt/" class="logo">echology<span>.</span></a>
             <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
             <div class="nav-links">
+                <a href="/signal/">Signal</a>
+                <a href="/surface/">Surface</a>
+                <a href="/spec/">Spec</a>
                 <a href="/pt/sobre">Sobre</a>
-                <a href="/pt/aecai">AECai</a>
-                <a href="/pt/decompose">Decompose</a>
                 <a href="/pt/blog">Blog</a>
                 <a href="/pt/contato" class="active">Contato</a>
                 <a href="/contact" class="lang-toggle" title="English">&#127482;&#127480;</a>
@@ -25,64 +34,89 @@
 
     <section class="hero">
         <div class="container container--narrow">
-            <h1>Vamos<br><span>conversar.</span></h1>
-            <p class="sub">Solicite uma avaliacao de documentos AECai, pergunte sobre o Decompose ou mande um oi.</p>
-        </div>
-    </section>
-
-    <section>
-        <div class="container container--narrow">
-            <p class="section-label">Avaliacao Discovery</p>
-            <h2 class="section-title">Veja o que tem nos seus documentos. $800.</h2>
-            <div class="card-grid" style="grid-template-columns: 1fr;">
-                <div class="card">
-                    <p>Rodamos uma amostra dos documentos da sua empresa pelo pipeline AECai e entregamos um relatorio completo: toda norma referenciada, obrigacoes sinalizadas, entidades extraidas, areas de risco identificadas. Entrega em 2 semanas.</p>
-                    <p style="margin-top: 12px;"><strong>$800</strong> — credita 100% para um engajamento completo. Sem burocracia de compras. Nenhum dado sai do seu predio.</p>
-                </div>
-            </div>
+            <h1>Agende uma<br><span>conversa.</span></h1>
+            <p class="sub">Diremos se seu ambiente tem estrutura suficiente para um engajamento -- antes de voce gastar qualquer coisa.</p>
         </div>
     </section>
 
     <section>
         <div class="container container--narrow">
             <form id="contact-form" onsubmit="return handleSubmit(event)">
-                <div class="form-group">
-                    <label for="name">Nome</label>
-                    <input type="text" id="name" name="name" required>
+                <div class="qualification-grid">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email corporativo</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+
+                <div class="qualification-grid">
+                    <div class="form-group">
+                        <label for="company">Empresa</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Seu cargo</label>
+                        <input type="text" id="role" name="role" placeholder="ex: VP Engenharia, COO, Diretor">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="company">Empresa</label>
-                    <input type="text" id="company" name="company">
+
+                <div class="qualification-grid">
+                    <div class="form-group">
+                        <label for="size">Tamanho da empresa</label>
+                        <select id="size" name="size" required>
+                            <option value="">Selecione</option>
+                            <option value="1-49">1-49 funcionarios</option>
+                            <option value="50-200">50-200 funcionarios</option>
+                            <option value="200-500">200-500 funcionarios</option>
+                            <option value="500+">500+ funcionarios</option>
+                        </select>
+                        <div class="form-note">Nossos produtos sao construidos para organizacoes de 50-500 funcionarios.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Tenho interesse em</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Selecione</option>
+                            <option value="Signal -- Inteligencia Operacional">The Signal -- Inteligencia Operacional</option>
+                            <option value="Surface -- Visibilidade em Citacao por IA">The Surface -- Visibilidade em Citacao por IA</option>
+                            <option value="Spec -- Risco Documental AEC">The Spec -- Risco Documental AEC</option>
+                            <option value="Resonance -- Coerencia Temporal">The Resonance -- Coerencia Temporal</option>
+                            <option value="Nao tenho certeza -- me ajude a decidir">Nao tenho certeza -- me ajude a decidir</option>
+                        </select>
+                    </div>
                 </div>
+
                 <div class="form-group">
-                    <label for="subject">Assunto</label>
-                    <select id="subject" name="subject">
-                        <option value="Avaliacao de Documentos AECai">Avaliacao de Documentos AECai</option>
-                        <option value="Integracao Decompose">Integracao Decompose</option>
-                        <option value="Parceria">Parceria</option>
-                        <option value="Consulta Geral">Consulta Geral</option>
-                    </select>
+                    <label for="problem">Qual problema voce esta tentando resolver?</label>
+                    <textarea id="problem" name="problem" rows="4" placeholder="Descreva a situacao. O que esta acontecendo, quanto esta custando, o que voce ja tentou."></textarea>
                 </div>
+
                 <div class="form-group">
-                    <label for="message">Mensagem</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
+                    <label for="message">Algo mais</label>
+                    <textarea id="message" name="message" rows="3"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+
+                <div id="form-status" style="display:none; padding: 16px; border-radius: 8px; margin-bottom: 16px; font-size: 14px;"></div>
+                <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%;">Agendar uma Conversa</button>
             </form>
+
+            <div class="anti-icp-note">
+                <h3>Transparencia sobre adequacao</h3>
+                <p>Nao aceitamos engajamentos onde nao podemos entregar valor. Se sua empresa tem menos de 50 pessoas (Signal, Spec), menos de 10 agentes de IA em producao (Resonance), ou nenhuma expertise de dominio para revelar (Surface) -- diremos honestamente e indicaremos o que pode funcionar. Os campos de qualificacao acima nos ajudam a fazer essa determinacao antes da sua primeira conversa.</p>
+            </div>
         </div>
     </section>
 
     <section>
-        <div class="container container--narrow" style="text-align:center;">
+        <div class="container container--narrow" style="text-align: center;">
             <p class="section-label">Direto</p>
             <p class="section-desc">
                 <a href="mailto:kyle@echology.io">kyle@echology.io</a><br>
                 <a href="https://github.com/echology-io">github.com/echology-io</a><br>
-                Charleston, South Carolina, EUA
+                Charleston, South Carolina
             </p>
         </div>
     </section>
@@ -91,10 +125,11 @@
         <div class="container">
             <div class="copy">&copy; 2026 Echology, Inc.</div>
             <div class="footer-links">
-                <a href="https://aecai.io">AECai</a>
-                <a href="https://geode.digital">Geode</a>
-                <a href="https://github.com/echology-io">GitHub</a>
+                <a href="/signal/">Signal</a>
+                <a href="/surface/">Surface</a>
+                <a href="/spec/">Spec</a>
                 <a href="/pt/sobre">Sobre</a>
+                <a href="/pt/blog">Blog</a>
                 <a href="/pt/contato">Contato</a>
                 <a href="/contact" class="lang-toggle" title="English">&#127482;&#127480;</a>
             </div>
@@ -105,19 +140,57 @@
     function handleSubmit(e) {
         e.preventDefault();
         var f = document.getElementById('contact-form');
-        var name = f.name.value;
-        var email = f.email.value;
-        var company = f.company.value || '(nao informado)';
-        var subject = f.subject.value;
-        var message = f.message.value;
-        var body = 'Nome: ' + name + '\n'
-            + 'Email: ' + email + '\n'
-            + 'Empresa: ' + company + '\n'
-            + 'Assunto: ' + subject + '\n\n'
-            + message;
-        window.location.href = 'mailto:kyle@echology.io'
-            + '?subject=' + encodeURIComponent('[Echology] ' + subject + ' — ' + name)
-            + '&body=' + encodeURIComponent(body);
+        var btn = document.getElementById('submit-btn');
+        var status = document.getElementById('form-status');
+        btn.disabled = true;
+        btn.textContent = 'Enviando...';
+        status.style.display = 'none';
+
+        var payload = {
+            name: f.name.value,
+            email: f.email.value,
+            firm: f.company.value,
+            role: f.role.value,
+            company_size: f.size.value,
+            interest: f.interest.value,
+            problem: f.problem.value,
+            message: f.message.value,
+            source_page: 'echology.io/pt/contato'
+        };
+
+        fetch('https://aecai.io/api/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(function(r) {
+            if (!r.ok) throw new Error('Erro do servidor');
+            return r.json();
+        })
+        .then(function() {
+            status.style.display = 'block';
+            status.style.background = 'rgba(200,168,78,0.1)';
+            status.style.border = '1px solid var(--accent)';
+            status.style.color = 'var(--fg)';
+            status.textContent = 'Recebido. Entraremos em contato em 48 horas.';
+            f.reset();
+            btn.textContent = 'Enviado';
+        })
+        .catch(function() {
+            var body = 'Nome: ' + payload.name + '\n'
+                + 'Email: ' + payload.email + '\n'
+                + 'Empresa: ' + payload.firm + '\n'
+                + 'Cargo: ' + payload.role + '\n'
+                + 'Tamanho: ' + payload.company_size + '\n'
+                + 'Interesse: ' + payload.interest + '\n'
+                + 'Problema: ' + payload.problem + '\n\n'
+                + payload.message;
+            window.location.href = 'mailto:kyle@echology.io'
+                + '?subject=' + encodeURIComponent('[echology] ' + payload.interest + ' -- ' + payload.firm)
+                + '&body=' + encodeURIComponent(body);
+            btn.disabled = false;
+            btn.textContent = 'Agendar uma Conversa';
+        });
         return false;
     }
     </script>

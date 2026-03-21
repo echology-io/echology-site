@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Echology — Plataforma de Inteligencia Documental</title>
-    <meta name="description" content="Echology constroi sistemas de inteligencia documental com IA. Classificacao deterministica, recuperacao estrutural, rastreamento de proveniencia. Local-first. Sem nuvem. Sem concessao.">
-    <meta property="og:title" content="Echology — Plataforma de Inteligencia Documental">
+    <title>Echology -- Plataforma de Inteligencia Documental</title>
+    <meta name="description" content="Echology revela o que ja existe. Documentos, operacoes, citacoes, risco -- percebidos deterministicamente, avaliados consistentemente, apresentados com prova. Uma plataforma. Quatro lentes. No seu hardware.">
+    <meta property="og:title" content="Echology -- Plataforma de Inteligencia Documental">
     <meta property="og:description" content="Sistemas com IA que classificam e estruturam documentos antes de chegarem a um LLM. Local-first. Sem nuvem.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://echology.io/pt/">
@@ -17,9 +17,10 @@
             <a href="/pt/" class="logo">echology<span>.</span></a>
             <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
             <div class="nav-links">
+                <a href="/signal/">Signal</a>
+                <a href="/surface/">Surface</a>
+                <a href="/spec/">Spec</a>
                 <a href="/pt/sobre">Sobre</a>
-                <a href="/pt/aecai">AECai</a>
-                <a href="/pt/decompose">Decompose</a>
                 <a href="/pt/blog">Blog</a>
                 <a href="/pt/contato">Contato</a>
                 <a href="/" class="lang-toggle" title="English">&#127482;&#127480;</a>
@@ -29,56 +30,64 @@
 
     <section class="hero">
         <div class="container">
-            <h1>A camada de percepcao<br><span>para IA estruturada.</span></h1>
-            <p class="sub">A maioria das IAs trata documentos como texto plano. Echology e a plataforma que classifica e estrutura conhecimento antes que ele chegue a um modelo. Uma arquitetura. Multiplas aplicacoes. Local-first.</p>
+            <h1>Seu negocio tem estrutura.<br><span>Nenhum sistema jamais olhou.</span></h1>
+            <p class="sub">Echology revela o que ja existe. Documentos, operacoes, citacoes, risco -- percebidos deterministicamente, avaliados consistentemente, apresentados com prova. Uma plataforma. Quatro lentes. No seu hardware.</p>
             <div class="btn-group">
-                <a href="/pt/aecai" class="btn btn-primary">Veja aplicado: AECai</a>
-                <a href="/pt/decompose" class="btn btn-outline">Experimentar Decompose</a>
+                <a href="/signal/" class="btn btn-primary">The Signal -- Inteligencia Operacional</a>
+                <a href="/surface/" class="btn btn-outline">The Surface -- Citacao por IA</a>
             </div>
         </div>
     </section>
 
     <section>
         <div class="container">
-            <p class="section-label">Arquitetura da Plataforma</p>
+            <p class="section-label">Quatro Lentes de Percepcao</p>
             <div class="stack">
+                <div class="stack-layer stack-layer--modules">
+                    <div class="stack-tier">O Que Revelamos</div>
+                    <div class="stack-content stack-content--triple" style="grid-template-columns: repeat(4, 1fr);">
+                        <a href="/signal/" class="stack-item">
+                            <strong>Signal</strong>
+                            <span>Estrutura operacional</span>
+                        </a>
+                        <a href="/surface/" class="stack-item">
+                            <strong>Surface</strong>
+                            <span>Visibilidade em citacao por IA</span>
+                        </a>
+                        <a href="/spec/" class="stack-item">
+                            <strong>Spec</strong>
+                            <span>Risco documental em AEC</span>
+                        </a>
+                        <div class="stack-item" style="opacity: 0.5;">
+                            <strong>Resonance</strong>
+                            <span>Coerencia temporal (em breve)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stack-connector"></div>
                 <div class="stack-layer stack-layer--engines">
-                    <div class="stack-tier">Engines</div>
-                    <div class="stack-content stack-content--triple">
+                    <div class="stack-tier">Plataforma</div>
+                    <div class="stack-content stack-content--triple" style="grid-template-columns: repeat(4, 1fr);">
                         <div class="stack-item">
                             <strong>Vanta</strong>
-                            <span>Perceber, classificar, embedar, indexar</span>
+                            <span>Perceber, classificar, embedar</span>
                         </div>
                         <div class="stack-item">
                             <strong>Aletheia</strong>
-                            <span>Verificar, auditar, referencia cruzada</span>
+                            <span>Verificar, auditar, rastrear</span>
                         </div>
                         <div class="stack-item">
                             <strong>Daedalus</strong>
                             <span>Recuperar, relatar, agir</span>
                         </div>
-                    </div>
-                </div>
-                <div class="stack-connector"></div>
-                <div class="stack-layer stack-layer--modules">
-                    <div class="stack-tier">Aplicacoes</div>
-                    <div class="stack-content stack-content--triple">
-                        <a href="/pt/aecai" class="stack-item">
-                            <strong>AECai</strong>
-                            <span>Inteligencia documental para engenharia</span>
-                        </a>
-                        <a href="https://geode.digital/pt/" class="stack-item">
-                            <strong>Geode</strong>
-                            <span>Otimizacao de visibilidade em IA</span>
-                        </a>
-                        <a href="https://github.com/echology-io/open-scripture-intelligence" class="stack-item">
-                            <strong>Open Scripture</strong>
-                            <span>Grafo de conhecimento biblico</span>
-                        </a>
+                        <div class="stack-item">
+                            <strong>decompose</strong>
+                            <span>Classificador deterministico</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <p class="stack-note">Construido sobre <a href="/pt/decompose">Decompose</a>, o classificador deterministico open-source do qual todo engine depende. <a href="/pt/decompose">Experimente &rarr;</a></p>
+            <p class="stack-note">Cada produto compartilha a mesma arquitetura deterministic-first. Classificacao antes de inferencia. Proveniencia em cada camada. Construido sobre <a href="/decompose">Decompose</a>, o classificador open-source. <a href="/decompose">Experimentar &rarr;</a></p>
             <div class="stack-pipeline">
                 <span>INGERIR</span>
                 <span class="stack-arrow">&rarr;</span>
@@ -103,19 +112,58 @@
 
     <section>
         <div class="container">
-            <p class="section-label">Em numeros</p>
+            <p class="section-label">Veja Funcionar</p>
+            <h2 class="section-title">O que o Decompose ve no seu texto.</h2>
+            <div class="panels">
+                <div class="panel">
+                    <div class="panel-label">Entrada</div>
+                    <span class="dim">Secao 4.2.1 -- Todas as instalacoes de detencao</span><br>
+                    <span class="dim">de aguas pluviais devem ser projetadas de acordo com</span><br>
+                    <span class="dim">AASHTO HEC-22 e requisitos da jurisdicao local. O</span><br>
+                    <span class="dim">engenheiro responsavel deve submeter calculos assinados</span><br>
+                    <span class="dim">por um PE licenciado em 30 dias corridos apos a aprovacao.</span>
+                </div>
+                <div class="panel accent">
+                    <div class="panel-label">Saida do Decompose</div>
+                    <span class="key">autoridade:</span> <span class="str">0.92</span> -- obrigacao mandatoria<br>
+                    <span class="key">risco:</span> <span class="str">0.78</span> -- prazo, conformidade<br>
+                    <span class="key">atencao:</span> <span class="str">0.85</span> -- requer acao<br>
+                    <span class="key">entidades:</span><br>
+                    &nbsp;&nbsp;<span class="key">norma:</span> <span class="str">AASHTO HEC-22</span><br>
+                    &nbsp;&nbsp;<span class="key">funcao:</span> <span class="str">engenheiro responsavel</span><br>
+                    &nbsp;&nbsp;<span class="key">prazo:</span> <span class="str">30 dias corridos</span><br>
+                    <span class="key">irredutivel:</span> <span class="bool">true</span>
+                </div>
+            </div>
+            <div class="legend">
+                <p>Sem LLM. Sem probabilidade. Mesma entrada sempre produz mesma saida. <strong>13.9ms</strong> em media. <a href="/decompose">Saiba mais &rarr;</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <p class="section-label">Nos usamos isso em nos mesmos</p>
             <div class="stats">
                 <div>
-                    <div class="stat-value">3</div>
-                    <div class="stat-label">Engines (Vanta, Aletheia, Daedalus)</div>
+                    <div class="stat-value">72</div>
+                    <div class="stat-label">Iniciativas rastreadas</div>
+                </div>
+                <div>
+                    <div class="stat-value">528</div>
+                    <div class="stat-label">Etapas gerenciadas</div>
                 </div>
                 <div>
                     <div class="stat-value">5</div>
-                    <div class="stat-label">Estagios do pipeline</div>
+                    <div class="stat-label">Engines comprovados</div>
                 </div>
                 <div>
-                    <div class="stat-value">630+</div>
-                    <div class="stat-label">Testes passando</div>
+                    <div class="stat-value">77%</div>
+                    <div class="stat-label">Economia de tempo medida</div>
+                </div>
+                <div>
+                    <div class="stat-value">$1.772</div>
+                    <div class="stat-label">Total investido</div>
                 </div>
                 <div>
                     <div class="stat-value">0</div>
@@ -125,12 +173,36 @@
         </div>
     </section>
 
+    <section>
+        <div class="container container--narrow">
+            <p class="section-label">Comece Aqui</p>
+            <div class="card-grid">
+                <a href="/signal/" class="card" style="text-decoration:none">
+                    <div class="tag">Oferta</div>
+                    <h3>The Signal -- $10K / 1 semana</h3>
+                    <p>Lemos todos os documentos do seu negocio e mostramos como sua operacao realmente funciona. Se nao encontrarmos o sinal, voce nao paga.</p>
+                </a>
+                <a href="/surface/" class="card" style="text-decoration:none">
+                    <div class="tag">Oferta</div>
+                    <h3>The Surface -- $5K / 1 semana</h3>
+                    <p>Testamos o que sistemas de IA dizem sobre seu dominio e mostramos exatamente onde voce esta invisivel. Se nao encontrarmos lacunas, voce nao paga.</p>
+                </a>
+                <a href="/spec/" class="card" style="text-decoration:none">
+                    <div class="tag">Oferta</div>
+                    <h3>The Spec -- $10K / 1 semana</h3>
+                    <p>Processamos todos os documentos do seu projeto AEC e revelamos cada lacuna de referencia cruzada e sinalizacao de risco. Se nao encontrarmos riscos, voce nao paga.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="copy">&copy; 2026 Echology, Inc.</div>
             <div class="footer-links">
-                <a href="https://aecai.io">AECai</a>
-                <a href="https://geode.digital">Geode</a>
+                <a href="/signal/">Signal</a>
+                <a href="/surface/">Surface</a>
+                <a href="/spec/">Spec</a>
                 <a href="https://github.com/echology-io">GitHub</a>
                 <a href="/pt/sobre">Sobre</a>
                 <a href="/pt/contato">Contato</a>

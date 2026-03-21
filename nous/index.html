@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nous | The Signal -- Operational Intelligence</title>
+    <meta name="description" content="Nous replaces your fragmented operational stack with a single AI-powered system that perceives your entire business from the documents you already have. On your hardware. 76% measured efficiency gain. No cloud. No lock-in.">
+    <meta property="og:title" content="Nous | Operational Intelligence by echology">
+    <meta property="og:description" content="One system. Your documents. Your hardware. Complete operational intelligence.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Nous",
+        "applicationCategory": "BusinessApplication",
+        "description": "Operational intelligence platform that builds a virtual twin of your business from existing documents, then scores, gaps, and maps every operational dimension. Replaces fragmented tool stacks with a single system. On-premise. AI-powered. Human-gated.",
+        "operatingSystem": "Linux, macOS",
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Signal Audit",
+                "price": "10000",
+                "priceCurrency": "USD",
+                "description": "Full document environment scan, operational model, 3-model AI comparison. 1 week."
+            },
+            {
+                "@type": "Offer",
+                "name": "Signal Build",
+                "price": "25000",
+                "priceCurrency": "USD",
+                "description": "4-factor scoring, gap detection, dependency mapping, trained model. 2-3 weeks."
+            },
+            {
+                "@type": "Offer",
+                "name": "Signal Intelligence",
+                "price": "5000",
+                "priceCurrency": "USD",
+                "description": "Weekly reports, monthly re-optimization, continuous gap detection. Per month."
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is operational intelligence?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Operational intelligence is the practice of building a structured model of a business from its existing documents, processes, decisions, and data. Unlike project management (which tracks tasks) or business intelligence (which visualizes metrics), operational intelligence perceives the full operational state -- scoring all work, detecting structural gaps, mapping dependencies, and identifying what matters most. Gartner categorizes this under Digital Twin of an Organization (DTO) and projects 25% enterprise adoption by 2026."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does my data leave my network?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. All processing runs on your hardware. No cloud services, no external API calls with your data. You own everything the system produces. Nous is deployed on-premise by design, not as an afterthought."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What does Nous replace?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nous replaces the fragmented stack of project management, BI dashboards, document management, and operational consulting with a single system. Mid-market companies spend $175,000-$855,000 annually on operational tools. 30-40% of that spend is waste from fragmentation. Nous consolidates operational intelligence into one database, one CLI, one living model."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is Nous different from Celonis or process mining?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Process mining requires structured event log data from ERP or CRM systems and costs $200,000-$1,000,000+ per year. Nous starts from your actual documents -- the contracts, SOPs, project files, and records that every business already has. Different input, different cost structure, different result. Celonis models processes. Nous models operations."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+<div id="content">
+
+    <nav>
+        <div class="container">
+            <a href="/nous/" class="logo"><span>nous</span><span style="color: var(--muted)">.</span></a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+            <div class="nav-links">
+                <a href="/nous/" class="active">Home</a>
+                <a href="/nous/methodology.html">Methodology</a>
+                <a href="/nous/build.html">Build</a>
+                <a href="/nous/contact.html">Contact</a>
+                <a href="/nous/pt/" style="font-size: 11px; letter-spacing: 1px;">PT</a>
+                <button class="mode-toggle" onclick="toggleMode()" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">&#9789;</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>One system.<br>Your <span>entire operation</span>.</h1>
+            <div class="section-lead" style="margin: 16px 0 24px;">How much of your own business can you actually see?</div>
+            <p class="sub">Your business runs on documents, decisions, and processes scattered across a dozen tools. Nous replaces that fragmentation with a single operational intelligence system -- built from what you already have, running on your hardware, with AI that you control.</p>
+            <div class="btn-group">
+                <a href="/nous/contact.html" class="btn btn-primary">Start with a Signal Audit</a>
+                <a href="/nous/build.html" class="btn btn-outline">See the Data</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem -->
+    <div class="page-section" id="problem">
+        <div class="container container--narrow">
+            <p class="section-label">The Problem</p>
+            <div class="section-lead">How much of your own business can you actually see?</div>
+            <p class="section-sub">You have project management, a CRM, shared drives, BI dashboards, maybe a dozen other tools. Each shows a piece. None shows the whole picture. The gaps between them are where initiatives stall, leads go cold, compliance steps get skipped, and priorities drift without anyone noticing. The average mid-market company spends <a href="/nous/nous-vs-tools.html">$175,000-$855,000 per year</a> on these tools. 30-40% of that is wasted on overlap and fragmentation.</p>
+        </div>
+    </div>
+
+    <!-- The Waste -->
+    <div class="page-section" style="padding-top: 0;">
+        <div class="container">
+            <div class="card-grid">
+                <div class="card">
+                    <div class="tag">Stack Waste</div>
+                    <h3>30-40% of operational spend</h3>
+                    <p>Fragmentation and overlap across 8+ tools that do not share context. You are paying for redundancy, not intelligence. SaaS spend per employee: $4,830/year, up 22% YoY.</p>
+                </div>
+                <div class="card">
+                    <div class="tag">Invisible Gaps</div>
+                    <h3>No tool detects what is missing</h3>
+                    <p>Dashboards show what is present. No project management tool tells you which initiative is blocked, which lead is decaying, which compliance step was skipped, or which dependency chain is broken.</p>
+                </div>
+                <div class="card">
+                    <div class="tag">Market Reality</div>
+                    <h3>Process mining costs $200K-$1M+/year</h3>
+                    <p>Enterprise solutions (Celonis, SAP Signavio) require structured event logs from ERP systems. Most businesses do not have clean event logs. They have documents. The enterprise tools are priced for Fortune 500, not for the businesses that need them most.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What Nous Does -->
+    <div class="page-section">
+        <div class="container container--narrow">
+            <p class="section-label">The Solution</p>
+            <div class="section-lead">One deployment. Complete operational intelligence.</div>
+            <p class="section-sub">Nous deploys on your hardware in one day. It ingests your documents -- contracts, SOPs, project files, financial records, everything -- classifies them without AI hallucination, and builds a <a href="/nous/methodology.html">living operational model</a>. Then it scores every piece of work, finds every gap, and maps every dependency. You decide what to do with it. If you are wondering <a href="/nous/what-is-oi.html">what operational intelligence actually means</a>, start there.</p>
+        </div>
+        <div class="container">
+            <div class="process-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="process-step">
+                    <h4>Document Intelligence</h4>
+                    <p>Recursive scan of your entire document environment. Every file classified deterministically -- no AI model, no hallucination, no probability. The foundation is always accurate.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Operational Model</h4>
+                    <p>Initiatives, pipeline, financials, decisions, milestones, content -- all structured in a single database. Not a dashboard view of separate tools. One model. One truth.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Work Scoring</h4>
+                    <p>Every task and initiative step scored on four factors: revenue proximity, foundation alignment, dependency weight, effort-to-impact ratio. The highest-leverage work surfaces first. No opinions. Deterministic.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Gap Detection</h4>
+                    <p>Stale leads. Blocked initiatives. Unprotected IP. Revenue gaps. Compliance holes. SOP violations. The system detects absence, not just presence. Gaps are the deliverable.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Dependency Mapping</h4>
+                    <p>Which initiatives block which. Which projects depend on which foundations. The critical path from infrastructure to revenue, mapped automatically. When a prerequisite completes, dependent work activates.</p>
+                </div>
+                <div class="process-step">
+                    <h4>AI You Control</h4>
+                    <p>Train a model on your approved data that runs on your hardware. Or use Claude, GPT, or any API for high-quality analysis. The system scores all outputs deterministically. It suggests the best. You choose.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Built for technical businesses -->
+    <div class="page-section">
+        <div class="container container--narrow">
+            <p class="section-label">Industries</p>
+            <div class="section-lead">Built for technical businesses</div>
+            <p class="section-sub">Proven across industries where documents, decisions, and operational complexity define the business.</p>
+        </div>
+        <div class="container">
+            <div class="process-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                <div class="process-step">
+                    <h4>Engineering &amp; AEC Firms</h4>
+                </div>
+                <div class="process-step">
+                    <h4>Insurance Practices</h4>
+                </div>
+                <div class="process-step">
+                    <h4>Legal &amp; Professional Services</h4>
+                </div>
+                <div class="process-step">
+                    <h4>Specialty Manufacturers</h4>
+                </div>
+                <div class="process-step">
+                    <h4>Healthcare Practices</h4>
+                </div>
+                <div class="process-step">
+                    <h4>Any Technical Business</h4>
+                    <p>Where operational visibility is the constraint.</p>
+                </div>
+            </div>
+            <p style="font-size: 15px; color: var(--muted); margin-top: 24px; text-align: center;">If your business runs on documents and decisions that no single tool can fully see, Nous was built for you.</p>
+        </div>
+    </div>
+
+    <!-- How It Works -->
+    <div class="page-section" id="how-it-works">
+        <div class="container">
+            <p class="section-label">How It Works</p>
+            <div class="section-lead">Five steps. Your approval at every gate.</div>
+            <p class="section-sub">Nothing happens without your explicit approval. The system proposes. You decide. This is not AI making decisions for you. It is AI making your operation visible. The <a href="/nous/methodology.html">full methodology</a> explains the three-twin architecture behind it.</p>
+            <div class="process-grid">
+                <div class="process-step">
+                    <h4>Deploy</h4>
+                    <p>One command. Your hardware. A fresh operational database, corpus directories, and output folders. Python 3.11 and SQLite. That's all.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Perceive</h4>
+                    <p>Recursive scan of your document environment. Every file classified, indexed, linked to its source. Multi-server support. No data copied. No cloud.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Model</h4>
+                    <p>Complete operational model built from your data. You review the True Twin -- your business as the system perceives it. You confirm accuracy before proceeding.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Optimize</h4>
+                    <p>Same data, reorganized by structural importance. Scored. Gapped. Dependency-mapped. The Optimized Twin shows what matters, what is missing, and where to act first.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Operate</h4>
+                    <p>Weekly reports. Monthly re-optimization. Continuous gap detection. Effort tracking. The system grows with your business. You keep everything.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guarantee -->
+    <div class="page-section" style="text-align: center; background: var(--bg-card);">
+        <div class="container container--narrow">
+            <p class="section-label">The Guarantee</p>
+            <div class="section-lead">If we do not find the signal, you do not pay.</div>
+            <p class="section-sub" style="margin-left: auto; margin-right: auto;">If the Signal Audit does not surface at least 3 structural findings your team did not already know about, you do not pay. We do not take money for work that did not produce value.</p>
+        </div>
+    </div>
+
+    <!-- Price Anchor -->
+    <div class="page-section">
+        <div class="container container--narrow" style="text-align: center;">
+            <p class="section-label">The Math</p>
+            <div class="section-lead">$10,000. One week.</div>
+            <p class="section-sub" style="margin-left: auto; margin-right: auto;">What does it cost your business when a key person leaves and you realize half your operational knowledge was in their head? Most companies say $200K-$500K in disruption, rework, and lost clients. What does it cost to run 8 tools that do not share information? $175K-$855K per year, with 30-40% waste from overlap and gaps. The Signal Audit costs $10,000.</p>
+        </div>
+    </div>
+
+    <!-- Comparison -->
+    <div class="page-section">
+        <div class="container">
+            <p class="section-label">Comparison</p>
+            <div class="section-lead">What you are using now vs what Nous delivers</div>
+            <p class="section-sub"><a href="/nous/nous-vs-tools.html">The detailed breakdown</a> covers every category: project management AI, process mining, fractional COOs, and ERP. Here is the summary.</p>
+            <p style="font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 32px;">Enterprise platforms like Palantir Foundry solve this problem for Fortune 500 companies -- at $500,000-$1M+ per year, requiring structured data infrastructure most businesses don't have, and taking months to deploy. Nous is the same architectural approach: deterministic classification, a persistent operational model, human-gated AI, data sovereignty. Built for the technical businesses that enterprise platforms will never serve, at a price that doesn't require a board approval.</p>
+            <table class="comparison-table">
+                <tr>
+                    <th>Capability</th>
+                    <th>PM Tools<br><span style="font-size: 9px; letter-spacing: 0;">Monday / Asana</span></th>
+                    <th>Process Mining<br><span style="font-size: 9px; letter-spacing: 0;">Celonis / Signavio</span></th>
+                    <th>Frac. COO</th>
+                    <th style="color: var(--accent)">Nous</th>
+                </tr>
+                <tr>
+                    <td><strong>Ingests your documents</strong></td>
+                    <td>No</td>
+                    <td>No (needs ERP logs)</td>
+                    <td>Manually</td>
+                    <td><strong style="color: var(--accent)">Recursive + classified</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Builds operational model</strong></td>
+                    <td>No (tracks tasks)</td>
+                    <td>Process model only</td>
+                    <td>Yes (in a report)</td>
+                    <td><strong style="color: var(--accent)">Living database</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Scores all work</strong></td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>Subjectively</td>
+                    <td><strong style="color: var(--accent)">4-factor deterministic</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Detects structural gaps</strong></td>
+                    <td>No</td>
+                    <td>Process bottlenecks</td>
+                    <td>Some (manually)</td>
+                    <td><strong style="color: var(--accent)">Structural + operational</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Runs on your hardware</strong></td>
+                    <td>No (cloud SaaS)</td>
+                    <td>Some (enterprise)</td>
+                    <td>N/A</td>
+                    <td><strong style="color: var(--accent)">Always</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Persists and grows</strong></td>
+                    <td>Task history</td>
+                    <td>Event logs</td>
+                    <td>No (report delivered)</td>
+                    <td><strong style="color: var(--accent)">Living ops.db</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>You keep everything</strong></td>
+                    <td>No (vendor owns)</td>
+                    <td>License-dependent</td>
+                    <td>Report only</td>
+                    <td><strong style="color: var(--accent)">Database + models + all outputs</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Annual cost</strong></td>
+                    <td>$96K-$140K</td>
+                    <td>$200K-$1M+</td>
+                    <td>$96K-$300K</td>
+                    <td><strong style="color: var(--accent)">$35K-$95K</strong></td>
+                </tr>
+            </table>
+            <p style="font-size: 12px; color: var(--muted); margin-top: 16px;">Sources: Gartner MQ 2025, Forrester TEI, Mordor Intelligence, vendor pricing, ScaleUpExec/OpsElevate fractional COO surveys.</p>
+        </div>
+    </div>
+
+    <!-- Common Questions -->
+    <div class="page-section" id="faq">
+        <div class="container">
+            <p class="section-label">Common Questions</p>
+            <div class="section-lead">What you need to know</div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3><a href="/nous/what-is-oi.html" style="color: inherit; text-decoration: none;">What is operational intelligence?</a></h3>
+                    <p>Building a structured model of a business from its existing documents, processes, and decisions. Project management tracks tasks. BI visualizes metrics. <a href="/nous/what-is-oi.html">Operational intelligence</a> perceives the full operational state -- what exists, what is missing, what depends on what, and where to act first. Gartner calls the broader category Digital Twin of an Organization and projects 25% enterprise adoption by 2026.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Does my data leave my network?</h3>
+                    <p>No. All processing runs on your hardware. No cloud. No external API calls with your data. You own everything. We access your systems via SSH during the engagement and delete credentials when complete.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What infrastructure do I need?</h3>
+                    <p>Python 3.11+ and SQLite (included with Python). 8GB RAM. No Docker, no cloud services, no external databases. Ollama is optional for local AI model training. If you have a laptop, you can run Nous.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><a href="/nous/nous-vs-tools.html" style="color: inherit; text-decoration: none;">How is this different from Monday, Notion, or Asana?</a></h3>
+                    <p>Those tools track tasks. Nous perceives your entire operational environment and builds a structured model that scores everything, detects what is missing, and maps dependencies. It is the intelligence layer beneath task trackers. Monday.com enterprise runs $96K-$140K/year for project visibility alone. <a href="/nous/nous-vs-tools.html">Here is how Nous compares to every alternative.</a></p>
+                </div>
+                <div class="faq-item">
+                    <h3><a href="/nous/nous-vs-tools.html" style="color: inherit; text-decoration: none;">How is this different from Celonis or process mining?</a></h3>
+                    <p>Process mining requires structured event log data from ERP systems and costs $200K-$1M+/year. Nous starts from your actual documents -- the contracts, SOPs, project files, and records that every business already has. Different input, different cost, different result. <a href="/nous/nous-vs-tools.html">The full breakdown is here.</a></p>
+                </div>
+                <div class="faq-item">
+                    <h3>What AI models does it use?</h3>
+                    <p>You choose. Classification and scoring are deterministic -- no AI model, no hallucination, no cost. For document generation and analysis, you can use local models (trained on your data, running on your hardware) or external APIs (Claude, GPT) or both. The system scores all outputs and suggests the best. You select.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What if the system finds problems?</h3>
+                    <p>That is the point. The system honestly surfaces stale processes, blocked work, unprotected IP, revenue gaps, and compliance holes. A system that reveals its own gaps is more valuable than one that hides them. Gaps are the deliverable.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do I keep everything?</h3>
+                    <p>Yes. The database, all reports, the trained model, the full CLI toolset. You can run Nous independently after the engagement ends. This is not SaaS. There is no lock-in. The value is in the intelligence, not the access.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is Nous LGPD compliant?</h3>
+                    <p>Yes, by architecture. All processing runs on your hardware. No external API calls with your data. Nothing leaves your network. LGPD compliance is not a policy -- it is how the system is built. You are the sole controller of your data.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Proof Loop -->
+    <div class="page-section">
+        <div class="container container--narrow">
+            <p class="section-label">Ecosystem</p>
+            <div class="section-lead">The proof loop</div>
+            <p class="section-sub">Nous and the Surface are sibling products on the echology platform. Nous audits Surface's operations -- indexing its document environment, scoring its initiatives, detecting its gaps. The Surface optimizes Nous's citation presence -- ensuring AI platforms cite Nous when operators search for operational intelligence tools. Each product validates the other. No competitor can replicate this without building both.</p>
+            <div class="btn-group" style="margin-top: 24px;">
+                <a href="https://echology.io/surface/" class="btn btn-outline">The Surface -- AI citation intelligence</a>
+                <a href="https://echology.io" class="btn btn-outline">echology -- the platform</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Self-Referential Proof -->
+    <div class="page-section" style="background: var(--bg-card);">
+        <div class="container container--narrow" style="text-align: center;">
+            <p class="section-label">Self-Referential Proof</p>
+            <div class="section-lead">We run the Signal on ourselves.</div>
+            <p class="section-sub" style="margin-left: auto; margin-right: auto;">echology operates on the same system we sell. 72 initiatives. 528 steps. 5 engines proven. 77% time savings measured. All built on $1,772 total investment. No competitor can replicate this without rebuilding their operations on their own product.</p>
+        </div>
+    </div>
+
+    <!-- Anti-ICP -->
+    <div class="page-section">
+        <div class="container container--narrow">
+            <p class="section-label">Not For Everyone</p>
+            <div class="section-lead">Who this is not for</div>
+            <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                <div class="card">
+                    <h3>Fewer than 50 people</h3>
+                    <p>Not enough operational complexity to justify. The system reveals structure -- you need enough structure to reveal.</p>
+                </div>
+                <div class="card">
+                    <h3>AI as a checkbox</h3>
+                    <p>If you want to tell your board you have AI, any tool will do. Nous is for leaders who want to see what is actually happening.</p>
+                </div>
+                <div class="card">
+                    <h3>No document access</h3>
+                    <p>The system perceives documents. No documents, no signal. Organizations unwilling to share document access cannot benefit.</p>
+                </div>
+                <div class="card">
+                    <h3>Already running Celonis</h3>
+                    <p>If process mining is working for you, you solved the problem differently. Nous is for businesses that start from documents, not event logs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="page-section" style="text-align: center;">
+        <div class="container container--narrow">
+            <div class="section-lead">Find out what you cannot see.</div>
+            <p class="section-sub" style="margin-left: auto; margin-right: auto;">An Operational Audit takes one week. You get a structured model of your business built from your own documents, on your own hardware. The system perceives. You decide.</p>
+            <a href="https://echology.io/signal/" class="btn btn-primary">Request a Signal Audit</a>
+            <a href="/nous/contact.html" class="btn btn-outline">Contact Us Directly</a>
+        </div>
+    </div>
+
+    <div class="page-section" style="padding: 48px 0; text-align: center;">
+        <div class="container container--narrow">
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.8; max-width: 560px; margin: 0 auto;">Nous is built on the <a href="https://echology.io">echology</a> platform. The same deterministic classification engine that powers <a href="https://echology.io/spec/">the Spec</a> and <a href="https://echology.io/surface/">the Surface</a> drives Nous operational perception.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="copy">&copy; 2026 Nous and Geode are products of <a href="https://echology.io">echology, Inc.</a> -- the operational and citation intelligence platform for technical businesses.</div>
+            <div class="footer-links">
+                <a href="/nous/methodology.html">Methodology</a>
+                <a href="/nous/what-is-oi.html">What is OI</a>
+                <a href="/nous/nous-vs-tools.html">Comparison</a>
+                <a href="/nous/build.html">Build Log</a>
+                <a href="/nous/contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+function toggleMode() {
+    document.body.classList.toggle('light');
+    localStorage.setItem('mode', document.body.classList.contains('light') ? 'light' : 'dark');
+}
+if (localStorage.getItem('mode') === 'light') document.body.classList.add('light');
+</script>
+
+</body>
+</html>

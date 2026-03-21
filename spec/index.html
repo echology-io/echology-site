@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AECai Spec -- Document Risk Intelligence for AEC | echology</title>
+    <meta name="description" content="See the risk before it finds you. Deterministic document intelligence for AEC firms. Every cross-reference mapped, every gap flagged.">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .offer-price {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .guarantee {
+            background: var(--code-bg);
+            border: 1px solid var(--accent-dim);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--fg);
+            line-height: 1.6;
+        }
+        .guarantee strong { color: var(--accent); }
+        .risk-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            max-width: 960px;
+        }
+        .risk-table th {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--muted);
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        .risk-table td {
+            font-size: 14px;
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--fg);
+            line-height: 1.5;
+        }
+        .risk-table td:nth-child(2) {
+            color: var(--accent);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .risk-table td:nth-child(3) {
+            color: var(--muted);
+        }
+        .fit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .fit-grid ul {
+            list-style: none;
+            padding: 0;
+        }
+        .fit-grid li {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.8;
+            padding-left: 20px;
+            position: relative;
+        }
+        .fit-grid li::before {
+            position: absolute;
+            left: 0;
+        }
+        .fit-yes li::before { content: "+"; color: var(--accent); font-weight: 700; }
+        .fit-no li::before { content: "-"; color: var(--muted); font-weight: 700; }
+        .deliverables {
+            list-style: none;
+            padding: 0;
+        }
+        .deliverables li {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.8;
+            padding-left: 20px;
+            position: relative;
+        }
+        .deliverables li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        .math-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 32px;
+            max-width: 640px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .math-block .stat-value { margin-bottom: 8px; }
+        .math-block p {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        .founder-block {
+            max-width: 640px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .founder-block h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .founder-block p {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+        @media (max-width: 640px) {
+            .fit-grid { grid-template-columns: 1fr; }
+            .risk-table th, .risk-table td { padding: 10px 8px; font-size: 13px; }
+            .risk-table td:nth-child(2) { white-space: normal; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "AECai Spec Services",
+        "itemListElement": [
+            {
+                "@type": "Service",
+                "position": 1,
+                "name": "Spec Audit",
+                "description": "Full document environment scan with deterministic classification, cross-reference mapping, and risk flag report. Guaranteed to find at least 3 cross-reference gaps or risk flags your team missed.",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "echology, Inc.",
+                    "url": "https://echology.io"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "10000",
+                    "priceCurrency": "USD"
+                }
+            },
+            {
+                "@type": "Service",
+                "position": 2,
+                "name": "Spec Build",
+                "description": "Project-specific trained model, automated specification cross-referencing, jurisdiction-aware compliance checking, and searchable knowledge base. Runs on your hardware. No subscription.",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "echology, Inc.",
+                    "url": "https://echology.io"
+                },
+                "offers": {
+                    "@type": "AggregateOffer",
+                    "lowPrice": "25000",
+                    "highPrice": "50000",
+                    "priceCurrency": "USD"
+                }
+            },
+            {
+                "@type": "Service",
+                "position": 3,
+                "name": "Spec Intelligence",
+                "description": "Continuous document ingestion, automated risk flagging, monthly compliance re-audit, and PM tool integration. Every new document checked the moment it enters.",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "echology, Inc.",
+                    "url": "https://echology.io"
+                },
+                "offers": {
+                    "@type": "AggregateOffer",
+                    "lowPrice": "5000",
+                    "highPrice": "10000",
+                    "priceCurrency": "USD",
+                    "unitText": "MONTH"
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+    <div class="container">
+        <a href="/" class="logo">echology<span>.</span></a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+        <div class="nav-links">
+            <a href="/signal/">Signal</a>
+            <a href="/surface/">Surface</a>
+            <a href="/spec/" class="active">Spec</a>
+            <a href="/about">About</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+    <div class="container">
+        <h1>The AECai <span>Spec</span></h1>
+        <p class="sub">See the risk before it finds you.</p>
+        <p class="sub" style="margin-top: -20px;">Your projects run on documents. Somewhere in those documents is a contradiction, a missing cross-reference, an expired standard. Nobody catches it until construction. Then it costs $500K-$5M.</p>
+        <div class="btn-group">
+            <a href="/contact" class="btn btn-primary">Schedule a conversation</a>
+            <a href="#audit" class="btn btn-outline">See the offers</a>
+        </div>
+    </div>
+</div>
+
+<!-- How It Works -->
+<section>
+    <div class="container">
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">Every document. Every cross-reference. Every gap.</h2>
+        <p class="section-desc">No samples. No summaries. The system reads everything and classifies deterministically.</p>
+        <div class="card-grid">
+            <div class="card">
+                <div class="tag">Process</div>
+                <h3>Every document ingested</h3>
+                <p>Specs, geotech reports, structural calcs, contracts, environmental assessments. Not a sample. Everything in your project environment.</p>
+            </div>
+            <div class="card">
+                <div class="tag">Classify</div>
+                <h3>Deterministic classification</h3>
+                <p>Each document classified by type, authority level, and risk signals. No AI guessing. No hallucination. The system classifies, scores, and maps -- it never decides.</p>
+            </div>
+            <div class="card">
+                <div class="tag">Cross-reference</div>
+                <h3>Everything against everything</h3>
+                <p>Which specs reference which reports. Where geotech contradicts structural. Which standards expired. Where a reference should exist and does not. Provenance on every cross-reference.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Spec Audit -->
+<section id="audit">
+    <div class="container">
+        <div class="section-label">Engagement</div>
+        <h2 class="section-title">What You Get</h2>
+        <div class="card-grid" style="grid-template-columns: 1fr;">
+            <div class="card">
+                <div class="offer-price">$10,000 / 1 week</div>
+                <h3>Spec Audit</h3>
+                <p style="color: var(--fg); margin-bottom: 16px;">We read every document and show you every risk.</p>
+                <ul class="deliverables">
+                    <li>Full document environment scan: specs, geotech reports, structural calcs, contracts</li>
+                    <li>Deterministic classification by document type, authority level, risk signals</li>
+                    <li>Cross-reference map: which specs reference which reports, where gaps exist</li>
+                    <li>Risk flag report: contradictions, missing references, expired standards</li>
+                </ul>
+                <div class="guarantee">
+                    <strong>The guarantee:</strong> If the Spec Audit does not identify at least 3 cross-reference gaps or risk flags your team missed, you do not pay.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Spec Build -->
+<section>
+    <div class="container">
+        <div class="card-grid" style="grid-template-columns: 1fr;">
+            <div class="card">
+                <div class="offer-price">$25,000-$50,000 / 2-4 weeks</div>
+                <h3>Spec Build</h3>
+                <p style="color: var(--fg); margin-bottom: 16px;">We build the system that never stops checking. Everything in the Audit, plus:</p>
+                <ul class="deliverables">
+                    <li>Project-specific trained model on your document corpus</li>
+                    <li>Automated specification cross-referencing (geotech to structural to civil)</li>
+                    <li>Jurisdiction-aware compliance checking (building codes, environmental regs)</li>
+                    <li>Searchable, structured knowledge base from all project documents</li>
+                </ul>
+                <div class="guarantee">
+                    Runs on your hardware. You keep everything -- the database, the model, the tools. No subscription. No lock-in.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Spec Intelligence -->
+<section>
+    <div class="container">
+        <div class="card-grid" style="grid-template-columns: 1fr;">
+            <div class="card">
+                <div class="offer-price">$5,000-$10,000 / month</div>
+                <h3>Spec Intelligence</h3>
+                <p style="color: var(--fg); margin-bottom: 16px;">Every new document is checked the moment it enters. Everything persists, plus:</p>
+                <ul class="deliverables">
+                    <li>Continuous ingestion of new project documents</li>
+                    <li>Automated risk flagging on document changes</li>
+                    <li>Monthly compliance re-audit</li>
+                    <li>Integration with existing PM tools (Procore, Autodesk, Bluebeam via export)</li>
+                </ul>
+                <div class="guarantee">
+                    Every new document that enters your environment is a new risk. Spec Intelligence means no document goes unread.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What It Prevents -->
+<section>
+    <div class="container">
+        <div class="section-label">Risk</div>
+        <h2 class="section-title">What It Prevents</h2>
+        <p class="section-desc">The gap between what your team thinks they reviewed and what the Spec actually finds.</p>
+        <table class="risk-table">
+            <thead>
+                <tr>
+                    <th>What is at risk right now</th>
+                    <th>Cost</th>
+                    <th>What Spec delivers instead</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>One missed cross-reference that becomes a construction dispute</td>
+                    <td>$500K-$5M</td>
+                    <td>Every cross-reference mapped, every gap flagged</td>
+                </tr>
+                <tr>
+                    <td>Senior engineer departure taking spec knowledge with them</td>
+                    <td>$200K-$500K</td>
+                    <td>The system knows what they knew, and it never leaves</td>
+                </tr>
+                <tr>
+                    <td>Manual review missing a contradiction under deadline pressure</td>
+                    <td>$100K-$10M</td>
+                    <td>Deterministic review that does not get tired or rushed</td>
+                </tr>
+                <tr>
+                    <td>Compliance violation from an expired standard nobody caught</td>
+                    <td>Fines + rework</td>
+                    <td>Continuous jurisdiction-aware compliance checking</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Who This Is For -->
+<section>
+    <div class="container">
+        <div class="section-label">Fit</div>
+        <h2 class="section-title">Is this for you?</h2>
+        <div class="fit-grid">
+            <div class="card">
+                <h3>Who this is for</h3>
+                <ul class="fit-yes">
+                    <li>Mid-market AEC firms (50-500 employees) processing hundreds of technical documents per project</li>
+                    <li>Geotech, structural, civil, environmental firms</li>
+                    <li>Companies where a missed spec clause costs $100K-$10M in rework or claims</li>
+                    <li>Firms that just lost a senior engineer and realized how much knowledge walked out</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Who this is NOT for</h3>
+                <ul class="fit-no">
+                    <li>Residential-only builders (not enough document complexity)</li>
+                    <li>Firms doing fewer than 10 projects per year (volume does not justify the system)</li>
+                    <li>Companies that want cloud-only (project documents are sensitive, Spec deploys on-premise)</li>
+                    <li>Firms looking for estimating or takeoff tools (different problem)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Founder -->
+<section>
+    <div class="container">
+        <div class="section-label">Credibility</div>
+        <div class="founder-block">
+            <h3>Built by an engineer who lived inside these documents</h3>
+            <p>Kyle Vines spent 13+ years in geotechnical and civil engineering. He ran a geotech firm. His last role was at LaBella Associates, an ENR Top 200 firm. The document taxonomy behind AECai was built by someone who reviewed specs, geotech reports, and structural calcs every day for over a decade.</p>
+            <p style="margin-top: 16px;">This is not a software company guessing at AEC workflows. It is a system built by an engineer who lived inside them.</p>
+        </div>
+    </div>
+</section>
+
+<!-- The Math -->
+<section>
+    <div class="container">
+        <div class="section-label">The Math</div>
+        <div class="math-block">
+            <div class="stat-value">$10K</div>
+            <p>What did your last construction dispute cost? Most firms say $500K-$5M before legal fees. How many of those disputes trace back to a document somebody should have read?</p>
+            <p style="margin-top: 16px; color: var(--fg); font-weight: 600;">$10,000. One week. If we do not find risks your team missed, you do not pay.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section>
+    <div class="container" style="text-align: center;">
+        <h2 class="section-title">Schedule a conversation</h2>
+        <p class="section-desc">We will tell you whether your document environment has enough complexity for an engagement -- before you spend anything.</p>
+        <a href="/contact" class="btn btn-primary">Schedule a conversation</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <span class="copy">echology, Inc. -- Delaware C-Corp. Everything runs on your hardware. Nothing leaves your network.</span>
+        <div class="footer-links">
+            <a href="/signal/">Signal</a>
+            <a href="/surface/">Surface</a>
+            <a href="/spec/">Spec</a>
+            <a href="/about">About</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
