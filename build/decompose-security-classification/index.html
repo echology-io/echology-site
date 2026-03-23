@@ -10,25 +10,25 @@ echology<span class="text-accent">.</span> </a> <button id="nav-toggle" class="f
 Get started
 </a> </div> </div> <!-- Mobile menu --> <div id="mobile-menu" class="hidden border-t border-border md:hidden"> <div class="flex flex-col gap-1 px-6 py-4"> <a href="/signal/" data-i18n="nav.signal" data-en="Signal" data-pt="Signal" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> Signal </a><a href="/surface/" data-i18n="nav.surface" data-en="Surface" data-pt="Surface" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> Surface </a><a href="/spec/" data-i18n="nav.spec" data-en="Spec" data-pt="Spec" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> Spec </a><a href="/syncro/" data-i18n="nav.syncro" data-en="Syncro" data-pt="Syncro" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> Syncro </a><a href="/methodology/" data-i18n="nav.methodology" data-en="Methodology" data-pt="Metodologia" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> Methodology </a><a href="/build/" data-i18n="nav.build" data-en="Build" data-pt="Diario" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text"> Build </a><a href="/about/" data-i18n="nav.about" data-en="About" data-pt="Sobre" class="rounded-md px-3 py-2 text-sm font-medium transition-colors text-text-secondary hover:text-text"> About </a> <div class="mt-2 flex gap-2"> <button onclick="__toggleTheme()" class="flex h-8 w-8 items-center justify-center rounded-md border border-border text-sm text-text-muted" aria-label="Toggle light/dark mode">&#9789;</button> <button onclick="__toggleLang()" class="flex h-8 w-8 items-center justify-center rounded-md border border-border text-xs font-semibold text-text-muted" aria-label="Toggle language">PT</button> </div> <a href="/engage/" data-i18n="nav.cta" data-en="Get started" data-pt="Comecar" class="btn-glow mt-2 rounded-md bg-accent px-4 py-2 text-center text-sm font-semibold text-bg shadow-md shadow-accent/20 transition-all hover:shadow-accent/40">
 Get started
-</a> </div> </div> </nav> <div class="h-16"></div> <script type="module">const e=document.getElementById("nav-toggle"),t=document.getElementById("mobile-menu");e?.addEventListener("click",()=>{t?.classList.toggle("hidden")});</script> <main class="flex-1">    <section class="py-section pt-24 pb-16 md:pt-32 md:pb-24"> <div class="mx-auto max-w-6xl px-6">  <div class="mx-auto max-w-3xl"> <div class="mb-4 flex items-center gap-2"> <span class="text-xs font-medium uppercase tracking-widest text-accent">Build Log</span> <span class="text-xs text-text-muted">2026-02-16</span> </div> <h1 class="text-4xl font-bold tracking-tight text-text md:text-5xl">
+</a> </div> </div> </nav> <div class="h-16"></div> <script type="module">const e=document.getElementById("nav-toggle"),t=document.getElementById("mobile-menu");e?.addEventListener("click",()=>{t?.classList.toggle("hidden")});</script> <main class="flex-1">    <section class="py-section pt-24 pb-16 md:pt-32 md:pb-24"> <div class="mx-auto max-w-6xl px-6">  <div class="mx-auto max-w-3xl"> <div class="mb-4 flex items-center gap-2"> <span class="text-xs font-medium uppercase tracking-widest text-accent" data-i18n="decsec.hero.label" data-en="Build Log" data-pt="Registro de Build">Build Log</span> <span class="text-xs text-text-muted">2026-02-16</span> </div> <h1 class="text-4xl font-bold tracking-tight text-text md:text-5xl" data-i18n="decsec.hero.title" data-en="Security Classification Lands in Decompose v0.1.1" data-pt="Classificacao de Seguranca Chega ao Decompose v0.1.1">
 Security Classification Lands in Decompose v0.1.1
-</h1> <p class="mt-6 max-w-2xl text-lg text-text-secondary">
+</h1> <p class="mt-6 max-w-2xl text-lg text-text-secondary" data-i18n="decsec.hero.subtitle" data-en="Which parts of this document carry security implications? Decompose now answers that deterministically." data-pt="Quais partes deste documento possuem implicacoes de seguranca? O Decompose agora responde isso de forma deterministica.">
 Which parts of this document carry security implications? Decompose now answers that deterministically.
-</p> </div>  </div> </section> <section class="py-section border-t border-border"> <div class="mx-auto max-w-6xl px-6">  <div class="mx-auto max-w-3xl prose-echology"> <p>Here's a question that comes up in every compliance review: which parts of this document carry security implications?</p>
+</p> </div>  </div> </section> <section class="py-section border-t border-border"> <div class="mx-auto max-w-6xl px-6">  <div class="mx-auto max-w-3xl prose-echology"> <p data-i18n="decsec.body.intro1" data-en="Here's a question that comes up in every compliance review: which parts of this document carry security implications?" data-pt="Esta e uma pergunta que surge em toda revisao de conformidade: quais partes deste documento possuem implicacoes de seguranca?">Here's a question that comes up in every compliance review: which parts of this document carry security implications?</p>
 
-            <p>Not "which parts mention the word security." Which parts describe authentication flows, credential handling, transport encryption, or access control boundaries — the sections where a misreading has consequences beyond a confused user.</p>
+            <p data-i18n="decsec.body.intro2" data-en="Not &quot;which parts mention the word security.&quot; Which parts describe authentication flows, credential handling, transport encryption, or access control boundaries — the sections where a misreading has consequences beyond a confused user." data-pt="Nao &quot;quais partes mencionam a palavra seguranca.&quot; Quais partes descrevem fluxos de autenticacao, manuseio de credenciais, criptografia de transporte ou limites de controle de acesso - as secoes onde uma leitura errada tem consequencias alem de um usuario confuso.">Not "which parts mention the word security." Which parts describe authentication flows, credential handling, transport encryption, or access control boundaries — the sections where a misreading has consequences beyond a confused user.</p>
 
-            <p>If you're building an AI system that processes technical specifications, security policies, or regulatory documents, this question isn't optional. It's the first thing an auditor asks.</p>
+            <p data-i18n="decsec.body.intro3" data-en="If you're building an AI system that processes technical specifications, security policies, or regulatory documents, this question isn't optional. It's the first thing an auditor asks." data-pt="Se voce esta construindo um sistema de IA que processa especificacoes tecnicas, politicas de seguranca ou documentos regulatorios, esta pergunta nao e opcional. E a primeira coisa que um auditor pergunta.">If you're building an AI system that processes technical specifications, security policies, or regulatory documents, this question isn't optional. It's the first thing an auditor asks.</p>
 
-            <h2>The Problem with LLM-Only Classification</h2>
+            <h2 data-i18n="decsec.llm.heading" data-en="The Problem with LLM-Only Classification" data-pt="O Problema com Classificacao Apenas por LLM">The Problem with LLM-Only Classification</h2>
 
-            <p>You can prompt an LLM to read a document and flag security-relevant sections. It will do a reasonable job. It will also take 2-10 seconds per document, cost you API credits on every call, and — critically — give you different results on Tuesday than it gave you on Monday.</p>
+            <p data-i18n="decsec.llm.para1" data-en="You can prompt an LLM to read a document and flag security-relevant sections. It will do a reasonable job. It will also take 2-10 seconds per document, cost you API credits on every call, and — critically — give you different results on Tuesday than it gave you on Monday." data-pt="Voce pode solicitar a um LLM que leia um documento e sinalize secoes relevantes para seguranca. Ele fara um trabalho razoavel. Tambem levara de 2 a 10 segundos por documento, custara creditos de API em cada chamada e, criticamente, dara resultados diferentes na terca-feira em relacao a segunda-feira.">You can prompt an LLM to read a document and flag security-relevant sections. It will do a reasonable job. It will also take 2-10 seconds per document, cost you API credits on every call, and — critically — give you different results on Tuesday than it gave you on Monday.</p>
 
-            <p>That's fine for summarization. It's not fine for security classification. When your pipeline flags a section as security-critical, you need to explain why. "The model thought so" doesn't survive a SOC 2 audit.</p>
+            <p data-i18n="decsec.llm.para2" data-en="That's fine for summarization. It's not fine for security classification. When your pipeline flags a section as security-critical, you need to explain why. &quot;The model thought so&quot; doesn't survive a SOC 2 audit." data-pt="Isso e aceitavel para resumos. Nao e aceitavel para classificacao de seguranca. Quando seu pipeline sinaliza uma secao como critica para seguranca, voce precisa explicar o motivo. &quot;O modelo achou que sim&quot; nao sobrevive a uma auditoria SOC 2.">That's fine for summarization. It's not fine for security classification. When your pipeline flags a section as security-critical, you need to explain why. "The model thought so" doesn't survive a SOC 2 audit.</p>
 
-            <h2>What Changed in v0.1.1</h2>
+            <h2 data-i18n="decsec.changed.heading" data-en="What Changed in v0.1.1" data-pt="O Que Mudou na v0.1.1">What Changed in v0.1.1</h2>
 
-            <p>Decompose now includes <code>security</code> as a first-class risk category in its classification output. Every semantic unit returned by <code>decompose_text()</code> gets scored across risk dimensions — and security is now one of them.</p>
+            <p data-i18n="decsec.changed.para1" data-en="Decompose now includes security as a first-class risk category in its classification output. Every semantic unit returned by decompose_text() gets scored across risk dimensions — and security is now one of them." data-pt="O Decompose agora inclui seguranca como uma categoria de risco de primeira classe em sua saida de classificacao. Cada unidade semantica retornada por decompose_text() recebe uma pontuacao em dimensoes de risco - e seguranca agora e uma delas.">Decompose now includes <code>security</code> as a first-class risk category in its classification output. Every semantic unit returned by <code>decompose_text()</code> gets scored across risk dimensions — and security is now one of them.</p>
 
 <div class="code-block">from decompose import decompose_text
 
@@ -45,68 +45,68 @@ for unit in result["units"]:
     print(f"Risk: {unit['risk_score']}  Security: {unit.get('security', 0)}")
     print(f"  {unit['text'][:80]}...")</div>
 
-            <p>No API key. No network call. No GPU. The classification runs in single-digit milliseconds on commodity hardware, and it returns the same result every time you run it.</p>
+            <p data-i18n="decsec.changed.para2" data-en="No API key. No network call. No GPU. The classification runs in single-digit milliseconds on commodity hardware, and it returns the same result every time you run it." data-pt="Sem chave de API. Sem chamada de rede. Sem GPU. A classificacao roda em milissegundos de um digito em hardware comum e retorna o mesmo resultado toda vez que voce a executa.">No API key. No network call. No GPU. The classification runs in single-digit milliseconds on commodity hardware, and it returns the same result every time you run it.</p>
 
-            <h2>How It Works</h2>
+            <h2 data-i18n="decsec.how.heading" data-en="How It Works" data-pt="Como Funciona">How It Works</h2>
 
-            <p>Decompose uses deterministic pattern matching — regex-based classification against a structured rule set. It identifies RFC 2119 keywords (MUST, SHALL, SHOULD), maps them to authority levels, and scores risk across categories including the new security dimension.</p>
+            <p data-i18n="decsec.how.para1" data-en="Decompose uses deterministic pattern matching — regex-based classification against a structured rule set. It identifies RFC 2119 keywords (MUST, SHALL, SHOULD), maps them to authority levels, and scores risk across categories including the new security dimension." data-pt="O Decompose usa correspondencia de padroes deterministica - classificacao baseada em regex contra um conjunto de regras estruturado. Ele identifica palavras-chave RFC 2119 (MUST, SHALL, SHOULD), mapeia-as para niveis de autoridade e pontua risco em categorias, incluindo a nova dimensao de seguranca.">Decompose uses deterministic pattern matching — regex-based classification against a structured rule set. It identifies RFC 2119 keywords (MUST, SHALL, SHOULD), maps them to authority levels, and scores risk across categories including the new security dimension.</p>
 
-            <p>The security classifier catches:</p>
-
-            <ul>
-                <li>Transport and encryption requirements (TLS, certificate validation)</li>
+            <p data-i18n="decsec.how.catches" data-en="The security classifier catches:" data-pt="O classificador de seguranca detecta:">The security classifier catches:</p>
 
             <ul>
-                <li>Authentication and credential handling patterns</li>
+                <li data-i18n="decsec.how.catch1" data-en="Transport and encryption requirements (TLS, certificate validation)" data-pt="Requisitos de transporte e criptografia (TLS, validacao de certificado)">Transport and encryption requirements (TLS, certificate validation)</li>
 
             <ul>
-                <li>Access control and authorization boundaries</li>
+                <li data-i18n="decsec.how.catch2" data-en="Authentication and credential handling patterns" data-pt="Padroes de autenticacao e manuseio de credenciais">Authentication and credential handling patterns</li>
 
             <ul>
-                <li>Data protection and privacy constraints</li>
+                <li data-i18n="decsec.how.catch3" data-en="Access control and authorization boundaries" data-pt="Limites de controle de acesso e autorizacao">Access control and authorization boundaries</li>
 
             <ul>
-                <li>Audit and logging requirements</li>
-
-            <p>Each unit gets a numeric risk score. Units with security implications surface with higher scores. Your downstream system — whether that's an LLM, a rules engine, or a human reviewer — gets a pre-sorted, pre-classified feed instead of a raw wall of text.</p>
-
-            <h2>What It Cannot Do</h2>
-
-            <p>Decompose doesn't understand context. It doesn't know whether TLS 1.2 is sufficient for your threat model or whether 24-hour token rotation is too aggressive for your infrastructure. It can't tell you that a particular authentication scheme has a known vulnerability, or that two sections contradict each other in ways that create a security gap.</p>
-
-            <p>That's domain reasoning. An LLM or a human expert handles that.</p>
-
-            <p>Decompose handles the mechanical layer: splitting the document into semantic units, classifying each one, scoring risk, and extracting entities. It gives your LLM a structured, deterministic foundation so the LLM can focus on nuance and cross-referencing instead of parsing.</p>
-
-            <h2>Why This Matters</h2>
-
-            <p>Every AI document pipeline has the same architecture problem. You need deterministic, reproducible preprocessing before you get to the probabilistic reasoning layer. Security classification makes this sharper — because security-relevant sections are exactly the sections where you need an audit trail, where you need reproducibility, and where "the model said so" is the wrong answer.</p>
-
-            <p>If your system processes specs, contracts, policies, or regulatory filings and someone asks "why did it flag this section as security-critical?" — you can point to the rule that matched, the pattern that triggered, and the score that resulted. Deterministically. Every time.</p>
-
-            <h2>Also in This Release</h2>
+                <li data-i18n="decsec.how.catch4" data-en="Data protection and privacy constraints" data-pt="Restricoes de protecao de dados e privacidade">Data protection and privacy constraints</li>
 
             <ul>
-                <li>Published to the ClawHub marketplace — install directly from OpenClaw</li>
+                <li data-i18n="decsec.how.catch5" data-en="Audit and logging requirements" data-pt="Requisitos de auditoria e registro">Audit and logging requirements</li>
+
+            <p data-i18n="decsec.how.para2" data-en="Each unit gets a numeric risk score. Units with security implications surface with higher scores. Your downstream system — whether that's an LLM, a rules engine, or a human reviewer — gets a pre-sorted, pre-classified feed instead of a raw wall of text." data-pt="Cada unidade recebe uma pontuacao de risco numerica. Unidades com implicacoes de seguranca aparecem com pontuacoes mais altas. Seu sistema downstream - seja um LLM, um motor de regras ou um revisor humano - recebe um feed pre-ordenado e pre-classificado em vez de um muro de texto bruto.">Each unit gets a numeric risk score. Units with security implications surface with higher scores. Your downstream system — whether that's an LLM, a rules engine, or a human reviewer — gets a pre-sorted, pre-classified feed instead of a raw wall of text.</p>
+
+            <h2 data-i18n="decsec.cannot.heading" data-en="What It Cannot Do" data-pt="O Que Nao Pode Fazer">What It Cannot Do</h2>
+
+            <p data-i18n="decsec.cannot.para1" data-en="Decompose doesn't understand context. It doesn't know whether TLS 1.2 is sufficient for your threat model or whether 24-hour token rotation is too aggressive for your infrastructure. It can't tell you that a particular authentication scheme has a known vulnerability, or that two sections contradict each other in ways that create a security gap." data-pt="O Decompose nao entende contexto. Ele nao sabe se TLS 1.2 e suficiente para seu modelo de ameacas ou se a rotacao de token de 24 horas e agressiva demais para sua infraestrutura. Ele nao pode dizer que um esquema de autenticacao especifico tem uma vulnerabilidade conhecida, ou que duas secoes se contradizem de maneiras que criam uma lacuna de seguranca.">Decompose doesn't understand context. It doesn't know whether TLS 1.2 is sufficient for your threat model or whether 24-hour token rotation is too aggressive for your infrastructure. It can't tell you that a particular authentication scheme has a known vulnerability, or that two sections contradict each other in ways that create a security gap.</p>
+
+            <p data-i18n="decsec.cannot.para2" data-en="That's domain reasoning. An LLM or a human expert handles that." data-pt="Isso e raciocinio de dominio. Um LLM ou um especialista humano lida com isso.">That's domain reasoning. An LLM or a human expert handles that.</p>
+
+            <p data-i18n="decsec.cannot.para3" data-en="Decompose handles the mechanical layer: splitting the document into semantic units, classifying each one, scoring risk, and extracting entities. It gives your LLM a structured, deterministic foundation so the LLM can focus on nuance and cross-referencing instead of parsing." data-pt="O Decompose lida com a camada mecanica: dividindo o documento em unidades semanticas, classificando cada uma, pontuando risco e extraindo entidades. Ele da ao seu LLM uma base estruturada e deterministica para que o LLM possa focar em nuances e referencias cruzadas em vez de parsing.">Decompose handles the mechanical layer: splitting the document into semantic units, classifying each one, scoring risk, and extracting entities. It gives your LLM a structured, deterministic foundation so the LLM can focus on nuance and cross-referencing instead of parsing.</p>
+
+            <h2 data-i18n="decsec.why.heading" data-en="Why This Matters" data-pt="Por Que Isso Importa">Why This Matters</h2>
+
+            <p data-i18n="decsec.why.para1" data-en="Every AI document pipeline has the same architecture problem. You need deterministic, reproducible preprocessing before you get to the probabilistic reasoning layer. Security classification makes this sharper — because security-relevant sections are exactly the sections where you need an audit trail, where you need reproducibility, and where &quot;the model said so&quot; is the wrong answer." data-pt="Todo pipeline de documentos de IA tem o mesmo problema de arquitetura. Voce precisa de pre-processamento deterministico e reproduzivel antes de chegar a camada de raciocinio probabilistico. A classificacao de seguranca torna isso mais preciso - porque secoes relevantes para seguranca sao exatamente as secoes onde voce precisa de uma trilha de auditoria, onde precisa de reprodutibilidade, e onde &quot;o modelo disse que sim&quot; e a resposta errada.">Every AI document pipeline has the same architecture problem. You need deterministic, reproducible preprocessing before you get to the probabilistic reasoning layer. Security classification makes this sharper — because security-relevant sections are exactly the sections where you need an audit trail, where you need reproducibility, and where "the model said so" is the wrong answer.</p>
+
+            <p data-i18n="decsec.why.para2" data-en="If your system processes specs, contracts, policies, or regulatory filings and someone asks &quot;why did it flag this section as security-critical?&quot; — you can point to the rule that matched, the pattern that triggered, and the score that resulted. Deterministically. Every time." data-pt="Se seu sistema processa especificacoes, contratos, politicas ou arquivamentos regulatorios e alguem pergunta &quot;por que ele sinalizou esta secao como critica para seguranca?&quot; - voce pode apontar para a regra que correspondeu, o padrao que disparou e a pontuacao que resultou. Deterministicamente. Toda vez.">If your system processes specs, contracts, policies, or regulatory filings and someone asks "why did it flag this section as security-critical?" — you can point to the rule that matched, the pattern that triggered, and the score that resulted. Deterministically. Every time.</p>
+
+            <h2 data-i18n="decsec.also.heading" data-en="Also in This Release" data-pt="Tambem Nesta Versao">Also in This Release</h2>
 
             <ul>
-                <li>Added CONTRIBUTING.md and LICENSE (BSD 3-Clause)</li>
+                <li data-i18n="decsec.also.item1" data-en="Published to the ClawHub marketplace — install directly from OpenClaw" data-pt="Publicado no marketplace ClawHub - instale diretamente pelo OpenClaw">Published to the ClawHub marketplace — install directly from OpenClaw</li>
 
             <ul>
-                <li>Open Graph and Twitter Card meta tags across all site pages</li>
+                <li data-i18n="decsec.also.item2" data-en="Added CONTRIBUTING.md and LICENSE (BSD 3-Clause)" data-pt="Adicionados CONTRIBUTING.md e LICENSE (BSD 3-Clause)">Added CONTRIBUTING.md and LICENSE (BSD 3-Clause)</li>
 
             <ul>
-                <li>Blog post links in README and SKILL.md</li>
+                <li data-i18n="decsec.also.item3" data-en="Open Graph and Twitter Card meta tags across all site pages" data-pt="Meta tags Open Graph e Twitter Card em todas as paginas do site">Open Graph and Twitter Card meta tags across all site pages</li>
 
-            <p>44 files changed across 31 commits. The full diff is on GitHub.</p>
+            <ul>
+                <li data-i18n="decsec.also.item4" data-en="Blog post links in README and SKILL.md" data-pt="Links de posts do blog no README e SKILL.md">Blog post links in README and SKILL.md</li>
 
-            <h2>Try It</h2>
+            <p data-i18n="decsec.also.summary" data-en="44 files changed across 31 commits. The full diff is on GitHub." data-pt="44 arquivos alterados em 31 commits. O diff completo esta no GitHub.">44 files changed across 31 commits. The full diff is on GitHub.</p>
 
-            <p>Install from PyPI:</p>
+            <h2 data-i18n="decsec.try.heading" data-en="Try It" data-pt="Experimente">Try It</h2>
+
+            <p data-i18n="decsec.try.install" data-en="Install from PyPI:" data-pt="Instale pelo PyPI:">Install from PyPI:</p>
 
 <div class="code-block">pip install decompose-mcp==0.1.1</div>
 
-            <p>Or add it as an MCP server for Claude Code, Cursor, or any MCP-compatible client:</p>
+            <p data-i18n="decsec.try.mcp" data-en="Or add it as an MCP server for Claude Code, Cursor, or any MCP-compatible client:" data-pt="Ou adicione como um servidor MCP para Claude Code, Cursor ou qualquer cliente compativel com MCP:">Or add it as an MCP server for Claude Code, Cursor, or any MCP-compatible client:</p>
 
 <div class="code-block">{
   "mcpServers": {
@@ -117,7 +117,7 @@ for unit in result["units"]:
   }
 }</div>
 
-            <p>Source and docs: [github.com/echology-io/decompose](https://github.com/echology-io/decompose)</p> </div>  </div> </section> <section class="py-section border-t border-border"> <div class="mx-auto max-w-6xl px-6">  <div class="mx-auto max-w-2xl text-center"> <a href="/build/" class="text-sm font-medium text-accent hover:underline">&larr; Back to build logs</a> </div>  </div> </section>    </main> <div class="prism-bar"></div> <footer class="bg-bg"> <div class="mx-auto max-w-6xl px-6 py-16"> <div class="grid gap-12 md:grid-cols-4"> <div class="md:col-span-1"> <a href="/" class="text-xl font-semibold tracking-tight text-text">
+            <p data-i18n="decsec.try.source" data-en="Source and docs: github.com/echology-io/decompose" data-pt="Codigo-fonte e documentacao: github.com/echology-io/decompose">Source and docs: [github.com/echology-io/decompose](https://github.com/echology-io/decompose)</p> </div>  </div> </section> <section class="py-section border-t border-border"> <div class="mx-auto max-w-6xl px-6">  <div class="mx-auto max-w-2xl text-center"> <a href="/build/" class="text-sm font-medium text-accent hover:underline" data-i18n="decsec.nav.back" data-en="← Back to build logs" data-pt="← Voltar aos registros de build">&larr; Back to build logs</a> </div>  </div> </section>    </main> <div class="prism-bar"></div> <footer class="bg-bg"> <div class="mx-auto max-w-6xl px-6 py-16"> <div class="grid gap-12 md:grid-cols-4"> <div class="md:col-span-1"> <a href="/" class="text-xl font-semibold tracking-tight text-text">
 echology<span class="text-accent">.</span> </a> <p class="mt-3 text-sm text-text-secondary" data-i18n="footer.tagline" data-en="Revealing structure. On your hardware. Built to show." data-pt="Revelando estrutura. No seu hardware. Construido para mostrar.">
 Revealing structure. On your hardware. Built to show.
 </p> </div> <div> <h4 class="mb-4 text-sm font-semibold uppercase tracking-wider text-text-muted" data-i18n="footer.products" data-en="Products" data-pt="Produtos">Products</h4> <ul class="space-y-2"> <li><a href="/signal/" class="text-sm text-text-secondary hover:text-text">Signal</a></li> <li><a href="/surface/" class="text-sm text-text-secondary hover:text-text">Surface</a></li> <li><a href="/spec/" class="text-sm text-text-secondary hover:text-text">Spec</a></li> <li><a href="/syncro/" class="text-sm text-text-secondary hover:text-text">Syncro</a></li> </ul> </div> <div> <h4 class="mb-4 text-sm font-semibold uppercase tracking-wider text-text-muted" data-i18n="footer.company" data-en="Company" data-pt="Empresa">Company</h4> <ul class="space-y-2"> <li><a href="/about/" class="text-sm text-text-secondary hover:text-text" data-i18n="footer.about" data-en="About" data-pt="Sobre">About</a></li> <li><a href="/build/" class="text-sm text-text-secondary hover:text-text" data-i18n="footer.build" data-en="Build" data-pt="Diario">Build</a></li> <li><a href="/methodology/" class="text-sm text-text-secondary hover:text-text" data-i18n="footer.methodology" data-en="Methodology" data-pt="Metodologia">Methodology</a></li> <li><a href="/engage/" class="text-sm text-text-secondary hover:text-text" data-i18n="footer.contact" data-en="Contact" data-pt="Contato">Contact</a></li> </ul> </div> <div> <h4 class="mb-4 text-sm font-semibold uppercase tracking-wider text-text-muted" data-i18n="footer.legal" data-en="Legal" data-pt="Juridico">Legal</h4> <ul class="space-y-2"> <li><a href="/terms/" class="text-sm text-text-secondary hover:text-text" data-i18n="footer.terms" data-en="Terms" data-pt="Termos">Terms</a></li> <li><a href="/privacy/" class="text-sm text-text-secondary hover:text-text" data-i18n="footer.privacy" data-en="Privacy" data-pt="Privacidade">Privacy</a></li> <li><a href="/dpa/" class="text-sm text-text-secondary hover:text-text">DPA</a></li> </ul> </div> </div> <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row"> <p class="text-sm text-text-muted" data-i18n="footer.corp" data-en="© 2026 echology, Inc. Delaware C-Corp." data-pt="© 2026 echology, Inc. Delaware C-Corp.">
