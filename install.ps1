@@ -1,9 +1,14 @@
 # Signal Provenance installer -- Windows
 # Usage: irm https://echology.io/install.ps1 | iex
 
-Write-Host "Signal Provenance -- installing..." -ForegroundColor Cyan
+$ErrorActionPreference = "Stop"
+$VENV = "$env:USERPROFILE\.signal-provenance"
+$WHEEL_URL = "https://echology.io/downloads/signal_provenance-1.0.0-py3-none-any.whl"
 
-# Check Python
+Write-Host "Signal Provenance -- installing..." -ForegroundColor Cyan
+Write-Host ""
+
+# Find Python
 $py = $null
 foreach ($cmd in @("python3", "python", "py")) {
     try {
@@ -26,12 +31,21 @@ if (-not $py) {
     exit 1
 }
 
+# Create isolated venv
+if (-not (Test-Path $VENV)) {
+    Write-Host "Creating environment..."
+    & $py -m venv $VENV
+}
+
 # Install
-& $py -m pip install --upgrade https://echology.io/downloads/signal_provenance-1.0.0-py3-none-any.whl
+Write-Host "Installing Signal Provenance..."
+& "$VENV\Scripts\pip.exe" install --upgrade --quiet $WHEEL_URL
 
 Write-Host ""
 Write-Host "Installed. Starting Signal Provenance..." -ForegroundColor Green
 Write-Host ""
+Write-Host "To run again later:  ~\.signal-provenance\Scripts\python.exe -m signal_provenance"
+Write-Host ""
 
 # Launch
-& $py -m signal_provenance
+& "$VENV\Scripts\python.exe" -m signal_provenance

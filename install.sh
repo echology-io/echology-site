@@ -3,38 +3,48 @@
 # Usage: curl -sSL https://echology.io/install.sh | bash
 set -euo pipefail
 
+VENV="$HOME/.signal-provenance"
+WHEEL_URL="https://echology.io/downloads/signal_provenance-1.0.0-py3-none-any.whl"
+
 echo "Signal Provenance -- installing..."
+echo ""
 
-# Check Python
-if command -v python3 &>/dev/null; then
-    PY=python3
-elif command -v python &>/dev/null; then
-    PY=python
-else
-    echo "Error: Python 3.11+ is required."
+# Find Python
+PY=""
+for cmd in python3 python; do
+    if command -v "$cmd" &>/dev/null; then
+        MAJOR=$($cmd -c "import sys; print(sys.version_info.major)")
+        MINOR=$($cmd -c "import sys; print(sys.version_info.minor)")
+        if [ "$MAJOR" -ge 3 ] && [ "$MINOR" -ge 9 ]; then
+            PY="$cmd"
+            break
+        fi
+    fi
+done
+
+if [ -z "$PY" ]; then
+    echo "Error: Python 3.9+ is required."
     echo "Install from https://python.org/downloads/ and try again."
     exit 1
 fi
 
-# Check version
-VER=$($PY -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')")
-MAJOR=$($PY -c "import sys; print(sys.version_info.major)")
-MINOR=$($PY -c "import sys; print(sys.version_info.minor)")
+echo "Found $($PY --version)"
 
-if [ "$MAJOR" -lt 3 ] || ([ "$MAJOR" -eq 3 ] && [ "$MINOR" -lt 9 ]); then
-    echo "Error: Python $VER found, but 3.9+ is required."
-    echo "Install from https://python.org/downloads/ and try again."
-    exit 1
+# Create isolated venv
+if [ ! -d "$VENV" ]; then
+    echo "Creating environment..."
+    $PY -m venv "$VENV"
 fi
-
-echo "Found Python $VER"
 
 # Install
-$PY -m pip install --upgrade https://echology.io/downloads/signal_provenance-1.0.0-py3-none-any.whl
+echo "Installing Signal Provenance..."
+"$VENV/bin/pip" install --upgrade --quiet "$WHEEL_URL"
 
 echo ""
 echo "Installed. Starting Signal Provenance..."
 echo ""
+echo "To run again later:  ~/.signal-provenance/bin/python -m signal_provenance"
+echo ""
 
 # Launch
-$PY -m signal_provenance
+"$VENV/bin/python" -m signal_provenance
