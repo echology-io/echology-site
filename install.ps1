@@ -40,6 +40,7 @@ if (-not (Test-Path $VENV)) {
 # Install
 Write-Host "Installing Signal Provenance..."
 & "$VENV\Scripts\pip.exe" install --upgrade --quiet $WHEEL_URL
+& "$VENV\Scripts\pip.exe" install --upgrade --quiet weasyprint
 
 Write-Host ""
 Write-Host "Installed. Starting Signal Provenance..." -ForegroundColor Green

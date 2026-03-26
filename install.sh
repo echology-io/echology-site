@@ -39,6 +39,7 @@ fi
 # Install
 echo "Installing Signal Provenance..."
 "$VENV/bin/pip" install --upgrade --quiet "$WHEEL_URL"
+"$VENV/bin/pip" install --upgrade --quiet weasyprint
 
 echo ""
 echo "Installed. Starting Signal Provenance..."
