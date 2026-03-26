@@ -37,4 +37,4 @@ echo "Installed. Starting Signal Provenance..."
 echo ""
 
 # Launch
-signal-provenance
+$PY -m signal_provenance

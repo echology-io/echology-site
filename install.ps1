@@ -34,4 +34,4 @@ Write-Host "Installed. Starting Signal Provenance..." -ForegroundColor Green
 Write-Host ""
 
 # Launch
-signal-provenance
+& $py -m signal_provenance
