@@ -39,13 +39,16 @@ fi
 # Install
 echo "Installing Signal Provenance..."
 "$VENV/bin/pip" install --upgrade --quiet "$WHEEL_URL"
-"$VENV/bin/pip" install --upgrade --quiet weasyprint
+"$VENV/bin/pip" install --upgrade --quiet weasyprint pystray Pillow
 
 echo ""
-echo "Installed. Starting Signal Provenance..."
+echo "Installed. Launching Signal Provenance..."
 echo ""
+
+# Launch in background with tray icon
+nohup "$VENV/bin/python" -m signal_provenance &>/dev/null &
+disown
+
+echo "Signal Provenance is running. Look for the tray icon."
 echo "To run again later:  ~/.signal-provenance/bin/python -m signal_provenance"
 echo ""
-
-# Launch
-"$VENV/bin/python" -m signal_provenance
