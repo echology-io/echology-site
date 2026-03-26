@@ -21,8 +21,8 @@ VER=$($PY -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.min
 MAJOR=$($PY -c "import sys; print(sys.version_info.major)")
 MINOR=$($PY -c "import sys; print(sys.version_info.minor)")
 
-if [ "$MAJOR" -lt 3 ] || ([ "$MAJOR" -eq 3 ] && [ "$MINOR" -lt 11 ]); then
-    echo "Error: Python $VER found, but 3.11+ is required."
+if [ "$MAJOR" -lt 3 ] || ([ "$MAJOR" -eq 3 ] && [ "$MINOR" -lt 9 ]); then
+    echo "Error: Python $VER found, but 3.9+ is required."
     echo "Install from https://python.org/downloads/ and try again."
     exit 1
 fi

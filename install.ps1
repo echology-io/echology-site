@@ -11,7 +11,7 @@ foreach ($cmd in @("python3", "python", "py")) {
         if ($ver -match "Python (\d+)\.(\d+)") {
             $major = [int]$Matches[1]
             $minor = [int]$Matches[2]
-            if ($major -ge 3 -and $minor -ge 11) {
+            if ($major -ge 3 -and $minor -ge 9) {
                 $py = $cmd
                 Write-Host "Found $ver"
                 break
@@ -21,7 +21,7 @@ foreach ($cmd in @("python3", "python", "py")) {
 }
 
 if (-not $py) {
-    Write-Host "Error: Python 3.11+ is required." -ForegroundColor Red
+    Write-Host "Error: Python 3.9+ is required." -ForegroundColor Red
     Write-Host "Install from https://python.org/downloads/ and try again."
     exit 1
 }
