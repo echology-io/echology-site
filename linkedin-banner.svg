@@ -1,0 +1,137 @@
+<svg width="1584" height="396" viewBox="0 0 1584 396" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Hero grid pattern from site -->
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#c8a84e" stroke-width="0.4" opacity="0.04"/>
+    </pattern>
+    <!-- Hero glow: radial gradient matching site hero-glow -->
+    <radialGradient id="hero-glow" cx="75%" cy="45%" r="40%">
+      <stop offset="0%" stop-color="#c8a84e" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#c8a84e" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Gradient line (site .gradient-line) -->
+    <linearGradient id="grad-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="20%" stop-color="#a08838"/>
+      <stop offset="80%" stop-color="#a08838"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+    <!-- Prism bar gradient (site .prism-bar) -->
+    <linearGradient id="prism-bar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A13A59"/>
+      <stop offset="33%" stop-color="#573AA1"/>
+      <stop offset="66%" stop-color="#3A78A1"/>
+      <stop offset="100%" stop-color="#3CA13A"/>
+    </linearGradient>
+    <!-- Glow for logo -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1584" height="396" fill="#0E1114"/>
+
+  <!-- Prism bar at top (site .prism-bar) -->
+  <rect x="0" y="0" width="1584" height="2" fill="url(#prism-bar)"/>
+
+  <!-- Grid overlay (site .hero-grid) -->
+  <rect width="1584" height="396" fill="url(#grid)"/>
+
+  <!-- Hero glow (site .hero-glow::before) -->
+  <rect width="1584" height="396" fill="url(#hero-glow)"/>
+
+  <!-- Gradient line separator between left content and right logo area -->
+  <line x1="1180" y1="60" x2="1180" y2="336" stroke="#a08838" stroke-width="1" opacity="0.12"/>
+
+  <!-- LEFT 4/5: Subtle background elements -->
+
+  <!-- Faint horizontal gradient lines evoking data/provenance flow -->
+  <line x1="80" y1="132" x2="720" y2="132" stroke="#3A78A1" stroke-width="0.5" opacity="0.08"/>
+  <line x1="40" y1="198" x2="900" y2="198" stroke="#c8a84e" stroke-width="0.6" opacity="0.06"/>
+  <line x1="120" y1="264" x2="680" y2="264" stroke="#573AA1" stroke-width="0.5" opacity="0.07"/>
+
+  <!-- Subtle verification nodes on the lines -->
+  <circle cx="180" cy="132" r="2" fill="#3A78A1" opacity="0.15"/>
+  <circle cx="380" cy="132" r="1.5" fill="#3A78A1" opacity="0.12"/>
+  <circle cx="560" cy="132" r="2" fill="#3A78A1" opacity="0.10"/>
+
+  <circle cx="140" cy="198" r="1.5" fill="#c8a84e" opacity="0.10"/>
+  <circle cx="340" cy="198" r="2" fill="#c8a84e" opacity="0.12"/>
+  <circle cx="540" cy="198" r="1.5" fill="#c8a84e" opacity="0.08"/>
+  <circle cx="740" cy="198" r="2" fill="#c8a84e" opacity="0.10"/>
+
+  <circle cx="220" cy="264" r="2" fill="#573AA1" opacity="0.12"/>
+  <circle cx="440" cy="264" r="1.5" fill="#573AA1" opacity="0.10"/>
+  <circle cx="600" cy="264" r="2" fill="#573AA1" opacity="0.08"/>
+
+  <!-- Ghost hexagons scattered subtly in left area -->
+  <!-- Small hex 1 -->
+  <polygon points="160,80 186,95 186,125 160,140 134,125 134,95" stroke="#3A78A1" stroke-width="0.6" opacity="0.06" fill="none"/>
+  <!-- Small hex 2 -->
+  <polygon points="460,120 480,132 480,156 460,168 440,156 440,132" stroke="#c8a84e" stroke-width="0.5" opacity="0.05" fill="none"/>
+  <!-- Small hex 3 -->
+  <polygon points="300,240 324,255 324,285 300,300 276,285 276,255" stroke="#573AA1" stroke-width="0.6" opacity="0.06" fill="none"/>
+  <!-- Small hex 4 -->
+  <polygon points="680,160 700,172 700,196 680,208 660,196 660,172" stroke="#A13A59" stroke-width="0.5" opacity="0.05" fill="none"/>
+  <!-- Small hex 5 -->
+  <polygon points="820,220 844,235 844,265 820,280 796,265 796,235" stroke="#3CA13A" stroke-width="0.5" opacity="0.05" fill="none"/>
+  <!-- Larger ghost hex -->
+  <polygon points="550,198 602,226 602,282 550,310 498,282 498,226" stroke="#c8a84e" stroke-width="0.5" opacity="0.035" fill="none"/>
+  <!-- Another larger ghost -->
+  <polygon points="900,140 940,163 940,209 900,232 860,209 860,163" stroke="#3A78A1" stroke-width="0.5" opacity="0.04" fill="none"/>
+
+  <!-- Faint inner rings on some ghost hexes -->
+  <polygon points="300,255 312,262 312,278 300,285 288,278 288,262" stroke="#573AA1" stroke-width="0.4" opacity="0.04" fill="none"/>
+  <polygon points="550,226 576,241 576,269 550,284 524,269 524,241" stroke="#c8a84e" stroke-width="0.4" opacity="0.025" fill="none"/>
+
+  <!-- Tiny fire vertices (glowing dots) -->
+  <circle cx="160" cy="80" r="1.5" fill="#6ba3c7" opacity="0.12"/>
+  <circle cx="300" cy="240" r="1.5" fill="#8b6cc7" opacity="0.10"/>
+  <circle cx="680" cy="160" r="1.5" fill="#c75a72" opacity="0.08"/>
+  <circle cx="820" cy="220" r="1.5" fill="#5cb85c" opacity="0.08"/>
+  <circle cx="550" cy="198" r="2" fill="#c8a84e" opacity="0.06"/>
+
+  <!-- RIGHT 1/5: Logo and wordmark, right-justified -->
+
+  <!-- Echology prism logo, centered in right column -->
+  <g transform="translate(1380, 165) scale(1.3)">
+    <polygon points="0,-62 52,-34 52,34 0,62 -52,34 -52,-34" stroke="#c8a84e" stroke-width="2" fill="none"/>
+    <!-- Crown facet -->
+    <polygon points="0,-62 52,-34 28,-10 -18,-22" fill="#d4b870" opacity="0.25"/>
+    <!-- Right pavilion -->
+    <polygon points="52,-34 52,34 28,-10" fill="#c8a84e" opacity="0.15"/>
+    <!-- Left pavilion -->
+    <polygon points="0,-62 -52,-34 -18,-22" fill="#c8a84e" opacity="0.18"/>
+    <!-- Bottom pavilion -->
+    <polygon points="-52,34 0,62 52,34 28,10 -18,22" fill="#c8a84e" opacity="0.08"/>
+    <!-- Inner hex ring -->
+    <polygon points="0,-24 26,-10 26,22 0,36 -26,22 -26,-10" stroke="#c8a84e" stroke-width="1.5" opacity="0.25" fill="none"/>
+    <!-- Three-axis lines -->
+    <line x1="0" y1="-62" x2="0" y2="62" stroke="#c8a84e" stroke-width="1" opacity="0.1"/>
+    <line x1="-52" y1="-34" x2="52" y2="34" stroke="#c8a84e" stroke-width="1" opacity="0.08"/>
+    <line x1="52" y1="-34" x2="-52" y2="34" stroke="#c8a84e" stroke-width="1" opacity="0.08"/>
+    <!-- Center point -->
+    <circle cx="0" cy="0" r="6" fill="#c8a84e" opacity="0.8" filter="url(#glow)"/>
+    <!-- Fire vertices -->
+    <circle cx="0" cy="-62" r="3" fill="#e8d5a0" opacity="0.7" filter="url(#glow)"/>
+    <circle cx="52" cy="-34" r="2.5" fill="#d4b870" opacity="0.6"/>
+    <circle cx="52" cy="34" r="2" fill="#c8a84e" opacity="0.4"/>
+    <circle cx="0" cy="62" r="2" fill="#c8a84e" opacity="0.3"/>
+    <circle cx="-52" cy="34" r="2" fill="#c8a84e" opacity="0.35"/>
+    <circle cx="-52" cy="-34" r="2.5" fill="#d4b870" opacity="0.55"/>
+  </g>
+
+  <!-- Wordmark below logo -->
+  <text x="1380" y="280" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="300" letter-spacing="7" fill="#c8a84e" opacity="0.75">ECHOLOGY</text>
+
+  <!-- Tagline -->
+  <text x="1380" y="302" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="300" letter-spacing="2.5" fill="#999999" opacity="0.5">PERCEPTION BEFORE GENERATION</text>
+
+  <!-- Gradient line at bottom (site .gradient-line) -->
+  <line x1="0" y1="394" x2="1584" y2="394" stroke="url(#grad-line)" stroke-width="1" opacity="0.4"/>
+</svg>
