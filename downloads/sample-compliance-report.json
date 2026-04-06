@@ -1,0 +1,889 @@
+{
+  "report_metadata": {
+    "tool": "signal-provenance",
+    "version": "1.0.0",
+    "generated_at": "2026-03-30T00:22:26.501090+00:00",
+    "reporting_period": {
+      "start": "2026-03-26T15:49:47.488589+00:00",
+      "end": "2026-03-26T20:06:27.690736+00:00"
+    },
+    "chain_status": "VALID",
+    "total_events": 59,
+    "hash_algorithm": "SHA-256",
+    "monitored_directory": "/opt/company/project-files"
+  },
+  "chain_verification": {
+    "genesis_hash": "e93be4ba8a518f0fc7bdbb71a88ab011d33746c739a26f7b32f89412662e4d3b",
+    "terminal_hash": "d0cabb7448987a73b224e09ecb19e99a161b29996a9a612a4a00c1f136ed633e",
+    "total_links": 59,
+    "verified": true,
+    "breaks": []
+  },
+  "events": [
+    {
+      "sequence": 1,
+      "timestamp": "2026-03-26T15:49:47.488589+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "README.md",
+      "content_hash_before": null,
+      "content_hash_after": "bd8d0ac4f819",
+      "actor": "harvest",
+      "chain_hash": "e93be4ba8a518f0fc7bdbb71a88ab011d33746c739a26f7b32f89412662e4d3b"
+    },
+    {
+      "sequence": 2,
+      "timestamp": "2026-03-26T15:49:47.490388+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "docs/cloud-storage-adapters.md",
+      "content_hash_before": null,
+      "content_hash_after": "904d243c7f86",
+      "actor": "harvest",
+      "chain_hash": "34ceeb592256b33b0e29d3cd443d395e75d2e7a627af89ff8b83b7ef18ba16cc"
+    },
+    {
+      "sequence": 3,
+      "timestamp": "2026-03-26T15:49:47.492121+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "docs/magic-experience.md",
+      "content_hash_before": null,
+      "content_hash_after": "81b8e68a89b1",
+      "actor": "harvest",
+      "chain_hash": "2ecbb76387d6cf3658daaf1ef51d5f0d8110b443cd7e8d9a2cb9408d60f70274"
+    },
+    {
+      "sequence": 4,
+      "timestamp": "2026-03-26T15:49:47.493664+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "pyproject.toml",
+      "content_hash_before": null,
+      "content_hash_after": "2cdbcc407653",
+      "actor": "harvest",
+      "chain_hash": "36ba9b127bed8c2ff35da0a46dc73c6b69ed83f2e844347eb761afe3fe6976b6"
+    },
+    {
+      "sequence": 5,
+      "timestamp": "2026-03-26T15:49:47.495134+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "scripts/sync-to-macmini.sh",
+      "content_hash_before": null,
+      "content_hash_after": "0f3a7f839251",
+      "actor": "harvest",
+      "chain_hash": "ed7fb76057d6068ded6da8ee72663d00b66e3737ea6fe4c039661e3d0aee1c69"
+    },
+    {
+      "sequence": 6,
+      "timestamp": "2026-03-26T15:49:47.496607+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/__init__.py",
+      "content_hash_before": null,
+      "content_hash_after": "607771d34143",
+      "actor": "harvest",
+      "chain_hash": "8a3f694f322aaf6331dbabdbc9ba664abeed0a7f102cc604bbaa79ce6e14abfb"
+    },
+    {
+      "sequence": 7,
+      "timestamp": "2026-03-26T15:49:47.498205+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/cli.py",
+      "content_hash_before": null,
+      "content_hash_after": "788da302610d",
+      "actor": "harvest",
+      "chain_hash": "d35027cb0b2559cc0c1389b1c4cf8352d2f1f5d1b6ef6cd06b46c06e9d3c9165"
+    },
+    {
+      "sequence": 8,
+      "timestamp": "2026-03-26T15:49:47.499752+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/config.py",
+      "content_hash_before": null,
+      "content_hash_after": "311c44b7cdc2",
+      "actor": "harvest",
+      "chain_hash": "1203e4cc442d94f4430e6241a3fd69b09482d201d6e3fc7ca19c12f0081c4a18"
+    },
+    {
+      "sequence": 9,
+      "timestamp": "2026-03-26T15:49:47.501614+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/dashboard.py",
+      "content_hash_before": null,
+      "content_hash_after": "2319f9e1f0cc",
+      "actor": "harvest",
+      "chain_hash": "e828db236df14baf3b371d758c84d5d32024ceb519d278aef4c12f2ebdc03cc8"
+    },
+    {
+      "sequence": 10,
+      "timestamp": "2026-03-26T15:49:47.503091+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/db.py",
+      "content_hash_before": null,
+      "content_hash_after": "6ae3d73b5aa8",
+      "actor": "harvest",
+      "chain_hash": "9838d6eed63fd7ddab4aa00a80469cf6e45e854ea66ff10477b6525032620b4e"
+    },
+    {
+      "sequence": 11,
+      "timestamp": "2026-03-26T15:49:47.504552+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/export.py",
+      "content_hash_before": null,
+      "content_hash_after": "b1ea807f30d9",
+      "actor": "harvest",
+      "chain_hash": "fbb35725616b3c1560e2bb2c4ed0c83a5bfc6b4fd26901e10277813058825749"
+    },
+    {
+      "sequence": 12,
+      "timestamp": "2026-03-26T15:49:47.506138+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/harvest.py",
+      "content_hash_before": null,
+      "content_hash_after": "3f56d3eaef0e",
+      "actor": "harvest",
+      "chain_hash": "00d2d17c1ec76418e94f3406d1091100665e7e44696c136804ca9b2fa5d5a87d"
+    },
+    {
+      "sequence": 13,
+      "timestamp": "2026-03-26T15:49:47.507590+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/license.py",
+      "content_hash_before": null,
+      "content_hash_after": "5fa6e5afee59",
+      "actor": "harvest",
+      "chain_hash": "3ae3c1d24337b8ae32ec6d57a26d1c7d8182856ed48ffdf88cba7a27eeac903a"
+    },
+    {
+      "sequence": 14,
+      "timestamp": "2026-03-26T15:49:47.509454+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/providers/__init__.py",
+      "content_hash_before": null,
+      "content_hash_after": "2f5d054316a1",
+      "actor": "harvest",
+      "chain_hash": "1943de7089db7bd849c0ebafdcd064be6d9a9fec54fbd186937e1b93c0a0d52f"
+    },
+    {
+      "sequence": 15,
+      "timestamp": "2026-03-26T15:49:47.511051+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/providers/gdrive.py",
+      "content_hash_before": null,
+      "content_hash_after": "320ed33360bd",
+      "actor": "harvest",
+      "chain_hash": "c0ff00ca7f0e4f792731575522cd85944468814ab81e53c8bbed56ec4c6ef40e"
+    },
+    {
+      "sequence": 16,
+      "timestamp": "2026-03-26T15:49:47.512869+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/providers/local.py",
+      "content_hash_before": null,
+      "content_hash_after": "16c87a513219",
+      "actor": "harvest",
+      "chain_hash": "df4cccb06517946a20cf254d06cd7c2cee7e41097b33e288017622fdbf316098"
+    },
+    {
+      "sequence": 17,
+      "timestamp": "2026-03-26T15:49:47.514359+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/providers/s3.py",
+      "content_hash_before": null,
+      "content_hash_after": "fb9dcc2b777b",
+      "actor": "harvest",
+      "chain_hash": "c9e83e6cf61918fab39d00c12d41cd6d96c53b55e9a4f7fbb367bf65f1ab5fbc"
+    },
+    {
+      "sequence": 18,
+      "timestamp": "2026-03-26T15:49:47.515952+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/providers/sharepoint.py",
+      "content_hash_before": null,
+      "content_hash_after": "fa3c2fd969e9",
+      "actor": "harvest",
+      "chain_hash": "88cc3a829b71829a89f2610b4293a787b179c6d066fd4d1e0bb000f1b83a0bf2"
+    },
+    {
+      "sequence": 19,
+      "timestamp": "2026-03-26T15:49:47.517442+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "tests/__init__.py",
+      "content_hash_before": null,
+      "content_hash_after": "e3b0c44298fc",
+      "actor": "harvest",
+      "chain_hash": "5ffe321f2ffcb612d6ad13e46b5acbd6095ac2ab731d42b10a8203ce9eebbf9c"
+    },
+    {
+      "sequence": 20,
+      "timestamp": "2026-03-26T15:49:47.518993+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "tests/test_dashboard.py",
+      "content_hash_before": null,
+      "content_hash_after": "fe3ff0a83308",
+      "actor": "harvest",
+      "chain_hash": "45dd6e553ef3d7057657591ee422a15785c90bf26909733b62d0e70814143f34"
+    },
+    {
+      "sequence": 21,
+      "timestamp": "2026-03-26T15:49:47.520524+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "tests/test_provenance.py",
+      "content_hash_before": null,
+      "content_hash_after": "bdf5a4202c13",
+      "actor": "harvest",
+      "chain_hash": "9899a39604ff659f153b50064261ffd81bd5000409719a7fd235d49962577a19"
+    },
+    {
+      "sequence": 22,
+      "timestamp": "2026-03-26T15:49:47.522003+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "tests/test_providers.py",
+      "content_hash_before": null,
+      "content_hash_after": "c7896db859b7",
+      "actor": "harvest",
+      "chain_hash": "1ed83d14cc55e2054960a434813bd2f521d871ee373b4a791963f4364066e08d"
+    },
+    {
+      "sequence": 23,
+      "timestamp": "2026-03-26T15:49:47.523735+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "tests/test_watch.py",
+      "content_hash_before": null,
+      "content_hash_after": "74685e62fb78",
+      "actor": "harvest",
+      "chain_hash": "8c42c0be23522a64f716fde73c1cb6dd5c96fc8e8d796f3b44af1e723129db4c"
+    },
+    {
+      "sequence": 24,
+      "timestamp": "2026-03-26T15:49:47.683329+00:00",
+      "event_type": "harvest_completed",
+      "source": "provenance.harvest",
+      "file_path": null,
+      "content_hash_before": null,
+      "content_hash_after": null,
+      "actor": "provenance.harvest",
+      "chain_hash": "0d6c67e331d3070e05f5924e492ada621bbe2270b07fcfe5968b43536dab01c8"
+    },
+    {
+      "sequence": 25,
+      "timestamp": "2026-03-26T15:56:22.651670+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/dashboard.py",
+      "content_hash_before": "2319f9e1f0cc",
+      "content_hash_after": "84eb74838f8b",
+      "actor": "harvest",
+      "chain_hash": "544a030e6bb3517276481f22e555806790a1249609c57513088452dcd09263ef"
+    },
+    {
+      "sequence": 26,
+      "timestamp": "2026-03-26T15:56:22.815578+00:00",
+      "event_type": "harvest_completed",
+      "source": "provenance.harvest",
+      "file_path": null,
+      "content_hash_before": null,
+      "content_hash_after": null,
+      "actor": "provenance.harvest",
+      "chain_hash": "7f2809a359801b6253c761fd90829a4f691b4d3c61442303976ca1408f7a2e0e"
+    },
+    {
+      "sequence": 27,
+      "timestamp": "2026-03-26T15:59:26.904554+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "README.md",
+      "content_hash_before": "bd8d0ac4f819",
+      "content_hash_after": "361db0ee2f36",
+      "actor": "harvest",
+      "chain_hash": "25c7b03c96aa331d2c137700615d012656c5133bde79d0659e431086f0508395"
+    },
+    {
+      "sequence": 28,
+      "timestamp": "2026-03-26T15:59:26.906460+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "pyproject.toml",
+      "content_hash_before": "2cdbcc407653",
+      "content_hash_after": "e2b0d1de6263",
+      "actor": "harvest",
+      "chain_hash": "bfc5c971a767b2932111ff4d313bd2eed1f6f7a94ea5e038cc3846c2c3c5b6a6"
+    },
+    {
+      "sequence": 29,
+      "timestamp": "2026-03-26T15:59:26.908309+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/__init__.py",
+      "content_hash_before": "607771d34143",
+      "content_hash_after": "9bd7ee9a34bb",
+      "actor": "harvest",
+      "chain_hash": "b9177611cf0f8a1bd8ab996c9f4c17647b3e3fa8c946aff09f91086ee7859947"
+    },
+    {
+      "sequence": 30,
+      "timestamp": "2026-03-26T15:59:26.910394+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/cli.py",
+      "content_hash_before": "788da302610d",
+      "content_hash_after": "cbe0978968d8",
+      "actor": "harvest",
+      "chain_hash": "fed29cb7c6a6f88759ab0c6073d8c4c37872c3c85b6bbc54dd0473e6269764d5"
+    },
+    {
+      "sequence": 31,
+      "timestamp": "2026-03-26T15:59:26.912621+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/dashboard.py",
+      "content_hash_before": "84eb74838f8b",
+      "content_hash_after": "680db655ff10",
+      "actor": "harvest",
+      "chain_hash": "143c9515d69f23f01eaa89e5787ad18ef79f415306718a995d762e6b37d6c5f0"
+    },
+    {
+      "sequence": 32,
+      "timestamp": "2026-03-26T15:59:26.914302+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/license.py",
+      "content_hash_before": "5fa6e5afee59",
+      "content_hash_after": "07abdfbef2e9",
+      "actor": "harvest",
+      "chain_hash": "61d77a479927acdc9a649a3b52dfb99e308a85359aaeab57c306728ca57f2250"
+    },
+    {
+      "sequence": 33,
+      "timestamp": "2026-03-26T15:59:27.072719+00:00",
+      "event_type": "harvest_completed",
+      "source": "provenance.harvest",
+      "file_path": null,
+      "content_hash_before": null,
+      "content_hash_after": null,
+      "actor": "provenance.harvest",
+      "chain_hash": "88bffa9459e6729b1416184db06620618bec87195ad56a7edcfe30458e88de90"
+    },
+    {
+      "sequence": 34,
+      "timestamp": "2026-03-26T16:04:50.377230+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/cli.py",
+      "content_hash_before": "cbe0978968d8",
+      "content_hash_after": "27ad1660291b",
+      "actor": "harvest",
+      "chain_hash": "ed7aba0cd770f4a79d288cc9286d620e4ce84bec5ee395ce502699f947aa2eb8"
+    },
+    {
+      "sequence": 35,
+      "timestamp": "2026-03-26T16:04:50.379805+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/dashboard.py",
+      "content_hash_before": "680db655ff10",
+      "content_hash_after": "218db19d42fa",
+      "actor": "harvest",
+      "chain_hash": "5214c0ca94d20607af1dc54e4bed0aaeb233888ea943e748cda357e0ab4fa315"
+    },
+    {
+      "sequence": 36,
+      "timestamp": "2026-03-26T16:04:50.550125+00:00",
+      "event_type": "harvest_completed",
+      "source": "provenance.harvest",
+      "file_path": null,
+      "content_hash_before": null,
+      "content_hash_after": null,
+      "actor": "provenance.harvest",
+      "chain_hash": "0b080646bee4835410b68cb2869af12c67cd776cf052a797aa9508518f8790a9"
+    },
+    {
+      "sequence": 37,
+      "timestamp": "2026-03-26T16:20:21.581654+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/cli.py",
+      "content_hash_before": "27ad1660291b",
+      "content_hash_after": "45afbbc59a0b",
+      "actor": "harvest",
+      "chain_hash": "fdabbf8276fe4ca94c19bf33fe15bc01394560861126b0377d13ffd85b168da3"
+    },
+    {
+      "sequence": 38,
+      "timestamp": "2026-03-26T16:20:21.584392+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/config.py",
+      "content_hash_before": "311c44b7cdc2",
+      "content_hash_after": "58a72f5a15e2",
+      "actor": "harvest",
+      "chain_hash": "68bed8925e6d77de3755f917b38290ff0dede312fef750585b296a2d487356b5"
+    },
+    {
+      "sequence": 39,
+      "timestamp": "2026-03-26T16:20:21.586581+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/dashboard.py",
+      "content_hash_before": "218db19d42fa",
+      "content_hash_after": "92ad2d1a3b6d",
+      "actor": "harvest",
+      "chain_hash": "0dbf2432ba9de0426a21995d370f5133ecad5086d48c67e7940e1d4cd824ca16"
+    },
+    {
+      "sequence": 40,
+      "timestamp": "2026-03-26T16:20:21.758738+00:00",
+      "event_type": "harvest_completed",
+      "source": "provenance.harvest",
+      "file_path": null,
+      "content_hash_before": null,
+      "content_hash_after": null,
+      "actor": "provenance.harvest",
+      "chain_hash": "54fdcda24dd4c0fccd9e1c5f7773fa89d2a35d8aa771f481a36349c1cd119a96"
+    },
+    {
+      "sequence": 41,
+      "timestamp": "2026-03-26T16:32:00.281551+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/dashboard.py",
+      "content_hash_before": "92ad2d1a3b6d",
+      "content_hash_after": "831882d21090",
+      "actor": "harvest",
+      "chain_hash": "9622dbcd64c94e4bc24f6c61e993147582912d6ebebb26d73120b49d68272f80"
+    },
+    {
+      "sequence": 42,
+      "timestamp": "2026-03-26T16:32:00.284563+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/harvest.py",
+      "content_hash_before": "3f56d3eaef0e",
+      "content_hash_after": "a6ebb33ac91f",
+      "actor": "harvest",
+      "chain_hash": "d6c384b7414c3d54df1cf4200c282e579f23e59f5c80d04b728eb27a6dcbdb7d"
+    },
+    {
+      "sequence": 43,
+      "timestamp": "2026-03-26T16:32:00.458128+00:00",
+      "event_type": "harvest_completed",
+      "source": "provenance.harvest",
+      "file_path": null,
+      "content_hash_before": null,
+      "content_hash_after": null,
+      "actor": "provenance.harvest",
+      "chain_hash": "6f084738c4d6be4e2de94466fd5f334c9117a1f056af5d1bb3217b1d410c7fe7"
+    },
+    {
+      "sequence": 44,
+      "timestamp": "2026-03-26T16:45:35.149366+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/cli.py",
+      "content_hash_before": "45afbbc59a0b",
+      "content_hash_after": "90994fc68b96",
+      "actor": "harvest",
+      "chain_hash": "d6700880566b2f983e1295d5944ad0ad3818f5791d7a6d8abd522c0630654650"
+    },
+    {
+      "sequence": 45,
+      "timestamp": "2026-03-26T16:45:35.151555+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/export.py",
+      "content_hash_before": "b1ea807f30d9",
+      "content_hash_after": "6c2cd3a3a781",
+      "actor": "harvest",
+      "chain_hash": "a5d43a465c93419ffbb0e04b591dfab30098968cc185c27ccb5056f8bf2efa0c"
+    },
+    {
+      "sequence": 46,
+      "timestamp": "2026-03-26T16:45:35.153299+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/harvest.py",
+      "content_hash_before": "a6ebb33ac91f",
+      "content_hash_after": "df119952f293",
+      "actor": "harvest",
+      "chain_hash": "904a9ebbd3dc5a85ecdb3eaebc1a86d310ab4c30926c26537517511a352e0a2c"
+    },
+    {
+      "sequence": 47,
+      "timestamp": "2026-03-26T16:45:35.329283+00:00",
+      "event_type": "harvest_completed",
+      "source": "provenance.harvest",
+      "file_path": null,
+      "content_hash_before": null,
+      "content_hash_after": null,
+      "actor": "provenance.harvest",
+      "chain_hash": "08f15d17a164871dc9b556d788112a1423a91daebf76807cd1d01f84891f69fb"
+    },
+    {
+      "sequence": 48,
+      "timestamp": "2026-03-26T16:56:24.575828+00:00",
+      "event_type": "harvest_completed",
+      "source": "provenance.harvest",
+      "file_path": null,
+      "content_hash_before": null,
+      "content_hash_after": null,
+      "actor": "provenance.harvest",
+      "chain_hash": "f22a89b6932cc9773be8da692fcde5e200f6784f4ce1e1174513e763781fd0c6"
+    },
+    {
+      "sequence": 49,
+      "timestamp": "2026-03-26T20:06:27.356131+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "pyproject.toml",
+      "content_hash_before": "e2b0d1de6263",
+      "content_hash_after": "d4cf5cd5d478",
+      "actor": "harvest",
+      "chain_hash": "3d66282a8eb3cac647c5cd99755f8aaf6cfcf786a2729e96b9066fdb16c577b2"
+    },
+    {
+      "sequence": 50,
+      "timestamp": "2026-03-26T20:06:27.359202+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "signal-provenance.spec",
+      "content_hash_before": null,
+      "content_hash_after": "79bf98819fe4",
+      "actor": "harvest",
+      "chain_hash": "7c582c163d94238d52218eff093eccf503017f912f0295dfd73f1b8207828d32"
+    },
+    {
+      "sequence": 51,
+      "timestamp": "2026-03-26T20:06:27.362279+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/__main__.py",
+      "content_hash_before": null,
+      "content_hash_after": "4e6e6a77369d",
+      "actor": "harvest",
+      "chain_hash": "98d0fd56806553bebaade64ec8731226f02ebdfb9481cc908e9ebc06d6f3f022"
+    },
+    {
+      "sequence": 52,
+      "timestamp": "2026-03-26T20:06:27.364067+00:00",
+      "event_type": "file_created",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/app.py",
+      "content_hash_before": null,
+      "content_hash_after": "294ecf564f60",
+      "actor": "harvest",
+      "chain_hash": "a06948d398b330681c6190cc88e6076e146ecb011298421de1cae463f779eab0"
+    },
+    {
+      "sequence": 53,
+      "timestamp": "2026-03-26T20:06:27.366040+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/cli.py",
+      "content_hash_before": "90994fc68b96",
+      "content_hash_after": "dd50ef23f7ac",
+      "actor": "harvest",
+      "chain_hash": "22fc6b3bef14f5f3bd44b3d8db7de7dda739a1e8f8f11db84cad2b12eb70a65d"
+    },
+    {
+      "sequence": 54,
+      "timestamp": "2026-03-26T20:06:27.368403+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/dashboard.py",
+      "content_hash_before": "831882d21090",
+      "content_hash_after": "34407c5681c3",
+      "actor": "harvest",
+      "chain_hash": "e2acc9a980410db04736c6eb934839ffc92bf739e16d18519d5fc61f93531d25"
+    },
+    {
+      "sequence": 55,
+      "timestamp": "2026-03-26T20:06:27.370359+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/db.py",
+      "content_hash_before": "6ae3d73b5aa8",
+      "content_hash_after": "d515bb19169c",
+      "actor": "harvest",
+      "chain_hash": "a6f4c11c6080b886c09e90d0a12033cb3726a2ae998033782ffa910972f272b3"
+    },
+    {
+      "sequence": 56,
+      "timestamp": "2026-03-26T20:06:27.372217+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/export.py",
+      "content_hash_before": "6c2cd3a3a781",
+      "content_hash_after": "5d8574003f58",
+      "actor": "harvest",
+      "chain_hash": "c8d3448c97a7e765d78e793e6bda904f264ca5714e4fc992d839cfee7c2042fe"
+    },
+    {
+      "sequence": 57,
+      "timestamp": "2026-03-26T20:06:27.374084+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/harvest.py",
+      "content_hash_before": "df119952f293",
+      "content_hash_after": "b7ab5c136bda",
+      "actor": "harvest",
+      "chain_hash": "42c33b924d1b66a3ae0bd823d06167dcfd43c2e5054968ab6091db2560685a10"
+    },
+    {
+      "sequence": 58,
+      "timestamp": "2026-03-26T20:06:27.376069+00:00",
+      "event_type": "file_modified",
+      "source": "provenance.harvest",
+      "file_path": "src/signal_provenance/license.py",
+      "content_hash_before": "07abdfbef2e9",
+      "content_hash_after": "8363a42fc319",
+      "actor": "harvest",
+      "chain_hash": "41634ba01ed04419114e17adc75c40087e7c65da2d2a2c2e025a6929bad1630c"
+    },
+    {
+      "sequence": 59,
+      "timestamp": "2026-03-26T20:06:27.690736+00:00",
+      "event_type": "harvest_completed",
+      "source": "provenance.harvest",
+      "file_path": null,
+      "content_hash_before": null,
+      "content_hash_after": null,
+      "actor": "provenance.harvest",
+      "chain_hash": "d0cabb7448987a73b224e09ecb19e99a161b29996a9a612a4a00c1f136ed633e"
+    }
+  ],
+  "file_inventory": [
+    {
+      "file_path": "README.md",
+      "content_hash": "361db0ee2f36eaca7ad574b1f033441eba24f12f51b93e2d3dbb02c4a7fa3c86",
+      "size_bytes": 2750,
+      "last_modified": "2026-03-26T15:58:28.068828+00:00",
+      "role": "doc"
+    },
+    {
+      "file_path": "docs/cloud-storage-adapters.md",
+      "content_hash": "904d243c7f86392326aa904dff692d90f5c3ff6c4cede446d1027a90de1940c1",
+      "size_bytes": 9007,
+      "last_modified": "2026-03-26T15:23:34.459883+00:00",
+      "role": "doc"
+    },
+    {
+      "file_path": "docs/magic-experience.md",
+      "content_hash": "81b8e68a89b12a6ab0a3bdc3f77c8318739dddedbb5f346c203ae456c83939b2",
+      "size_bytes": 7282,
+      "last_modified": "2026-03-26T15:36:02.430441+00:00",
+      "role": "doc"
+    },
+    {
+      "file_path": "pyproject.toml",
+      "content_hash": "d4cf5cd5d478a9ce62338bc0901f52f9b22b3e1458e52b5eadbe6f080724c406",
+      "size_bytes": 1332,
+      "last_modified": "2026-03-26T18:43:05.372326+00:00",
+      "role": "config"
+    },
+    {
+      "file_path": "scripts/sync-to-macmini.sh",
+      "content_hash": "0f3a7f839251abe8006250e5314c4903fb2217ef5c5fcc010e4d92b97815ff39",
+      "size_bytes": 378,
+      "last_modified": "2026-03-26T07:58:05.487357+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "signal-provenance.spec",
+      "content_hash": "79bf98819fe41dd2f43042f6ef292a1b3a5bea773617a257850462814154005b",
+      "size_bytes": 1591,
+      "last_modified": "2026-03-26T17:24:16.934571+00:00",
+      "role": "other"
+    },
+    {
+      "file_path": "src/signal_provenance/__init__.py",
+      "content_hash": "9bd7ee9a34bb0c5c9d6588676a6fef30b3dea6524b04cf62192d50c0cfcbf602",
+      "size_bytes": 98,
+      "last_modified": "2026-03-26T15:58:41.908577+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "src/signal_provenance/__main__.py",
+      "content_hash": "4e6e6a77369d8502863c1c01d652df7fb1762f3d83afda2eadb4b662bde3de0a",
+      "size_bytes": 100,
+      "last_modified": "2026-03-26T18:47:45.978004+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "src/signal_provenance/app.py",
+      "content_hash": "294ecf564f605fc3e429c6b5b023128062a3a618ffd1671e9c3faa0693f098c3",
+      "size_bytes": 10106,
+      "last_modified": "2026-03-26T18:20:12.208561+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "src/signal_provenance/cli.py",
+      "content_hash": "dd50ef23f7ac0afd9bb915fb97566425e3b539adad48e5924c5b953d619d34d3",
+      "size_bytes": 23574,
+      "last_modified": "2026-03-26T18:42:43.187430+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "src/signal_provenance/config.py",
+      "content_hash": "58a72f5a15e2a9d7f7bb6cd0d5133b35dccaeec78ffffc5ff641ce282a74f4b1",
+      "size_bytes": 1275,
+      "last_modified": "2026-03-26T16:12:33.724465+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "src/signal_provenance/dashboard.py",
+      "content_hash": "34407c5681c34d99c2a36ea0d0512bab4237ac4e21b19e49fffe043037bc76cd",
+      "size_bytes": 70557,
+      "last_modified": "2026-03-26T20:02:32.308881+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "src/signal_provenance/db.py",
+      "content_hash": "d515bb19169c253feb0a50a637429ff59c86e402ea8cd0100d9aa6db79f46af3",
+      "size_bytes": 18258,
+      "last_modified": "2026-03-26T18:42:43.784428+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "src/signal_provenance/export.py",
+      "content_hash": "5d8574003f589235fad3a9467a379e02954d706f375bbb51616d6193d31c09f1",
+      "size_bytes": 14549,
+      "last_modified": "2026-03-26T18:42:44.446424+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "src/signal_provenance/harvest.py",
+      "content_hash": "b7ab5c136bda8482af691861a987f9fa145e513c0205eabbaa5bfb609d92943f",
+      "size_bytes": 10057,
+      "last_modified": "2026-03-26T18:42:41.442439+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "src/signal_provenance/license.py",
+      "content_hash": "8363a42fc319326c4d5f140b0af441bcafaf2f921eb05d19b9a0763e59fb7cec",
+      "size_bytes": 7797,
+      "last_modified": "2026-03-26T18:42:45.049422+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "src/signal_provenance/providers/__init__.py",
+      "content_hash": "2f5d054316a110c6d2470d3b5312e26fff20e13fd1542046eecf3b57a4bc7382",
+      "size_bytes": 7043,
+      "last_modified": "2026-03-26T15:38:40.112253+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "src/signal_provenance/providers/gdrive.py",
+      "content_hash": "320ed33360bdc74734d99156b937ed6bc327d8bfe2576e0b2535c525c78a2eaa",
+      "size_bytes": 5103,
+      "last_modified": "2026-03-26T15:27:53.405039+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "src/signal_provenance/providers/local.py",
+      "content_hash": "16c87a5132194c69550037591f8ca8553d4c0e338e36b6ab4e0af2340ff190b5",
+      "size_bytes": 3465,
+      "last_modified": "2026-03-26T15:38:22.686384+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "src/signal_provenance/providers/s3.py",
+      "content_hash": "fb9dcc2b777bcbedac6b26645eaf656d4a7222d4b690bba87ba26ddb929e6fd1",
+      "size_bytes": 4451,
+      "last_modified": "2026-03-26T15:27:05.356477+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "src/signal_provenance/providers/sharepoint.py",
+      "content_hash": "fa3c2fd969e9f55039d84e3b1d05f64ff7590dd05c67dda233735ec4ed555b45",
+      "size_bytes": 6785,
+      "last_modified": "2026-03-26T15:27:32.443237+00:00",
+      "role": "code"
+    },
+    {
+      "file_path": "tests/__init__.py",
+      "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "last_modified": "2026-03-26T07:05:58.476736+00:00",
+      "role": "test"
+    },
+    {
+      "file_path": "tests/test_dashboard.py",
+      "content_hash": "fe3ff0a833088da53a9bf96760bcfac3bc944a94562168a123b4dc58775b7654",
+      "size_bytes": 1604,
+      "last_modified": "2026-03-26T15:48:44.538510+00:00",
+      "role": "test"
+    },
+    {
+      "file_path": "tests/test_provenance.py",
+      "content_hash": "bdf5a4202c1360a90eb277860b025fe063ffdfefc7e78737531ec5b8ca23fc7a",
+      "size_bytes": 5553,
+      "last_modified": "2026-03-26T07:07:48.045466+00:00",
+      "role": "test"
+    },
+    {
+      "file_path": "tests/test_providers.py",
+      "content_hash": "c7896db859b723b6f51063ede43949fdd8ee7eaf408242a71b14a4aefc40f4cc",
+      "size_bytes": 5676,
+      "last_modified": "2026-03-26T15:29:34.041088+00:00",
+      "role": "test"
+    },
+    {
+      "file_path": "tests/test_watch.py",
+      "content_hash": "74685e62fb785a151861b384c1b0023a3a54ca603ba47108f8dbe524ff40a6bb",
+      "size_bytes": 5526,
+      "last_modified": "2026-03-26T15:41:47.682840+00:00",
+      "role": "test"
+    }
+  ],
+  "compliance_mapping": {
+    "fda_21cfr11": [
+      "11.10(e)",
+      "11.10(b)"
+    ],
+    "sox_404": [
+      "Record integrity",
+      "7-year retention"
+    ],
+    "cmmc_nist171": [
+      "AU-2",
+      "AU-3",
+      "AU-6",
+      "AU-9",
+      "AU-12"
+    ],
+    "iso27001_soc2": [
+      "A.8.15",
+      "A.5.33"
+    ],
+    "hipaa": [
+      "164.312(b)",
+      "164.312(c)"
+    ],
+    "eu_ai_act": [
+      "Art. 12 Record-keeping",
+      "Annex IV Sec. 2 Data provenance",
+      "Art. 11 Technical documentation",
+      "Art. 17(1)(f) QMS data management",
+      "Art. 9 Risk management"
+    ]
+  }
+}
