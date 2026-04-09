@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEG MVP Architecture - Kyle Vines</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --border: #2a2a2a;
+    --text: #e0e0e0;
+    --muted: #888;
+    --accent: #4ade80;
+    --accent2: #38bdf8;
+    --accent3: #f59e0b;
+    --accent4: #f472b6;
+    --red: #ef4444;
+    --code-bg: #1a1a1a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.25rem; }
+  h1 span { color: var(--accent); }
+  .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.5rem; }
+  .version-tag { display: inline-block; background: #166534; color: #4ade80; font-size: 0.72rem; font-weight: 600; padding: 0.15em 0.6em; border-radius: 3px; margin-bottom: 1.5rem; }
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 2.5rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent2);
+    margin: 1.5rem 0 0.5rem 0;
+  }
+  h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent3);
+    margin: 1rem 0 0.25rem 0;
+  }
+  p { margin-bottom: 0.75rem; font-size: 0.92rem; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; font-size: 0.92rem; }
+  li { margin-bottom: 0.35rem; }
+  code {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.85rem;
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+  }
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 0.75rem 0 1rem 0;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+  pre code { background: none; padding: 0; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 0.75rem 0;
+  }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin: 0.75rem 0;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  th { color: var(--accent); font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  .phase-tag {
+    display: inline-block;
+    padding: 0.15em 0.5em;
+    border-radius: 3px;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .p1 { background: #166534; color: #4ade80; }
+  .p2 { background: #1e3a5f; color: #38bdf8; }
+  .p3 { background: #78350f; color: #f59e0b; }
+  .p4 { background: #581c87; color: #c084fc; }
+  .diagram {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    white-space: pre;
+    overflow-x: auto;
+  }
+  .callout {
+    border-left: 3px solid var(--accent3);
+    padding: 0.75rem 1rem;
+    background: rgba(245, 158, 11, 0.05);
+    margin: 1rem 0;
+    font-size: 0.88rem;
+  }
+  .callout strong { color: var(--accent3); }
+  .callout-red {
+    border-left: 3px solid var(--red);
+    padding: 0.75rem 1rem;
+    background: rgba(239, 68, 68, 0.05);
+    margin: 1rem 0;
+    font-size: 0.88rem;
+  }
+  .callout-red strong { color: var(--red); }
+  .callout-blue {
+    border-left: 3px solid var(--accent2);
+    padding: 0.75rem 1rem;
+    background: rgba(56, 189, 248, 0.05);
+    margin: 1rem 0;
+    font-size: 0.88rem;
+  }
+  .callout-blue strong { color: var(--accent2); }
+  a { color: var(--accent2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; }
+  .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; }
+  .toc ol { margin: 0.5rem 0 0 1.5rem; font-size: 0.88rem; }
+  .toc li { margin-bottom: 0.2rem; }
+  .toc a { color: var(--text); }
+  .toc a:hover { color: var(--accent); }
+  .badge { display: inline-block; padding: 0.1em 0.5em; border-radius: 3px; font-size: 0.75rem; font-weight: 600; }
+  .badge-green { background: #166534; color: #4ade80; }
+  .badge-blue { background: #1e3a5f; color: #38bdf8; }
+  .badge-amber { background: #78350f; color: #f59e0b; }
+  .badge-red { background: #7f1d1d; color: #fca5a5; }
+</style>
+</head>
+<body>
+
+<h1>Mira Energy Group - <span>MVP Architecture</span></h1>
+<p class="subtitle">CTO Technical Strategy Document | Kyle Vines | March 2026</p>
+<span class="version-tag">v4.0 - Core Loop</span>
+
+<div class="callout">
+  <strong>Design philosophy:</strong> Meter reads energy. Order placed. Match found. Settlement recorded. Payment processed. Everything in this document serves that loop. Everything else is Phase 2+.
+</div>
+
+<div class="toc">
+  <strong>Contents</strong>
+  <ol>
+    <li><a href="#overview">Platform Overview</a></li>
+    <li><a href="#architecture">System Architecture</a></li>
+    <li><a href="#stack">Technology Stack</a></li>
+    <li><a href="#blockchain">Blockchain Settlement Layer</a></li>
+    <li><a href="#anomaly">Anomaly Detection</a></li>
+    <li><a href="#iot">IoT / Edge Data Pipeline</a></li>
+    <li><a href="#matching">Matching Engine</a></li>
+    <li><a href="#economics">Settlement Economics</a></li>
+    <li><a href="#data-model">Data Model</a></li>
+    <li><a href="#api">API Surface</a></li>
+    <li><a href="#security">Security</a></li>
+    <li><a href="#regulatory">Regulatory Strategy</a></li>
+    <li><a href="#build">Build Plan, Risks & Cost</a></li>
+  </ol>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="overview">1. Platform Overview</h2>
+
+<p>MEG is a software-first platform for peer-to-peer energy trading. Prosumers (producers + consumers with solar, battery, or both) trade energy within a local market. Every trade settles on a permissioned blockchain with cryptographic proof of the underlying meter data.</p>
+
+<div class="grid">
+  <div class="card">
+    <h4>Blockchain Settlement</h4>
+    <p>Immutable trade settlement on Energy Web Chain. Every transaction is verifiable by regulators, participants, and auditors.</p>
+  </div>
+  <div class="card">
+    <h4>Anomaly Detection</h4>
+    <p>ML-scored meter readings. Bad data is quarantined before it reaches settlement. The one AI service that's non-negotiable for MVP.</p>
+  </div>
+  <div class="card">
+    <h4>Edge Metering</h4>
+    <p>Signed meter readings from edge devices. Hash chain from physical meter to on-chain settlement. Tamper-evident at every layer.</p>
+  </div>
+  <div class="card">
+    <h4>Matching Engine</h4>
+    <p>Periodic clearing every 15 minutes. Bids and asks collected, clearing price found, trades committed to settlement contract.</p>
+  </div>
+</div>
+
+<div class="callout-red">
+  <strong>Regulatory reality:</strong> True P2P energy sales are blocked by utility franchise laws in most US jurisdictions. MEG deploys behind-the-meter first (campuses, multi-tenant, microgrids). No utility permission needed. No regulatory approval needed. Prove the tech, generate real data, expand from there.
+</div>
+
+<p><strong>Competitive context:</strong> Power Ledger has the most commercial traction but uses a token model that creates friction with regulated utilities. LO3/Brooklyn Microgrid proved regulatory constraints make open-grid trading symbolic. SonnenCommunity (acquired by Shell) proved behind-the-meter battery sharing works commercially. No previous platform has combined blockchain settlement with edge-authenticated metering and ML-gated data integrity in a single system.</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="architecture">2. System Architecture</h2>
+
+<div class="diagram">
+                              ┌──────────────────────────┐
+                              │    PROSUMER DASHBOARD    │
+                              │       Next.js (PWA)      │
+                              └────────────┬─────────────┘
+                                           │ REST / WebSocket
+┌──────────────────────────────────────────▼──────────────────────────────────┐
+│                              BACKEND API (FastAPI)                           │
+│                                                                              │
+│  ┌──────────┐  ┌──────────┐  ┌───────────┐  ┌──────────┐  ┌───────────┐   │
+│  │ Matching  │  │Settlement│  │ Anomaly   │  │  Audit   │  │   Auth    │   │
+│  │  Engine   │  │  Oracle  │  │ Detection │  │  Logger  │  │  Service  │   │
+│  └────┬─────┘  └────┬─────┘  └─────┬─────┘  └────┬─────┘  └─────┬─────┘   │
+│       │              │              │              │              │          │
+│  ┌────▼──────────────▼──────────────▼──────────────▼──────────────▼──────┐  │
+│  │                        SERVICE BUS (Redis Streams)                     │  │
+│  └────┬──────────────┬──────────────┬────────────────────────────────────┘  │
+└───────┼──────────────┼──────────────┼──────────────────────────────────────┘
+        │              │              │
+   ┌────▼────┐   ┌────▼────┐   ┌────▼──────────┐
+   │Postgres │   │  Redis  │   │ Energy Web   │
+   │         │   │         │   │Chain (Volta) │
+   │ Users   │   │Sessions │   │              │
+   │ Orders  │   │ State   │   │ Settlement   │
+   │ Trades  │   │Pub/Sub  │   │ Meter hashes │
+   │ Audit   │   │         │   │ Permissions  │
+   └────▲────┘   └─────────┘   └──────────────┘
+        │
+        │ MQTT (TLS + client cert)
+   ┌────┴────────────────────────────────────────┐
+   │           MQTT BROKER (Mosquitto)            │
+   │      TLS 1.3 + client certificate auth       │
+   └──────────────────────▲──────────────────────┘
+                          │
+          ┌───────────────┼───────────────┐
+   ┌──────┴───────┐ ┌─────┴──────┐ ┌─────┴───────┐
+   │ Edge Node 1  │ │ Edge Node 2│ │ Edge Node N │
+   │ RPi4 + meter │ │            │ │             │
+   │ ed25519 sign │ │ Signed     │ │ Local       │
+   │ Hash chain   │ │ readings   │ │ buffer      │
+   └──────────────┘ └────────────┘ └─────────────┘</div>
+
+<p>4 services in Docker Compose: API (FastAPI), PostgreSQL, Redis, MQTT broker (Mosquitto). Anomaly detection runs in-process with the API. Settlement oracle is a background task. No separate ML service, no model registry, no TimescaleDB - standard Postgres handles 10-100 nodes without issue.</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="stack">3. Technology Stack</h2>
+
+<table>
+  <tr><th>Layer</th><th>Technology</th><th>Rationale</th></tr>
+  <tr><td>Blockchain</td><td>Energy Web Chain (Solidity, ERC-1155)</td><td>Purpose-built for energy, EVM-compatible, PoA, portable to Besu</td></tr>
+  <tr><td>Backend API</td><td>Python / FastAPI</td><td>ML ecosystem, async, security middleware, rapid development</td></tr>
+  <tr><td>Database</td><td>PostgreSQL (managed: Neon or Supabase)</td><td>Managed service. No ops burden. Scale when needed.</td></tr>
+  <tr><td>Cache / PubSub</td><td>Redis</td><td>Event bus, real-time state, rate limiting</td></tr>
+  <tr><td>Message Broker</td><td>MQTT (Mosquitto) + TLS</td><td>IoT standard, mutual TLS auth, topic ACLs</td></tr>
+  <tr><td>Anomaly Detection</td><td>Isolation Forest (scikit-learn)</td><td>Proven, interpretable, no training data required (unsupervised)</td></tr>
+  <tr><td>Edge Hardware</td><td>Raspberry Pi 4 + Eastron SDM630</td><td>~$100/node, Modbus TCP, well-documented</td></tr>
+  <tr><td>Frontend</td><td>Next.js (React, PWA)</td><td>SSR, offline-capable, responsive. Web only - no mobile app.</td></tr>
+  <tr><td>Infrastructure</td><td>Docker Compose (dev), Railway (prod)</td><td>Single platform. No multi-cloud. Ship fast.</td></tr>
+  <tr><td>CI/CD</td><td>GitHub Actions</td><td>Contract tests, API tests, settlement invariant tests</td></tr>
+</table>
+
+<div class="callout">
+  <strong>What's not here:</strong> No TimescaleDB (standard Postgres handles pilot scale). No MLflow (one model, version it in git). No Vault (environment variables + platform secrets manager). No model registry, no LSTM, no OR-Tools, no separate ML microservices. Add them when the data and scale justify them.
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="blockchain">4. Blockchain Settlement Layer</h2>
+
+<p>The settlement layer is the centerpiece. Everything feeds into or settles through it.</p>
+
+<h3>4.1 Contract Architecture (4 contracts)</h3>
+
+<div class="grid">
+  <div class="card">
+    <h4>ParticipantRegistry.sol</h4>
+    <p>Role-based access control: Prosumer, GridOperator, Regulator. KYC status tracking. Immutable - no proxy upgrade needed.</p>
+  </div>
+  <div class="card">
+    <h4>EnergyToken.sol (ERC-1155)</h4>
+    <p>Each token ID = generation batch (device + time period). Balance = Wh. Mint triggered by oracle after meter validation. Metadata: source type, location, timestamp.</p>
+  </div>
+  <div class="card">
+    <h4>EnergyMarket.sol</h4>
+    <p>Offer/accept with escrow. Seller locks energy tokens, buyer deposits payment. Atomic settlement releases both sides. Grid fee deduction. Dispute timeout.</p>
+  </div>
+  <div class="card">
+    <h4>Settlement.sol</h4>
+    <p>Periodic settlement (15-min intervals). Validates energy balance (exports ~ imports + losses). Calculates net financial positions. Emits auditable settlement events.</p>
+  </div>
+</div>
+
+<h3>4.2 On-Chain vs Off-Chain</h3>
+
+<div class="grid">
+  <div class="card">
+    <h4>On-Chain (immutable, auditable)</h4>
+    <ul>
+      <li>Trade records (seller, buyer, kWh, price, period)</li>
+      <li>Net settlement balances per participant</li>
+      <li>Meter reading hashes (provenance)</li>
+      <li>Market rules (price floor/ceiling, grid fees)</li>
+      <li>Participant registry and role assignments</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>Off-Chain (performant, private)</h4>
+    <ul>
+      <li>Raw meter data (15-sec intervals)</li>
+      <li>Order book / bid-ask matching</li>
+      <li>User profiles, KYC status</li>
+      <li>Anomaly scores and investigation logs</li>
+      <li>Audit trail (mirrored from on-chain events)</li>
+    </ul>
+  </div>
+</div>
+
+<h3>4.3 Chain Configuration</h3>
+
+<table>
+  <tr><th>Property</th><th>Volta (Dev/MVP)</th><th>EWC Mainnet (Prod)</th><th>Besu Fallback</th></tr>
+  <tr><td>Chain ID</td><td><code>73799</code></td><td><code>246</code></td><td>Custom</td></tr>
+  <tr><td>RPC</td><td><code>https://volta-rpc.energyweb.org</code></td><td><code>https://rpc.energyweb.org</code></td><td>Self-hosted</td></tr>
+  <tr><td>Consensus</td><td>PoA (AuRa)</td><td>PoA (AuRa)</td><td>QBFT</td></tr>
+  <tr><td>Block time</td><td>~5s</td><td>~5s</td><td>~2-5s</td></tr>
+  <tr><td>Gas price</td><td>1 Gwei (free VT)</td><td>1 Gwei (EWT)</td><td>0 (permissioned)</td></tr>
+</table>
+
+<div class="callout-blue">
+  <strong>Portability:</strong> All contracts are standard Solidity targeting EVM. If a utility partner requires data sovereignty, deploy identical contracts to a private Hyperledger Besu network. Zero code changes.
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="anomaly">5. Anomaly Detection</h2>
+
+<p>The one ML service in the MVP. Bad meter data hitting settlement is the highest-impact risk. The market works without forecasts, without dynamic pricing, without trade recommendations. It does not work if tampered or faulty readings settle as real trades.</p>
+
+<h3>5.1 Detection Model</h3>
+
+<table>
+  <tr><th>Threat</th><th>Model</th><th>Signals</th></tr>
+  <tr><td>Meter tampering</td><td>Isolation Forest</td><td>Sudden reading drops, statistical deviation from neighbors, zero-injection periods</td></tr>
+  <tr><td>Equipment failure</td><td>Threshold + trend</td><td>Flat readings, communication dropouts, voltage/frequency out of range</td></tr>
+  <tr><td>Data injection</td><td>Validation rules</td><td>Physically impossible values, broken hash chain, invalid signature</td></tr>
+  <tr><td>Billing fraud</td><td>Statistical outlier</td><td>Consumption inconsistent with profile, reverse flow without solar registration</td></tr>
+</table>
+
+<h3>5.2 Response Pipeline</h3>
+
+<pre><code>Reading ingested
+  -> Validate (physical bounds, signature, timestamp, sequence)
+  -> Score (Isolation Forest: anomaly probability 0.0-1.0)
+  -> Route:
+     score < 0.3  -> Accept, log
+     score 0.3-0.7 -> Accept, flag for review, alert operator
+     score > 0.7  -> Quarantine, exclude from settlement, investigate
+     score > 0.9  -> Quarantine, suspend meter, alert</code></pre>
+
+<p>Runs in-process with the FastAPI app. No separate ML service. Isolation Forest is unsupervised - no labeled training data needed. Fits on pilot data in seconds. Retrain weekly as more data accumulates.</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="iot">6. IoT / Edge Data Pipeline</h2>
+
+<h3>6.1 MVP: Simulated Data First</h3>
+
+<p>Don't wait for hardware to prove the trading logic. The platform ships with a meter data simulator that generates realistic load profiles (based on Pecan Street public datasets). Simulated readings flow through the same validation, anomaly detection, and settlement pipeline as real readings. When hardware is ready, swap the data source - nothing else changes.</p>
+
+<h3>6.2 Edge Node (Phase 2 Hardware)</h3>
+
+<div class="card">
+  <ul>
+    <li><strong>Hardware:</strong> Raspberry Pi 4 (4GB) + Eastron SDM630 submeter (~$100/node)</li>
+    <li><strong>Software:</strong> Python agent reading Modbus TCP every 15 seconds</li>
+    <li><strong>Local buffer:</strong> SQLite ring buffer (24h of readings) for connectivity drops</li>
+    <li><strong>Authentication:</strong> Mutual TLS (client certificate per device, issued by MEG CA)</li>
+    <li><strong>Integrity:</strong> Each reading signed with device key (ed25519). Hash chain links consecutive readings.</li>
+    <li><strong>Watchdog:</strong> systemd watchdog restarts agent on crash. Heartbeat published every 60s.</li>
+  </ul>
+</div>
+
+<h3>6.3 Data Validation Rules</h3>
+
+<table>
+  <tr><th>Check</th><th>Rule</th><th>Action on Failure</th></tr>
+  <tr><td>Signature</td><td>ed25519 signature valid against registered device key</td><td>Reject, alert, log</td></tr>
+  <tr><td>Timestamp</td><td>Within +/- 30s of server time (NTP synced)</td><td>Reject, flag clock drift</td></tr>
+  <tr><td>Sequence</td><td>Monotonically increasing per device</td><td>Reject if gap > 1</td></tr>
+  <tr><td>Voltage</td><td>108V - 132V (ANSI C84.1 Range A)</td><td>Accept but flag</td></tr>
+  <tr><td>Energy delta</td><td>Current reading >= previous (cumulative meter)</td><td>Reject, alert tampering</td></tr>
+  <tr><td>Rate of change</td><td>kW change < 200% of rated capacity per interval</td><td>Accept but flag</td></tr>
+</table>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="matching">7. Matching Engine</h2>
+
+<h3>Periodic Clearing (15-min intervals)</h3>
+
+<p>One market mode. No continuous bilateral. No forecast-informed auto-bidding. Keep it simple, auditable, and debuggable.</p>
+
+<div class="card">
+  <ol>
+    <li>Trading window opens at interval start</li>
+    <li>Prosumers submit buy bids (max price, quantity) and sell asks (min price, quantity)</li>
+    <li>Window closes at interval boundary (aligned to :00, :15, :30, :45)</li>
+    <li>Engine sorts: sellers ascending by price, buyers descending by price</li>
+    <li>Clearing price = intersection of supply and demand curves</li>
+    <li>All matched trades execute at the single clearing price</li>
+    <li>Matched trades committed to Settlement contract</li>
+    <li>Unmatched orders expire (no carryover)</li>
+  </ol>
+</div>
+
+<p><strong>Price bounds:</strong> Grid operator sets floor and ceiling prices. Floor protects sellers from dumping. Ceiling protects buyers from spikes. Both configurable. Default: floor = $0.04/kWh, ceiling = grid tariff ($0.15/kWh).</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="economics">8. Settlement Economics</h2>
+
+<h3>8.1 Payment Model (MVP: Fiat, Off-Chain)</h3>
+
+<p>Trades are recorded on-chain. Financial settlement is off-chain via ACH. The blockchain is the ledger of record; the bank is the payment processor.</p>
+
+<ul>
+  <li>Prosumer links bank account at registration (Plaid)</li>
+  <li>Net settlement calculated per period (15-min intervals, batched daily)</li>
+  <li>Daily net payout/debit via ACH (Stripe Connect or Dwolla)</li>
+  <li>On-chain settlement record serves as the invoice</li>
+</ul>
+
+<p><span class="badge badge-green">Lowest regulatory friction - no money transmitter license needed</span></p>
+
+<h3>8.2 Fee Structure</h3>
+
+<table>
+  <tr><th>Fee</th><th>Rate</th><th>Recipient</th></tr>
+  <tr><td>Grid usage fee</td><td>$0.02-0.04/kWh</td><td>GridOperator / Utility</td></tr>
+  <tr><td>Platform fee</td><td>2% of trade value</td><td>MEG</td></tr>
+  <tr><td>Settlement fee</td><td>$0.001/trade (gas)</td><td>EWC validators</td></tr>
+</table>
+
+<h3>8.3 Unit Economics</h3>
+
+<div class="card">
+<pre><code>Typical US residential solar prosumer:
+  Exported to market:  3,200 kWh/year
+  Average trade price: $0.12/kWh (vs $0.15 grid tariff)
+
+Seller:  3,200 x $0.12 = $384 revenue - $96 grid fee - $7.68 platform fee = $280/year net
+Buyer:   3,200 x $0.12 = $384 vs $480 grid = $96/year savings
+
+MEG revenue per prosumer pair: ~$15/year
+  At 10,000 prosumers:  ~$150K/year
+  At 100,000 prosumers: ~$1.5M/year</code></pre>
+</div>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="data-model">9. Data Model</h2>
+
+<h3>Core Schema (PostgreSQL)</h3>
+
+<pre><code>CREATE TABLE participants (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    wallet_address  TEXT UNIQUE NOT NULL,
+    email           TEXT UNIQUE NOT NULL,
+    display_name    TEXT NOT NULL,
+    role            TEXT NOT NULL CHECK (role IN ('prosumer','grid_operator','regulator')),
+    kyc_status      TEXT DEFAULT 'pending',
+    created_at      TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE TABLE meters (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    participant_id  UUID REFERENCES participants(id),
+    device_cert_fp  TEXT NOT NULL,
+    model           TEXT,
+    source_type     TEXT CHECK (source_type IN ('solar','wind','battery','grid','load')),
+    status          TEXT DEFAULT 'active',
+    registered_at   TIMESTAMPTZ DEFAULT now(),
+    last_heartbeat  TIMESTAMPTZ
+);
+
+CREATE TABLE meter_readings (
+    id              BIGSERIAL PRIMARY KEY,
+    time            TIMESTAMPTZ NOT NULL,
+    meter_id        UUID NOT NULL REFERENCES meters(id),
+    energy_kwh      NUMERIC NOT NULL,
+    net_energy_wh   INTEGER,
+    power_kw        NUMERIC,
+    voltage_v       NUMERIC,
+    sequence_num    BIGINT NOT NULL,
+    signature       TEXT NOT NULL,
+    reading_hash    TEXT NOT NULL,
+    prev_hash       TEXT,
+    anomaly_score   NUMERIC DEFAULT 0,
+    validated       BOOLEAN DEFAULT false
+);
+CREATE INDEX idx_readings_meter_time ON meter_readings(meter_id, time);
+
+CREATE TABLE orders (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    participant_id  UUID REFERENCES participants(id),
+    side            TEXT NOT NULL CHECK (side IN ('buy','sell')),
+    energy_wh       INTEGER NOT NULL,
+    price_per_wh    NUMERIC NOT NULL,
+    period_start    TIMESTAMPTZ NOT NULL,
+    status          TEXT DEFAULT 'open' CHECK (status IN ('open','matched','partial','expired')),
+    created_at      TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE TABLE trades (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    buyer_id        UUID REFERENCES participants(id),
+    seller_id       UUID REFERENCES participants(id),
+    energy_wh       INTEGER NOT NULL,
+    price_per_wh    NUMERIC NOT NULL,
+    total_price     NUMERIC NOT NULL,
+    grid_fee        NUMERIC NOT NULL,
+    platform_fee    NUMERIC NOT NULL,
+    period_start    TIMESTAMPTZ NOT NULL,
+    chain_tx_hash   TEXT,
+    status          TEXT DEFAULT 'pending' CHECK (status IN ('pending','settled','disputed')),
+    settled_at      TIMESTAMPTZ
+);
+
+CREATE TABLE settlements (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    period_start    TIMESTAMPTZ NOT NULL,
+    period_end      TIMESTAMPTZ NOT NULL,
+    total_traded_wh INTEGER NOT NULL,
+    clearing_price  NUMERIC,
+    total_trades    INTEGER NOT NULL,
+    total_grid_fees NUMERIC NOT NULL,
+    total_platform_fees NUMERIC NOT NULL,
+    chain_tx_hash   TEXT NOT NULL,
+    meter_hash_root TEXT NOT NULL,
+    settled_at      TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE TABLE audit_events (
+    id              BIGSERIAL PRIMARY KEY,
+    event_type      TEXT NOT NULL,
+    actor_id        UUID,
+    target_type     TEXT,
+    target_id       TEXT,
+    payload         JSONB NOT NULL,
+    created_at      TIMESTAMPTZ DEFAULT now()
+);
+CREATE INDEX idx_audit_type ON audit_events(event_type, created_at);</code></pre>
+
+<p>6 tables. No hypertables, no continuous aggregates, no materialized views. Standard Postgres handles the pilot. Add TimescaleDB when meter data volume justifies it (Phase 4+).</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="api">10. API Surface</h2>
+
+<h3>Prosumer API</h3>
+
+<table>
+  <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+  <tr><td>POST</td><td><code>/api/v1/auth/register</code></td><td>Register new prosumer</td></tr>
+  <tr><td>POST</td><td><code>/api/v1/auth/login</code></td><td>Login, get JWT</td></tr>
+  <tr><td>GET</td><td><code>/api/v1/me</code></td><td>Profile + wallet</td></tr>
+  <tr><td>GET</td><td><code>/api/v1/meters</code></td><td>My meters</td></tr>
+  <tr><td>GET</td><td><code>/api/v1/meters/{id}/readings</code></td><td>Meter readings (paginated)</td></tr>
+  <tr><td>POST</td><td><code>/api/v1/orders</code></td><td>Place buy/sell order</td></tr>
+  <tr><td>GET</td><td><code>/api/v1/orders</code></td><td>My orders</td></tr>
+  <tr><td>DELETE</td><td><code>/api/v1/orders/{id}</code></td><td>Cancel open order</td></tr>
+  <tr><td>GET</td><td><code>/api/v1/trades</code></td><td>My trade history</td></tr>
+  <tr><td>GET</td><td><code>/api/v1/market/price</code></td><td>Current clearing price</td></tr>
+  <tr><td>GET</td><td><code>/api/v1/balance</code></td><td>Energy + financial balance</td></tr>
+  <tr><td>WS</td><td><code>/ws/v1/feed</code></td><td>Real-time trades + prices</td></tr>
+</table>
+
+<h3>Operator API</h3>
+
+<table>
+  <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+  <tr><td>GET</td><td><code>/api/v1/admin/overview</code></td><td>Market health</td></tr>
+  <tr><td>GET</td><td><code>/api/v1/admin/anomalies</code></td><td>Active anomaly alerts</td></tr>
+  <tr><td>POST</td><td><code>/api/v1/admin/meters/{id}/suspend</code></td><td>Suspend a meter</td></tr>
+  <tr><td>POST</td><td><code>/api/v1/admin/market/pause</code></td><td>Emergency market pause</td></tr>
+  <tr><td>GET</td><td><code>/api/v1/admin/settlements</code></td><td>Settlement history</td></tr>
+  <tr><td>GET</td><td><code>/api/v1/admin/audit</code></td><td>Full audit trail</td></tr>
+</table>
+
+<p>18 endpoints total. No regulator API (give them operator read access for now). No edge device API (MQTT handles device communication). Add endpoints when there's a user asking for them.</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="security">11. Security</h2>
+
+<div class="callout-red">
+  <strong>Design principle:</strong> Every layer assumes the layer below it is compromised.
+</div>
+
+<h3>Edge</h3>
+<table>
+  <tr><th>Control</th><th>Implementation</th></tr>
+  <tr><td>Device identity</td><td>X.509 client certificates. Unique per device. Revocable.</td></tr>
+  <tr><td>Reading integrity</td><td>ed25519 signature per reading. Hash chain links consecutive readings.</td></tr>
+  <tr><td>Network isolation</td><td>Edge devices connect only to MQTT broker. No inbound connections.</td></tr>
+</table>
+
+<h3>Transport</h3>
+<table>
+  <tr><th>Channel</th><th>Protocol</th><th>Authentication</th></tr>
+  <tr><td>Edge to Broker</td><td>MQTT over TLS 1.3</td><td>Mutual TLS (client certificate)</td></tr>
+  <tr><td>API to Frontend</td><td>HTTPS (TLS 1.3)</td><td>JWT (short-lived, refresh rotation)</td></tr>
+  <tr><td>API to Blockchain</td><td>HTTPS to RPC</td><td>Wallet private key</td></tr>
+</table>
+
+<h3>Application</h3>
+<table>
+  <tr><th>Control</th><th>Implementation</th></tr>
+  <tr><td>Authentication</td><td>OAuth 2.0 + PKCE. API keys for service-to-service.</td></tr>
+  <tr><td>Authorization</td><td>RBAC: Prosumer, GridOperator, Regulator.</td></tr>
+  <tr><td>Input validation</td><td>Pydantic models. Parameterized queries only.</td></tr>
+  <tr><td>Rate limiting</td><td>Redis-backed. Per user, per endpoint.</td></tr>
+  <tr><td>Secrets</td><td>Platform secrets manager (Railway). No secrets in code.</td></tr>
+</table>
+
+<h3>Smart Contracts</h3>
+<table>
+  <tr><th>Control</th><th>Implementation</th></tr>
+  <tr><td>Access control</td><td>OpenZeppelin AccessControl. Role-gated functions.</td></tr>
+  <tr><td>Reentrancy</td><td>OpenZeppelin ReentrancyGuard.</td></tr>
+  <tr><td>Overflow</td><td>Solidity ^0.8.x built-in checks.</td></tr>
+  <tr><td>Pausability</td><td>OpenZeppelin Pausable. Emergency market freeze.</td></tr>
+  <tr><td>Testing</td><td>100% branch coverage. Fuzz testing via Foundry.</td></tr>
+</table>
+
+<p><strong>Privacy (MVP):</strong> Meter-level data is PII in some states. Encrypted at rest (Postgres column-level). On-chain records use wallet addresses only - no PII on-chain. Off-chain PII mapping deleted on account deletion. Full privacy architecture is Phase 4.</p>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="regulatory">12. Regulatory Strategy</h2>
+
+<h3>Expansion Pathway</h3>
+
+<div class="grid">
+  <div class="card">
+    <h4>Phase 1: Behind-the-Meter</h4>
+    <p>No utility franchise issues. Prosumers trade within a shared meter boundary (campus, apartment, microgrid). Platform operates as building energy management.</p>
+    <p><span class="badge badge-green">No regulatory approval needed</span></p>
+  </div>
+  <div class="card">
+    <h4>Phase 2: Utility Sandbox</h4>
+    <p>Partner with utility under regulatory sandbox or pilot program. Trades structured as bill credits. Utility provides meter data access.</p>
+    <p><span class="badge badge-blue">Requires utility partnership</span></p>
+  </div>
+  <div class="card">
+    <h4>Phase 3: Licensed Retailer</h4>
+    <p>In deregulated markets (TX), become a Retail Electric Provider. In regulated markets, operate as Community Choice Aggregator.</p>
+    <p><span class="badge badge-amber">Licensing + capital requirements</span></p>
+  </div>
+  <div class="card">
+    <h4>Phase 4: Wholesale Market</h4>
+    <p>Aggregate DERs under FERC Order 2222 for ISO/RTO markets (capacity, energy, ancillary services). 100 kW minimum aggregation.</p>
+    <p><span class="badge badge-red">ISO registration + telemetry</span></p>
+  </div>
+</div>
+
+<h3>Audit Trail</h3>
+
+<p>Every action that affects settlement produces an immutable audit record. Logged to PostgreSQL, hashed and anchored on-chain. Regulator gets read access to the operator API.</p>
+
+<ul>
+  <li><strong>Meter events:</strong> reading received, validated, flagged, quarantined</li>
+  <li><strong>Trade events:</strong> bid placed, matched, settled, disputed</li>
+  <li><strong>System events:</strong> market paused, meter suspended, price bounds changed</li>
+  <li><strong>Retention:</strong> 7 years minimum (FERC record retention)</li>
+</ul>
+
+<!-- ───────────────────────────────────────── -->
+<h2 id="build">13. Build Plan, Risks & Cost</h2>
+
+<h3>Phase 1: Core Settlement <span class="phase-tag p1">Months 1-2</span></h3>
+<div class="card">
+  <ul>
+    <li>Solidity contracts on EWC Volta: ParticipantRegistry, EnergyToken (ERC-1155), EnergyMarket, Settlement</li>
+    <li>FastAPI backend: auth, meter data ingestion, order placement, settlement orchestration, audit logger</li>
+    <li>PostgreSQL schema (6 tables above)</li>
+    <li>Simulated meter data generator (realistic load profiles)</li>
+    <li>Periodic clearing engine (15-min intervals)</li>
+    <li>Anomaly detection pipeline (Isolation Forest + validation rules)</li>
+    <li>Contract tests (Hardhat + Foundry, 100% branch coverage, fuzz)</li>
+    <li>API tests (pytest, unit + integration)</li>
+    <li>Deploy to Railway</li>
+  </ul>
+  <p><strong>Exit criteria:</strong> 10 simulated prosumers trading. Settlement math correct. Audit trail complete. API-only, no frontend.</p>
+</div>
+
+<h3>Phase 2: Dashboard + Hardware <span class="phase-tag p2">Months 2-3</span></h3>
+<div class="card">
+  <ul>
+    <li>Next.js prosumer dashboard: readings, orders, trades, balance, market price</li>
+    <li>Operator dashboard: market overview, anomaly alerts, meter management</li>
+    <li>WebSocket real-time feed</li>
+    <li>Edge gateway prototype: RPi4 + SDM630, signed readings, local buffer</li>
+    <li>MQTT broker with mTLS</li>
+    <li>End-to-end test: edge to dashboard to chain</li>
+  </ul>
+  <p><strong>Exit criteria:</strong> Full demo with real hardware. One RPi feeding live data through the entire pipeline to on-chain settlement.</p>
+</div>
+
+<h3>Phase 3: Pilot <span class="phase-tag p3">Months 3-4</span></h3>
+<div class="card">
+  <ul>
+    <li>Secure behind-the-meter pilot site</li>
+    <li>Deploy 5-10 edge nodes</li>
+    <li>Fiat settlement integration (Stripe Connect, ACH)</li>
+    <li>Smart contract security audit (external firm)</li>
+    <li>Regulatory documentation package</li>
+    <li>Investor demo with live data</li>
+  </ul>
+  <p><strong>Exit criteria:</strong> Real prosumers, real data, real money, security audited. Ready for pre-seed raise.</p>
+</div>
+
+<h3>Risks</h3>
+
+<table>
+  <tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Mitigation</th></tr>
+  <tr><td>Utility blocks meter access</td><td><span class="badge badge-red">High</span></td><td><span class="badge badge-red">High</span></td><td>Own submeters. Behind-the-meter doesn't need utility.</td></tr>
+  <tr><td>Regulatory blocks pilot</td><td><span class="badge badge-amber">Medium</span></td><td><span class="badge badge-red">High</span></td><td>Bill credits as fallback. Multiple target states.</td></tr>
+  <tr><td>EWC deprecation</td><td><span class="badge badge-amber">Medium</span></td><td><span class="badge badge-amber">Medium</span></td><td>Portable Solidity. Deploy to Besu in < 1 day.</td></tr>
+  <tr><td>Smart contract vulnerability</td><td><span class="badge badge-green">Low</span></td><td><span class="badge badge-red">High</span></td><td>External audit, OpenZeppelin base, fuzz testing, pausability.</td></tr>
+  <tr><td>Pre-seed raise delayed</td><td><span class="badge badge-amber">Medium</span></td><td><span class="badge badge-red">High</span></td><td>MVP buildable with minimal infra cost. Founders work equity-only until close.</td></tr>
+</table>
+
+<h3>Cost (4-Month MVP, Excluding Labor)</h3>
+
+<table>
+  <tr><th>Item</th><th>Monthly</th><th>4-Month Total</th></tr>
+  <tr><td>Railway (API + Redis + Postgres)</td><td>$25-50</td><td>$100-200</td></tr>
+  <tr><td>Managed Postgres (Neon free tier to Pro)</td><td>$0-19</td><td>$0-76</td></tr>
+  <tr><td>EWC Volta testnet</td><td>Free</td><td>Free</td></tr>
+  <tr><td>Edge hardware (5-10 nodes, Phase 2)</td><td>-</td><td>$500-1,000</td></tr>
+  <tr><td>Domain + TLS</td><td>$15</td><td>$60</td></tr>
+  <tr><td>Security audit (Phase 3)</td><td>-</td><td>$10,000-25,000</td></tr>
+  <tr><td><strong>Total (4 months, excl. labor + audit)</strong></td><td></td><td><strong>$660-1,336</strong></td></tr>
+  <tr><td><strong>Total (including audit)</strong></td><td></td><td><strong>$10,660-26,336</strong></td></tr>
+</table>
+
+<div class="callout">
+  <strong>What's not in this budget:</strong> MLflow ($50/mo), weather API ($40/mo), TimescaleDB ($100+/mo), multi-cloud hosting, monitoring stack. Those are Phase 4+ costs justified by scale, not by the MVP.
+</div>
+
+<div class="footer">
+  <p>Prepared by Kyle Vines | Echology, Inc. | March 2026</p>
+  <p>This document is confidential and intended for MEG executive team and investors.</p>
+</div>
+
+</body>
+</html>
