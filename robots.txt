@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://kylevines.com/sitemap.xml
+Sitemap: https://echology.io/sitemap-index.xml
