@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Document Review</title>
+<style>
+  :root{
+    --paper:#f6f7f9; --card:#ffffff; --ink:#191c24; --muted:#5d6470;
+    --line:#e3e6ec; --accent:#3a47b0; --accent-soft:#eceef9;
+    --good:#1f7a4d; --good-soft:#e6f3ec; --warn:#9a5b12; --warn-soft:#f6eddd;
+    --radius:12px; --maxw:760px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-variant-numeric:tabular-nums;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:24px 20px 96px}
+  header{display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap}
+  h1{font-size:1.5rem; line-height:1.2; text-wrap:balance; margin:0 0 2px}
+  .sub{color:var(--muted); font-size:.95rem; margin:0}
+  .langtoggle{display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; background:var(--card)}
+  .langtoggle button{border:0; background:transparent; padding:7px 14px; font:inherit; font-size:.85rem; cursor:pointer; color:var(--muted)}
+  .langtoggle button[aria-pressed="true"]{background:var(--accent); color:#fff}
+  .intro{background:var(--accent-soft); border:1px solid #d7dbf3; border-radius:var(--radius); padding:14px 16px; margin:18px 0 22px; font-size:.95rem}
+  .field{margin:14px 0}
+  label.lbl{display:block; font-size:.82rem; letter-spacing:.02em; text-transform:uppercase; color:var(--muted); margin-bottom:6px}
+  input[type=text]{width:100%; max-width:320px; padding:9px 11px; border:1px solid var(--line); border-radius:8px; font:inherit; background:var(--card)}
+  details.docs{border:1px solid var(--line); border-radius:var(--radius); background:var(--card); margin:0 0 26px}
+  details.docs>summary{cursor:pointer; padding:14px 16px; font-weight:600; list-style:none}
+  details.docs>summary::-webkit-details-marker{display:none}
+  details.docs>summary::after{content:"▾"; float:right; color:var(--muted)}
+  details.docs[open]>summary::after{content:"▴"}
+  .docgrid{padding:0 16px 16px; display:grid; gap:12px}
+  .doc{border:1px solid var(--line); border-radius:10px; overflow:hidden}
+  .doc .docid{background:#f0f2f6; padding:6px 12px; font-size:.78rem; letter-spacing:.04em; color:var(--muted); font-weight:600}
+  .doc pre{margin:0; padding:11px 12px; white-space:pre-wrap; word-break:break-word; font:inherit; font-size:.93rem}
+  .note{color:var(--muted); font-size:.85rem; padding:0 16px 14px}
+  .sys{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:18px 18px 20px; margin:0 0 22px}
+  .sys h2{font-size:1.15rem; margin:0 0 2px}
+  .timerrow{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:12px 0 6px}
+  .btn{border:0; border-radius:8px; padding:9px 16px; font:inherit; font-weight:600; cursor:pointer}
+  .btn.start{background:var(--accent); color:#fff}
+  .btn.done{background:var(--good); color:#fff}
+  .btn.ghost{background:var(--accent-soft); color:var(--accent)}
+  .btn:disabled{opacity:.45; cursor:default}
+  .timer{font-variant-numeric:tabular-nums; font-size:1.05rem; font-weight:600; color:var(--muted)}
+  .timer.running{color:var(--accent)}
+  .body[hidden]{display:none}
+  .blocklabel{font-size:.82rem; letter-spacing:.02em; text-transform:uppercase; color:var(--muted); margin:18px 0 6px}
+  .concl{background:#f7f8fb; border-left:3px solid var(--accent); border-radius:6px; padding:11px 13px; font-size:.95rem}
+  ul.claims{list-style:none; margin:8px 0 0; padding:0; display:grid; gap:8px}
+  ul.claims li{border:1px solid var(--line); border-radius:9px; padding:10px 12px}
+  .claimtext{font-size:.95rem}
+  .src{font-size:.78rem; color:var(--muted); margin-top:3px}
+  .trace{display:flex; align-items:center; gap:8px; margin-top:9px; flex-wrap:wrap}
+  .trace .q{font-size:.85rem; color:var(--muted)}
+  .yn,.holds{display:inline-flex; border:1px solid var(--line); border-radius:8px; overflow:hidden}
+  .yn button,.holds button{border:0; background:transparent; padding:6px 14px; font:inherit; font-size:.85rem; cursor:pointer; color:var(--muted)}
+  .yn button[aria-pressed="true"][data-v="1"]{background:var(--good-soft); color:var(--good)}
+  .yn button[aria-pressed="true"][data-v="0"]{background:var(--warn-soft); color:var(--warn)}
+  .holds button[aria-pressed="true"][data-v="hold"]{background:var(--good-soft); color:var(--good)}
+  .holds button[aria-pressed="true"][data-v="refute"]{background:var(--warn-soft); color:var(--warn)}
+  .small{font-size:.85rem; color:var(--muted)}
+  .flag{display:inline-block; background:#f0f2f6; border-radius:6px; padding:3px 8px; font-size:.82rem; margin:3px 6px 0 0}
+  footer{position:sticky; bottom:0; background:linear-gradient(180deg,rgba(246,247,249,0),var(--paper) 32%); padding-top:18px; margin-top:8px}
+  .finish{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+  .toast{font-size:.88rem; color:var(--good)}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  @media (max-width:560px){ .wrap{padding:18px 14px 96px} h1{font-size:1.3rem} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1 data-i="title">Document review</h1>
+      <p class="sub" data-i="subtitle"></p>
+    </div>
+    <div class="langtoggle" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">English</button>
+      <button type="button" data-lang="pt" aria-pressed="false">Português</button>
+    </div>
+  </header>
+
+  <div class="intro" data-i="intro"></div>
+
+  <div class="field">
+    <label class="lbl" for="rev" data-i="yourname">Your name</label>
+    <input type="text" id="rev" autocomplete="off">
+  </div>
+
+  <details class="docs" open>
+    <summary data-i="docs_title">The source documents</summary>
+    <div class="note" data-i="docs_note"></div>
+    <div class="docgrid" id="docgrid"></div>
+  </details>
+
+  <div id="systems"></div>
+
+  <footer>
+    <div class="finish">
+      <button type="button" class="btn start" id="download" data-i="download">Download my results</button>
+      <button type="button" class="btn ghost" id="copy" data-i="copy">Copy results</button>
+      <span class="toast" id="toast" role="status" aria-live="polite"></span>
+    </div>
+    <p class="small" style="margin-top:10px" data-i="sendhint"></p>
+  </footer>
+</div>
+
+<script type="application/json" id="data">
+{
+  "corpus": {
+    "A_policy": "VENDOR INSURANCE POLICY (Authority document)\nSection 3.1: All vendors engaged for contract work must carry general liability\ninsurance with an aggregate limit of at least $1,000,000.",
+    "B_vendor_record": "VENDOR RECORD — Vendorco\nStatus: Active\nLiability insurance: $1,000,000 (per vendor self-report, intake form)",
+    "C_certificate": "CERTIFICATE OF INSURANCE — Vendorco\nCarrier: Atlas Mutual\nGeneral liability aggregate limit: $500,000\nEffective: 2026-01-01 to 2026-12-31",
+    "D_memo": "INTERNAL MEMO (undated, unsigned)\nVendorco has been pre-approved for the expansion contract."
+  },
+  "packets": {
+    "System-1": {
+      "conclusion": "Witnessed deviations: A_policy (mandatory) requires liability insurance amount >= $1,000,000; C_certificate observes $500,000 (does not satisfy the requirement); B_vendor_record and C_certificate disagree on liability insurance amount. The compliance determination rests with the reviewer.",
+      "claims": [
+        {"text": "Policy requires liability insurance amount >= $1,000,000 (authority: mandatory)", "sources": ["A_policy"]},
+        {"text": "B_vendor_record states liability insurance amount $1,000,000", "sources": ["B_vendor_record"]},
+        {"text": "C_certificate states liability insurance amount $500,000", "sources": ["C_certificate"]},
+        {"text": "Observed $500,000 (C_certificate) does not satisfy the required >= $1,000,000 (A_policy)", "sources": ["C_certificate", "A_policy"]},
+        {"text": "B_vendor_record ($1,000,000) and C_certificate ($500,000) disagree on liability insurance amount", "sources": ["B_vendor_record", "C_certificate"]}
+      ],
+      "contradictions": [{"a": "B_vendor_record", "b": "C_certificate", "field": "liability_insurance_amount"}],
+      "deviations": [{"observed_source": "C_certificate", "required_source": "A_policy", "observed": "$500,000", "required": "$1,000,000", "relation": ">="}]
+    },
+    "System-2": {
+      "conclusion": "The authority policy [A_policy] requires general liability insurance with an aggregate limit of at least $1,000,000. Vendorco's self-reported intake record [B_vendor_record] claims $1,000,000, but the actual Certificate of Insurance [C_certificate] shows an aggregate limit of only $500,000, which fails the requirement. The self-report contradicts the certificate, and the certificate value deviates from the policy requirement.",
+      "claims": [
+        {"text": "All vendors must carry general liability insurance with an aggregate limit of at least $1,000,000.", "sources": ["A_policy"]},
+        {"text": "Vendorco is an active vendor and self-reported liability insurance of $1,000,000 on its intake form.", "sources": ["B_vendor_record"]},
+        {"text": "Vendorco's Certificate of Insurance from Atlas Mutual states a general liability aggregate limit of $500,000, effective 2026-01-01 to 2026-12-31.", "sources": ["C_certificate"]},
+        {"text": "An undated, unsigned internal memo states Vendorco has been pre-approved for the expansion contract.", "sources": ["D_memo"]}
+      ],
+      "contradictions": [{"a": "B_vendor_record", "b": "C_certificate", "field": "general liability aggregate limit"}],
+      "deviations": [{"observed_source": "C_certificate", "required_source": "A_policy", "observed": "$500,000", "required": "$1,000,000", "relation": ">="}]
+    }
+  },
+  "form": {
+    "reviewer": "",
+    "packets": {
+      "System-1": {"minutes_to_audit": null, "claims_traceable": {"0": null, "1": null, "2": null, "3": null, "4": null}},
+      "System-2": {"minutes_to_audit": null, "claims_traceable": {"0": null, "1": null, "2": null, "3": null}}
+    }
+  }
+}
+</script>
+
+<script>
+const DATA = JSON.parse(document.getElementById("data").textContent);
+const STR = {
+  en: {
+    title:"Document review",
+    subtitle:"Two systems summarized the same documents. Check each one against the sources.",
+    intro:"Thank you for helping. Below are two systems (System 1 and System 2). Each read the same source documents and produced a summary. For <b>each</b> system: press <b>Start</b>, then check every statement against the source documents above and mark whether you can trace it. When you finish a system, press <b>Done</b>. Work at your normal pace — the time is part of what we are measuring. Then download your results.",
+    yourname:"Your name",
+    docs_title:"The source documents",
+    docs_note:"The source documents are in English.",
+    start:"Start", reviewing:"Reviewing…", done:"Done", timed:"Time:",
+    conclusion:"Its conclusion",
+    claims:"Its statements — can you trace each one to the documents?",
+    traceq:"Can you trace this to the documents?",
+    yes:"Yes", no:"No", sources:"cites:",
+    contradictions:"Contradictions it flagged", deviations:"Shortfalls it flagged",
+    holdsq:"Overall, does its conclusion hold up against the documents?",
+    holds:"It holds", refute:"It does not", system:"System",
+    download:"Download my results", copy:"Copy results",
+    copied:"Copied to clipboard.", downloaded:"Downloaded review-form.filled.json.",
+    sendhint:"When finished, send the downloaded file (review-form.filled.json) back to Kyle."
+  },
+  pt: {
+    title:"Revisão de documentos",
+    subtitle:"Dois sistemas resumiram os mesmos documentos. Confira cada um nas fontes.",
+    intro:"Obrigado por ajudar. Abaixo estão dois sistemas (Sistema 1 e Sistema 2). Cada um leu os mesmos documentos de origem e produziu um resumo. Para <b>cada</b> sistema: aperte <b>Iniciar</b>, confira cada afirmação nos documentos de origem acima e marque se você consegue rastreá-la. Ao terminar um sistema, aperte <b>Concluir</b>. Trabalhe no seu ritmo normal — o tempo faz parte do que estamos medindo. Depois baixe seus resultados.",
+    yourname:"Seu nome",
+    docs_title:"Os documentos de origem",
+    docs_note:"Os documentos de origem estão em inglês.",
+    start:"Iniciar", reviewing:"Revisando…", done:"Concluir", timed:"Tempo:",
+    conclusion:"A conclusão dele",
+    claims:"As afirmações dele — você consegue rastrear cada uma nos documentos?",
+    traceq:"Você consegue rastrear isto até os documentos?",
+    yes:"Sim", no:"Não", sources:"cita:",
+    contradictions:"Contradições que ele apontou", deviations:"Insuficiências que ele apontou",
+    holdsq:"No geral, a conclusão dele se sustenta diante dos documentos?",
+    holds:"Sustenta", refute:"Não sustenta", system:"Sistema",
+    download:"Baixar meus resultados", copy:"Copiar resultados",
+    copied:"Copiado para a área de transferência.", downloaded:"Arquivo review-form.filled.json baixado.",
+    sendhint:"Ao terminar, envie o arquivo baixado (review-form.filled.json) de volta para o Kyle."
+  }
+};
+function detectLang(){var l=(navigator.language||navigator.userLanguage||"en").toLowerCase();return l.indexOf("pt")===0?"pt":"en";}
+let LANG = detectLang();
+const t = k => STR[LANG][k];
+const sys = {};
+
+function renderDocs(){
+  const g = document.getElementById("docgrid"); g.innerHTML="";
+  for(const [id,text] of Object.entries(DATA.corpus)){
+    const d=document.createElement("div"); d.className="doc";
+    const h=document.createElement("div"); h.className="docid"; h.textContent=id;
+    const p=document.createElement("pre"); p.textContent=text;
+    d.append(h,p); g.append(d);
+  }
+}
+
+function buildSystems(){
+  const root=document.getElementById("systems"); root.innerHTML="";
+  for(const label of Object.keys(DATA.packets)){
+    sys[label]={phase:"idle", t0:null, minutes:null, ticker:null, els:{}};
+    const num=label.split("-")[1]; const pk=DATA.packets[label];
+    const sec=document.createElement("section"); sec.className="sys";
+    const h2=document.createElement("h2"); h2.dataset.num=num; sec.append(h2);
+
+    const row=document.createElement("div"); row.className="timerrow";
+    const startBtn=document.createElement("button"); startBtn.className="btn start";
+    const doneBtn=document.createElement("button"); doneBtn.className="btn done"; doneBtn.disabled=true;
+    const tdisp=document.createElement("span"); tdisp.className="timer"; tdisp.textContent="00:00";
+    row.append(startBtn,doneBtn,tdisp); sec.append(row);
+    sys[label].els={startBtn,doneBtn,tdisp,h2};
+
+    const body=document.createElement("div"); body.className="body"; body.hidden=true;
+    const cl=document.createElement("div"); cl.className="blocklabel"; cl.dataset.i2="conclusion"; body.append(cl);
+    const cc=document.createElement("div"); cc.className="concl"; cc.textContent=pk.conclusion; body.append(cc);
+    const sl=document.createElement("div"); sl.className="blocklabel"; sl.dataset.i2="claims"; body.append(sl);
+    const ul=document.createElement("ul"); ul.className="claims";
+    pk.claims.forEach((c,idx)=>{
+      const li=document.createElement("li");
+      const ct=document.createElement("div"); ct.className="claimtext"; ct.textContent=c.text;
+      const sr=document.createElement("div"); sr.className="src";
+      const sk=document.createElement("span"); sk.dataset.i2="sources"; sr.append(sk, document.createTextNode(" "+c.sources.join(", ")));
+      const tr=document.createElement("div"); tr.className="trace";
+      const q=document.createElement("span"); q.className="q"; q.dataset.i2="traceq";
+      const yn=document.createElement("span"); yn.className="yn";
+      [["1","yes"],["0","no"]].forEach(([v,key])=>{
+        const b=document.createElement("button"); b.dataset.v=v; b.dataset.i2=key; b.setAttribute("aria-pressed","false");
+        b.onclick=()=>{ DATA.form.packets[label].claims_traceable[idx]=Number(v);
+          yn.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", x===b?"true":"false")); };
+        yn.append(b);
+      });
+      tr.append(q,yn); li.append(ct,sr,tr); ul.append(li);
+    });
+    body.append(ul);
+    if(pk.contradictions&&pk.contradictions.length){
+      const x=document.createElement("div"); x.className="blocklabel"; x.dataset.i2="contradictions"; body.append(x);
+      pk.contradictions.forEach(c=>{ const s=document.createElement("span"); s.className="flag"; s.textContent=`${c.a} ↔ ${c.b} · ${c.field}`; body.append(s); });
+    }
+    if(pk.deviations&&pk.deviations.length){
+      const x=document.createElement("div"); x.className="blocklabel"; x.dataset.i2="deviations"; body.append(x);
+      pk.deviations.forEach(d=>{ const s=document.createElement("span"); s.className="flag"; s.textContent=`${d.observed_source}: ${d.observed} (req ${d.relation} ${d.required})`; body.append(s); });
+    }
+    const hq=document.createElement("div"); hq.className="blocklabel"; hq.dataset.i2="holdsq"; hq.style.marginTop="18px"; body.append(hq);
+    const holds=document.createElement("span"); holds.className="holds";
+    [["hold","holds"],["refute","refute"]].forEach(([v,key])=>{
+      const b=document.createElement("button"); b.dataset.v=v; b.dataset.i2=key; b.setAttribute("aria-pressed","false");
+      b.onclick=()=>{ DATA.form.packets[label].conclusion_holds=v;
+        holds.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", x===b?"true":"false")); };
+      holds.append(b);
+    });
+    body.append(holds); sec.append(body);
+
+    const fmt=ms=>{ const s=Math.floor(ms/1000); return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0"); };
+    startBtn.onclick=()=>{
+      const st=sys[label]; st.phase="running"; st.t0=Date.now(); body.hidden=false;
+      startBtn.disabled=true; doneBtn.disabled=false; tdisp.classList.add("running"); refreshControls(label);
+      st.ticker=setInterval(()=>{ tdisp.textContent=fmt(Date.now()-st.t0); },1000);
+    };
+    doneBtn.onclick=()=>{
+      const st=sys[label]; if(st.ticker) clearInterval(st.ticker);
+      st.minutes=Math.round(((Date.now()-st.t0)/60000)*100)/100; st.phase="done";
+      DATA.form.packets[label].minutes_to_audit=st.minutes;
+      doneBtn.disabled=true; tdisp.classList.remove("running"); refreshControls(label);
+    };
+    root.append(sec);
+  }
+}
+
+function refreshControls(label){
+  const st=sys[label], {startBtn,doneBtn,tdisp,h2}=st.els;
+  h2.textContent=`${t("system")} ${h2.dataset.num}`;
+  doneBtn.textContent=t("done");
+  if(st.phase==="idle"){ startBtn.textContent=t("start"); tdisp.textContent="00:00"; }
+  else if(st.phase==="running"){ startBtn.textContent=t("reviewing"); }
+  else if(st.phase==="done"){ startBtn.textContent=t("start"); tdisp.textContent=`${t("timed")} ${st.minutes} min`; }
+}
+
+function applyLang(){
+  document.documentElement.lang=LANG;
+  document.querySelectorAll("[data-i]").forEach(el=>{ const k=el.dataset.i; if(k==="intro") el.innerHTML=t(k); else el.textContent=t(k); });
+  document.querySelectorAll("[data-i2]").forEach(el=>{ el.textContent=t(el.dataset.i2); });
+  for(const label of Object.keys(sys)) refreshControls(label);
+  document.querySelectorAll(".langtoggle button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===LANG?"true":"false"));
+}
+
+document.querySelectorAll(".langtoggle button").forEach(b=>{ b.onclick=()=>{ LANG=b.dataset.lang; applyLang(); }; });
+
+function buildResults(){ const form=JSON.parse(JSON.stringify(DATA.form)); form.reviewer=document.getElementById("rev").value.trim(); return form; }
+function toast(m){ const el=document.getElementById("toast"); el.textContent=m; setTimeout(()=>{ if(el.textContent===m) el.textContent=""; },4000); }
+document.getElementById("download").onclick=()=>{
+  const blob=new Blob([JSON.stringify(buildResults(),null,2)],{type:"application/json"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="review-form.filled.json";
+  document.body.append(a); a.click(); a.remove(); URL.revokeObjectURL(a.href); toast(t("downloaded"));
+};
+document.getElementById("copy").onclick=async()=>{
+  const txt=JSON.stringify(buildResults(),null,2);
+  try{ await navigator.clipboard.writeText(txt); toast(t("copied")); }
+  catch(e){ const ta=document.createElement("textarea"); ta.value=txt; document.body.append(ta); ta.select(); document.execCommand("copy"); ta.remove(); toast(t("copied")); }
+};
+
+renderDocs(); buildSystems(); applyLang();
+</script>
+</body>
+</html>
